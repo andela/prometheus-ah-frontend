@@ -5,7 +5,7 @@ import NotFoundPage from '../views/NotFoundPage';
 import LoginPage from '../views/LoginPage';
 import LandingPage from '../views/LandingPage';
 
-const AppRoutes = (
+const AppRoutes = () => (
   <BrowserRouter>
     <div>
       <Switch>
