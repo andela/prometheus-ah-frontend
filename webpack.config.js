@@ -5,7 +5,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[hash].min.js'
+    filename: '[hash].min.js',
+    publicPath: '/',  
   },
   module: {
     rules: [
@@ -22,5 +23,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html'
     })
-  ]
+  ],
+  devServer: {
+    historyApiFallback: true
+  },
 };
