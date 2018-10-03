@@ -1,0 +1,47 @@
+{
+  "name": "react-authorshaven",
+  "version": "1.0.0",
+  "description": "A Social platform for the creative at heart",
+  "main": "/src/index.js",
+  "scripts": {
+    "heroku-build": "rimraf dist && npm run build",
+    "build": "webpack --config webpack.config.prod.js",
+    "start": "node --require @babel/register index.js",
+    "start:dev": "webpack-dev-server --mode=development --watch --open --hot",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andela/prometheus-ah-frontend.git"
+  },
+  "author": "Andela Simulations prometheus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andela/prometheus-ah-frontend/issues"
+  },
+  "homepage": "https://github.com/andela/prometheus-ah-frontend#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "html-webpack-plugin": "^3.2.0",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9",
+    "webpack-merge": "^4.1.4"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "webpack": "^4.20.2"
+  }
+}
