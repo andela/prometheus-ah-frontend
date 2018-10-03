@@ -9,7 +9,7 @@ class App extends Component {
       <div>
         <h1>Welcome to Authors haven</h1>
       </div>
-    )
+    );
   }
 }
 
