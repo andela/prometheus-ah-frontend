@@ -1,9 +1,9 @@
-import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import routes from "../constants/routes";
-import NotFoundPage from "../views/NotFoundPage";
-import LoginPage from "../views/LoginPage";
-import LandingPage from "../views/LandingPage";
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import routes from '../constants/routes';
+import NotFoundPage from '../views/NotFoundPage';
+import LoginPage from '../views/LoginPage';
+import LandingPage from '../views/LandingPage';
 
 const AppRoutes = (
   <BrowserRouter>
