@@ -1,5 +1,5 @@
-import express from 'express';
-import path from 'path';
+const express = require('express');
+const path = require('path');
 
 const app = express();
 const port = parseInt(process.env.PORT, 10) || 8000;
@@ -11,6 +11,5 @@ app.get('*', (req, res) => {
 });
 
 const server = app.listen(port, () => {
-  // eslint-disable-next-line no-console
   console.log(`'Listening on port '${server.address().port}`);
 });
