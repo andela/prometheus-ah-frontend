@@ -18,4 +18,3 @@ describe('Error Alert Notification Component', () => {
     expect(wrapper.exists()).toBe(true);
   });
 });
-

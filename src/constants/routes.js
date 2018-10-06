@@ -3,7 +3,8 @@ const routes = {
   SIGN_UP: '/users',
   SIGN_IN: '/users/login',
   VERIFY_EMAIL: '/confirmation/',
-  CREATE_ARTICLE: '/articles'
+  LIST_ARTICLE: '/articles',
+  READ_ARTICLE: '/articles/:slug'
 };
 
 export default routes;
