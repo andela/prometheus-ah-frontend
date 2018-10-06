@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Editor component should render Body Editor correctly 1`] = `
+<Editor
+  apiKey="zre5x72iyosuc7o3z1vg6lfbkxwdw4b5lr9yrwpgjsnfsca7"
+  init={
+    Object {
+      "images_reuse_filename": true,
+      "inline": true,
+      "menubar": false,
+      "mobile": Object {
+        "plugins": Array [
+          "autosave",
+          "lists",
+          "autolink",
+        ],
+        "theme": "mobile",
+      },
+      "plugins": Array [
+        "autolink",
+        "codesample",
+        "link",
+        "linkchecker",
+        "lists",
+        "mediaembed",
+        "textcolor",
+        "image",
+        "emoticons",
+      ],
+      "selection_toolbar": "bold italic underline strikethrough|
+            h2 h3 | blockquote quicklink | alignleft aligncenter alignright alignjustify |
+            forecolor fontsize underlinr",
+      "theme": "inlite",
+      "toolbar": "emoticons",
+    }
+  }
+/>
+`;
+
+exports[`Editor component should render Title Editor correctly 1`] = `
+<Editor
+  apiKey="zre5x72iyosuc7o3z1vg6lfbkxwdw4b5lr9yrwpgjsnfsca7"
+  init={
+    Object {
+      "inline": true,
+      "insert_toolbar": "undo redo",
+      "menubar": false,
+      "selection_toolbar": "italic underline",
+      "theme": "inlite",
+    }
+  }
+  name="title-editor"
+  tagName="h1"
+/>
+`;

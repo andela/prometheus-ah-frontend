@@ -88,7 +88,7 @@ export class SignUpForm extends Component {
    * @returns {*} - state
    */
   render() {
-    const { auth } = this.props;
+    const { auth } = this.props; // eslint-disable-line
     if (auth) {
       return <Redirect to="/users/login" />;
     }
@@ -96,7 +96,7 @@ export class SignUpForm extends Component {
       errors, email, username, password, password_confirmation // eslint-disable-line
     } = this.state;
 
-    const { error } = this.props;
+    const { error } = this.props; // eslint-disable-line
 
     const form = (
       <div className="card">

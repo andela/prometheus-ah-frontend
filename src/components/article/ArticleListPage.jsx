@@ -30,7 +30,11 @@ class ArticleListPage extends Component {
             (
               <ul key={article.id}>
                 <li>
-                  <Link to={`/articles/${article.slug}`}>{ReactHtmlParser(article.title)}</Link>
+                  <Link
+                    to={`/articles/${article.slug}`}
+                  >
+                    {ReactHtmlParser(article.title)}
+                  </Link>
                   <br />
                   <span key={article.User.username}>{ReactHtmlParser(article.User.username)}</span>
                   <p key={article.description}>{ReactHtmlParser(article.description)}</p>

@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article Form component should render Article Form correctly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-md-7 align-self-start"
+    >
+      <TagsInput
+        addKeys={
+          Array [
+            9,
+            13,
+          ]
+        }
+        addOnBlur={false}
+        addOnPaste={true}
+        className="tag-box"
+        disabled={false}
+        focusedClassName="react-tagsinput--focused"
+        inputProps={Object {}}
+        inputValue=""
+        maxTags={5}
+        onChange={[Function]}
+        onChangeInput={[Function]}
+        onlyUnique={false}
+        pasteSplit={[Function]}
+        preventSubmit={true}
+        removeKeys={
+          Array [
+            8,
+          ]
+        }
+        renderInput={[Function]}
+        renderLayout={[Function]}
+        renderTag={[Function]}
+        tagDisplayProp={null}
+        tagProps={
+          Object {
+            "className": "react-tagsinput-tag",
+            "classNameRemove": "react-tagsinput-remove",
+          }
+        }
+        validationRegex={/\\.\\*/}
+        value={Array []}
+      />
+    </div>
+    <div
+      className="col-sm-5 col-md-5 submit d-flex justify-content-sm-end justify-content-md-end"
+    >
+      <input
+        className="btn btn-sm btn-primary btn-primary-outline btn-update"
+        disabled={true}
+        id="publish"
+        type="submit"
+        value="Publish"
+      />
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col-md-12"
+    >
+      <div
+        className="card"
+        id="format-title"
+      >
+        <div
+          className="card-title"
+        >
+          <h2>
+            <TitleEditor
+              handleChange={[Function]}
+              handleTitleFocusIn={[Function]}
+              handleTitleFocusOut={[Function]}
+              value="Title"
+            />
+          </h2>
+        </div>
+      </div>
+      <div
+        className="description"
+      >
+        <DescriptionEditor
+          handleChange={[Function]}
+          handleTitleFocusIn={[Function]}
+          handleTitleFocusOut={[Function]}
+          value="Write a short description of your story"
+        />
+      </div>
+    </div>
+    <div
+      className="card editor-body"
+    >
+      <div
+        className="card-body"
+      >
+        <BodyEditor
+          handleBodyFocusIn={[Function]}
+          handleBodyFocusOut={[Function]}
+          handleChange={[Function]}
+          value="Write your story..."
+        />
+      </div>
+    </div>
+  </div>
+</form>
+`;

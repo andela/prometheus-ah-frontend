@@ -52,12 +52,13 @@ exports[`UserNavigation component should render a snapshot of the userNavigation
       >
         View Profile
       </a>
-      <a
+      <Link
         className="dropdown-item"
-        href="#"
+        replace={false}
+        to="/new-story"
       >
         Create Post
-      </a>
+      </Link>
       <div
         className="dropdown-divider"
       />

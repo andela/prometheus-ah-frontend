@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Create article component should render create article page correctly 1`] = `
+<div>
+  <div
+    className="container"
+  >
+    <div
+      className="editor-config"
+    >
+      <Connect(ArticleForm)
+        onSubmit={[Function]}
+      />
+    </div>
+  </div>
+</div>
+`;
