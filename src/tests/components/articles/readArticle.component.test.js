@@ -1,6 +1,5 @@
 import configureMockStore from 'redux-mock-store';
 import React from 'react';
-import sinon from 'sinon';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { mount, shallow } from 'enzyme';
@@ -8,7 +7,7 @@ import DefaultReadArticle, { ReadArticle } from '../../../components/article/Rea
 
 const mockStore = configureMockStore([thunk]);
 describe('Read Article component', () => {
-  let wrapper, store, props, fetchSingleArticle, initialState;
+  let wrapper, store, props, initialState;
   beforeEach(() => {
     props = {
       article: {
@@ -34,7 +33,8 @@ describe('Read Article component', () => {
       },
       fetchSingleArticle: jest.fn(),
       match: {
-        params: { slug: 'new-article' }
+        params: { slug: 'new-article' },
+        url: '/articles/new-article'
       },
       location: { pathname: '/articles/new-article' },
       history: {}
@@ -84,7 +84,6 @@ describe('Read Article component', () => {
         ]
       }
     };
-    fetchSingleArticle = sinon.stub(props, 'fetchSingleArticle');
     store = mockStore(initialState);
     wrapper = mount(
       <Provider store={store}>
@@ -98,8 +97,18 @@ describe('Read Article component', () => {
   });
 
   it('ComponentDidMount', () => {
-    wrapper = shallow(<ReadArticle {...props} />);
-    expect(fetchSingleArticle.calledOnce).toBe(true);
+    const props = { // eslint-disable-line
+      article: null,
+      fetchSingleArticle: jest.fn(),
+      match: {
+        params: { slug: 'new-article' },
+        url: '/articles/new-article'
+      },
+      location: { pathname: '/articles/new-article' },
+      history: {}
+    };
+    wrapper = shallow(<ReadArticle store={store} {...props} />);
+    expect(props.fetchSingleArticle).toHaveBeenCalled();
   });
 
   it('should display the necessary element', () => {

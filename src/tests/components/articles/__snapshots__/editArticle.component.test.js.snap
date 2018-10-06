@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Edit article component should redirect to read article page correctly 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="editor-config"
+  >
+    <Connect(ArticleForm)
+      article={
+        Object {
+          "Tags": Array [],
+          "User": Object {
+            "bio": "I am a test",
+            "email": "test@test.com",
+            "firstname": "Testing",
+            "id": 5,
+            "image": "string",
+            "lastname": "Component",
+            "role": "user",
+            "status": "active",
+            "username": "test",
+          },
+          "body": "new body",
+          "createdAt": "2018-10-17T13:30:43.350Z",
+          "description": "new description",
+          "id": 83,
+          "readingTime": "1 min read",
+          "slug": "new-article",
+          "title": "new title",
+          "updatedAt": "2018-10-17T13:30:43.350Z",
+          "userId": 5,
+        }
+      }
+      match={
+        Object {
+          "params": Object {
+            "slug": "/new-article",
+          },
+        }
+      }
+      onSubmit={[Function]}
+    />
+  </div>
+</div>
+`;

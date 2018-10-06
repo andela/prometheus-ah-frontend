@@ -120,10 +120,13 @@ exports[`Read Article component ComponentDidMount 1`] = `
             src="https://image.ibb.co/i48Wqf/paceholder.jpg"
           />
           <div
-            className="ml-3 ml-md-3 ml-lg-4 text-center"
+            className="ml-3 ml-md-3 ml-lg-4"
           >
             <p
               className="my-2 author-name"
+            />
+            <p
+              className="author-bio"
             />
             <button
               className="btn follow-btn"
@@ -133,9 +136,6 @@ exports[`Read Article component ComponentDidMount 1`] = `
             </button>
           </div>
         </div>
-        <p
-          className="author-bio"
-        />
       </div>
       <div
         className="article-reactions mt-4 d-flex justify-content-around"
@@ -232,6 +232,7 @@ exports[`Read Article component should render Article page correctly 1`] = `
         "params": Object {
           "slug": "new-article",
         },
+        "url": "/articles/new-article",
       }
     }
   >
@@ -248,6 +249,7 @@ exports[`Read Article component should render Article page correctly 1`] = `
           "params": Object {
             "slug": "new-article",
           },
+          "url": "/articles/new-article",
         }
       }
     >

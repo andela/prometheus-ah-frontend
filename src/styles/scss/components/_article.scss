@@ -21,6 +21,15 @@ img {
 	}
 
 }
+.description {
+	font-size: 16px;
+
+	p {
+		font-style: italic !important;
+		padding: 10px 0;
+	}
+}
+
 *[contentEditable="true"] {
 	outline: 0;
 	p {
@@ -46,6 +55,7 @@ img {
 	border-right: 0;
 	border-top: 0;
 	font-weight: bolder;
+	padding-top: 10px;
 	
 	h2 {
 		margin-left: 1%;
@@ -131,10 +141,6 @@ img {
     font-weight: 600;
     font-size: 36px;
     letter-spacing: 2px;
-  }
-
-  .description {
-    font-size: 16px;
   }
 
   .author-bio {

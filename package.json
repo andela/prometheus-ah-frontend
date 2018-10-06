@@ -59,6 +59,7 @@
     "webpack-dev-server": "^3.1.9"
   },
   "dependencies": {
+    "@tinymce/tinymce-react": "^2.3.0",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "cookies-js": "^1.2.3",
@@ -78,9 +79,11 @@
     "react-html-parser": "^2.0.2",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
+    "react-tagsinput": "^3.19.0",
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.5",
     "redux-thunk": "^2.3.0",
+    "sanitize-html": "^1.19.1",
     "thunk": "0.0.1",
     "toastr": "^2.1.4",
     "uglifyjs-webpack-plugin": "^2.0.1",

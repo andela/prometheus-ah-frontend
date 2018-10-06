@@ -63,7 +63,7 @@ export class UserNavigation extends Component {
           />
           <div className="dropdown-menu dropdown-menu-right">
             <a className="dropdown-item" href="#">View Profile</a>
-            <a className="dropdown-item" href="#">Create Post</a>
+            <Link to="/new-story" className="dropdown-item">Create Post</Link>
             <div className="dropdown-divider" />
             <Link
               className="dropdown-item"

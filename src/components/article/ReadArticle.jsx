@@ -16,7 +16,7 @@ export class ReadArticle extends Component {
   componentDidMount = () => {
     const { fetchSingleArticle, match } = this.props;
     fetchSingleArticle(match.params.slug);
-  };
+  }
 
   /**
    * render jsx
@@ -93,15 +93,15 @@ export class ReadArticle extends Component {
                   className="img-fluid article-author-image rounded-circle"
                   alt=""
                 />
-                <div className="ml-3 ml-md-3 ml-lg-4 text-center">
+                <div className="ml-3 ml-md-3 ml-lg-4">
                   <p className="my-2 author-name">{article.User.username}</p>
+                  <p className="author-bio">
+                    {article.User.bio !== null
+                      ? article.User.bio : 'I love to write'}
+                  </p>
                   <button className="btn follow-btn" type="button">follow</button>
                 </div>
               </div>
-              <p className="author-bio">
-                {article.User.bio !== null
-                  ? article.User.bio : 'I love to write'}
-              </p>
             </div>
             <div className="article-reactions mt-4 d-flex justify-content-around">
               <i className="mdi mdi-thumb-up-outline">
@@ -126,7 +126,7 @@ ReadArticle.propTypes = {
   match: PropTypes.shape({})
 };
 const mapStateToProps = state => ({
-  article: state.articleReducer.article
+  article: state.articleReducer.article,
 });
 
 const matchDispatchToProps = dispatch => bindActionCreators(
