@@ -43,7 +43,7 @@ const error = {
 
 const setUp = () => {
   const props = {
-    userSignUpRequest: jest.fn(),
+    signUp: jest.fn(),
     auth: false,
     router: undefined
   };

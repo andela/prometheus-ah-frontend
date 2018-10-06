@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 import TextField from '../common/TextField';
 import SignUpInputValidation from '../../middlewares/SignUpInputValidate';
 import ErrorAlertNotification from '../common/ErrorAlertNotification';
-import { userSignUpRequest, deleteErrorMessage } from '../../actions/index';
+import { userSignUpRequest, deleteErrorMessage } from '../../actions/signUp.action';
 import googleLogo from '../../images/google.png';
 import facebookLogo from '../../images/facebook-logo.png';
 
@@ -48,7 +48,8 @@ export class SignUpForm extends Component {
   }
 
   handleDelete = () => {
-    this.props.deleteErrorMessage();
+    const { deleteError } = this.props;
+    deleteError();
     this.setState({
       password: '',
       password_confirmation: '',
@@ -64,8 +65,8 @@ export class SignUpForm extends Component {
     event.preventDefault();
     if (this.isValid()) {
       this.setState({ errors: {}, isLoading: true });
-      const { userSignUpRequest } = this.props;
-      userSignUpRequest(this.state);
+      const { signUp } = this.props;
+      signUp(this.state);
     }
   }
 
@@ -101,7 +102,9 @@ export class SignUpForm extends Component {
       <div className="card">
         <div>
           <small className="form-text login-label">Welcome to Authors Haven</small>
-          <small className="form-text login-label-2">You can join the community by filling this form</small>
+          <small className="form-text login-label-2">
+          You can join the community by filling this form
+          </small>
         </div>
         <div className="card-body">
           {
@@ -161,7 +164,12 @@ export class SignUpForm extends Component {
             </div>
             <div className="form-row">
               <div className="form-group col-md-12">
-                <button id="register" type="button" className="btn login-btn" onClick={this.onSubmit}>
+                <button
+                  id="register"
+                  type="button"
+                  className="btn login-btn"
+                  onClick={this.onSubmit}
+                >
                       SIGN UP
                 </button>
               </div>
@@ -174,13 +182,13 @@ export class SignUpForm extends Component {
             <div className="form-row">
               <div className="form-group col-md-6">
                 <button type="submit" className="btn  social-submit-btn">
-                  <img className="social-submit-logo" alt="facebooklogo" src={facebookLogo} /> 
+                  <img className="social-submit-logo" alt="facebooklogo" src={facebookLogo} />
                   FACEBOOK
                 </button>
               </div>
               <div className="form-group col-md-6">
                 <button type="submit" className="btn social-submit-btn">
-                  <img className="social-submit-logo" alt="facebooklogo" src={googleLogo} /> 
+                  <img className="social-submit-logo" alt="facebooklogo" src={googleLogo} />
                   GOOGLE
                 </button>
               </div>
@@ -198,7 +206,10 @@ export class SignUpForm extends Component {
 }
 
 SignUpForm.propTypes = {
-  userSignUpRequest: PropTypes.func.isRequired,
+  signUp: PropTypes.func.isRequired,
+  deleteError: PropTypes.func.isRequired,
+  error: PropTypes.shape({}),
+  auth: PropTypes.bool
 };
 
 const mapStateToProps = state => ({
@@ -207,4 +218,5 @@ const mapStateToProps = state => ({
 });
 
 
-export default connect(mapStateToProps, { userSignUpRequest, deleteErrorMessage })((SignUpForm));
+export default connect(mapStateToProps,
+  { signUp: userSignUpRequest, deleteError: deleteErrorMessage })((SignUpForm));

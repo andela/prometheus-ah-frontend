@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Header from '../Header';
 import { startVerifyEmail } from '../../actions/index';
 
 /**
@@ -34,7 +33,6 @@ export class VerifyEmail extends Component {
     }
     return (
       <div>
-        <Header />
         <div>
           <h1>Verification Page</h1>
         </div>

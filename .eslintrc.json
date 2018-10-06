@@ -86,6 +86,7 @@
         "jsx-a11y/label-has-associated-control": 0,
         "jsx-a11y/anchor-is-valid": 0,
         "react/prefer-stateless-function": 0,
-        "react/require-default-props" : 0
+        "react/require-default-props" : 0,
+        "import/no-named-as-default": 0
     }
 }
