@@ -7,4 +7,6 @@ coverage/
 #env
 .env
 
+# Coverage directory used by tools like istanbul
+coverage/
 .DS_Store

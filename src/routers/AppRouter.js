@@ -10,6 +10,7 @@ import DefaultVerifyEmail from '../components/auth/VerifyEmail';
 import ArticleListPage from '../components/article/ArticleListPage';
 import ReadArticle from '../components/article/ReadArticle';
 
+import SocialLoginContainer from '../components/socialLogin/SocialLoginContainer'; // eslint-disable-line
 
 const AppRoutes = () => (
   <BrowserRouter>
@@ -22,6 +23,8 @@ const AppRoutes = () => (
         <Route exact path={routes.VERIFY_EMAIL} component={DefaultVerifyEmail} />
         <Route exact path={routes.LANDING} component={LandingPage} />
         <PrivateRoute exact path={routes.CREATE_ARTICLE} component={CreateArticle} />
+        <PrivateRoute path={routes.CREATE_ARTICLE} component={CreateArticle} />
+        <Route exact path={routes.SOCIAL} component={SocialLoginContainer} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>

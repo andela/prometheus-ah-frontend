@@ -4,7 +4,9 @@ const routes = {
   SIGN_IN: '/users/login',
   VERIFY_EMAIL: '/confirmation/',
   LIST_ARTICLE: '/articles',
-  READ_ARTICLE: '/articles/:slug'
+  READ_ARTICLE: '/articles/:slug',
+  CREATE_ARTICLE: '/articles',
+  SOCIAL: '/users/oauth/:socialLogin',
 };
 
 export default routes;
