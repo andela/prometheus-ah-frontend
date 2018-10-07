@@ -80,7 +80,26 @@ const mockData = {
     password: 'This password is a required field',
   },
 
-  empty: ''
+  empty: '',
+  response1: {
+    data: {
+      message: 'authentication successful',
+      user: {
+        email: 'otutudinma@gmail.com',
+        username: 'dinma',
+        token: 'orkdkdkkskskksksksk111kdkdkd',
+      },
+    },
+  },
+
+  errorResponse1: {
+    error: 'An error occurred!',
+    status: 401
+  },
+  authResponse1: {
+    token:
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3'
+  },
 };
 
 export default mockData;
