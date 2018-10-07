@@ -82,41 +82,8 @@ exports[`Login component should renders a snapshot of the app component 1`] = `
         </small>
         <br />
       </div>
-      <div
-        className="form-row"
-      >
-        <div
-          className="form-group col-md-6"
-        >
-          <button
-            className="btn  social-submit-btn"
-            type="submit"
-          >
-            <img
-              alt="facebooklogo"
-              className="social-submit-logo"
-              src={Object {}}
-            />
-            FACEBOOK
-          </button>
-        </div>
-        <div
-          className="form-group col-md-6"
-        >
-          <button
-            className="btn social-submit-btn"
-            type="submit"
-          >
-            <img
-              alt="facebooklogo"
-              className="social-submit-logo"
-              src={Object {}}
-            />
-            GOOGLE
-          </button>
-        </div>
-      </div>
     </form>
+    <SocialLogin />
   </div>
 </div>
 `;
@@ -213,41 +180,8 @@ exports[`Login component should return error for invalid form submission 1`] = `
         </small>
         <br />
       </div>
-      <div
-        className="form-row"
-      >
-        <div
-          className="form-group col-md-6"
-        >
-          <button
-            className="btn  social-submit-btn"
-            type="submit"
-          >
-            <img
-              alt="facebooklogo"
-              className="social-submit-logo"
-              src={Object {}}
-            />
-            FACEBOOK
-          </button>
-        </div>
-        <div
-          className="form-group col-md-6"
-        >
-          <button
-            className="btn social-submit-btn"
-            type="submit"
-          >
-            <img
-              alt="facebooklogo"
-              className="social-submit-logo"
-              src={Object {}}
-            />
-            GOOGLE
-          </button>
-        </div>
-      </div>
     </form>
+    <SocialLogin />
   </div>
 </div>
 `;

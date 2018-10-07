@@ -7,8 +7,7 @@ import TextField from '../common/TextField';
 import loginAction, { deleteErrorMessages } from '../../actions/authentication/loginAction';
 import UserInputValidation from '../../vaidations/validateLogin';
 import ErrorAlertNotification from '../common/ErrorAlertNotification';
-import googleLogo from '../../images/google.png';
-import facebookLogo from '../../images/facebook-logo.png';
+import SocialLogin from '../socialLogin/SocialLogin';
 
 /**
  * @description Login form component
@@ -139,21 +138,8 @@ export class LoginForm extends Component {
               <small className="form-text">sign in with one of these services</small>
               <br />
             </div>
-            <div className="form-row">
-              <div className="form-group col-md-6">
-                <button type="submit" className="btn  social-submit-btn">
-                  <img className="social-submit-logo" alt="facebooklogo" src={facebookLogo} />
-                  FACEBOOK
-                </button>
-              </div>
-              <div className="form-group col-md-6">
-                <button type="submit" className="btn social-submit-btn">
-                  <img className="social-submit-logo" alt="facebooklogo" src={googleLogo} />
-                  GOOGLE
-                </button>
-              </div>
-            </div>
           </form>
+          <SocialLogin />
         </div>
       </div>
     );

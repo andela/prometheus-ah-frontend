@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import 'toastr/build/toastr.css';
 import AppRoutes from './routers/AppRouter';
 import store from './store/index';
-import setAuthorizationToken from './utils/setAuthorizationToken';
+import setAuthorizationToken from './utils/authorization';
 import setCurrentUserToStore from './utils/setCurrentUserToStore';
 import './styles/scss/App.scss';
 
