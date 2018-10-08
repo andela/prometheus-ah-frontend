@@ -1,23 +1,31 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import SignUpForm from '../auth/SignUpForm.jsx';
+import SignupForm from '../auth/SignUpForm';
 import { hideSignupModal } from '../../actions/modal.action';
 
 /**
    * @class Modal
    */
 export class SignUpModal extends React.Component {
-  
   closeModal = () => {
-    this.props.hideSignupModal();
+    const { hideSignupModal } = this.props;
+    hideSignupModal();
   }
 
+  /**
+   * @description Render the JSX template
+   *
+   * @memberof LoginModal
+   *
+   * @returns {JSX} JSX representation of component
+   */
   render() {
     const { show } = this.props;
     return (
-      <div className="modal-content" style={{ display: !show ? 'none' : 'block'}}>
-        <div className="modal-header card-title card-header"><h5>SIGN UP</h5>
+      <div className="modal-content" style={{ display: !show ? 'none' : 'block' }}>
+        <div className="modal-header card-title card-header">
+          <h5 className="modal-title">SIGN UP</h5>
           <button
             type="button"
             className="close"
@@ -27,14 +35,15 @@ export class SignUpModal extends React.Component {
             &times;
           </button>
         </div>
-        <SignUpForm />
+        <SignupForm />
       </div>
     );
   }
-};
+}
 
 SignUpModal.propTypes = {
   hideSignupModal: PropTypes.func.isRequired,
+  show: PropTypes.bool
 };
 
 export default connect(null, { hideSignupModal })(SignUpModal);

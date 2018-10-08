@@ -1,0 +1,253 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login component should renders a snapshot of the app component 1`] = `
+<div
+  className="card border-0"
+>
+  <div>
+    <small
+      className="form-text login-label"
+    >
+      Welcome to Authors Haven
+    </small>
+  </div>
+  <div
+    className="card-body"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <div
+        className="form-row"
+      >
+        <div
+          className="form-group col-md-12"
+        >
+          <TextField
+            field="username"
+            id="username"
+            label="username"
+            onChange={[Function]}
+            placeholder="username"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="form-group col-md-12"
+        >
+          <TextField
+            field="password"
+            id="password"
+            label="password"
+            onChange={[Function]}
+            placeholder="password"
+            type="password"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        className="form-row"
+      >
+        <div
+          className="form-group col-md-12"
+        >
+          <button
+            className="btn login-btn"
+            id="submit"
+            onClick={[Function]}
+            type="submit"
+          >
+            SIGN IN
+          </button>
+          <div
+            className="mt-4"
+          >
+            <a
+              className="form-text text-danger"
+              href="#"
+            >
+              Forgot your password?
+            </a>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div>
+        <small
+          className="form-text"
+        >
+          sign in with one of these services
+        </small>
+        <br />
+      </div>
+      <div
+        className="form-row"
+      >
+        <div
+          className="form-group col-md-6"
+        >
+          <button
+            className="btn  social-submit-btn"
+            type="submit"
+          >
+            <img
+              alt="facebooklogo"
+              className="social-submit-logo"
+              src={Object {}}
+            />
+            FACEBOOK
+          </button>
+        </div>
+        <div
+          className="form-group col-md-6"
+        >
+          <button
+            className="btn social-submit-btn"
+            type="submit"
+          >
+            <img
+              alt="facebooklogo"
+              className="social-submit-logo"
+              src={Object {}}
+            />
+            GOOGLE
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Login component should return error for invalid form submission 1`] = `
+<div
+  className="card border-0"
+>
+  <div>
+    <small
+      className="form-text login-label"
+    >
+      Welcome to Authors Haven
+    </small>
+  </div>
+  <div
+    className="card-body"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <div
+        className="form-row"
+      >
+        <div
+          className="form-group col-md-12"
+        >
+          <TextField
+            error={
+              Array [
+                "This username is a required field.",
+              ]
+            }
+            field="username"
+            id="username"
+            label="username"
+            onChange={[Function]}
+            placeholder="username"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="form-group col-md-12"
+        >
+          <TextField
+            error={
+              Array [
+                "This password is a required field.",
+              ]
+            }
+            field="password"
+            id="password"
+            label="password"
+            onChange={[Function]}
+            placeholder="password"
+            type="password"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        className="form-row"
+      >
+        <div
+          className="form-group col-md-12"
+        >
+          <button
+            className="btn login-btn"
+            id="submit"
+            onClick={[Function]}
+            type="submit"
+          >
+            SIGN IN
+          </button>
+          <div
+            className="mt-4"
+          >
+            <a
+              className="form-text text-danger"
+              href="#"
+            >
+              Forgot your password?
+            </a>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div>
+        <small
+          className="form-text"
+        >
+          sign in with one of these services
+        </small>
+        <br />
+      </div>
+      <div
+        className="form-row"
+      >
+        <div
+          className="form-group col-md-6"
+        >
+          <button
+            className="btn  social-submit-btn"
+            type="submit"
+          >
+            <img
+              alt="facebooklogo"
+              className="social-submit-logo"
+              src={Object {}}
+            />
+            FACEBOOK
+          </button>
+        </div>
+        <div
+          className="form-group col-md-6"
+        >
+          <button
+            className="btn social-submit-btn"
+            type="submit"
+          >
+            <img
+              alt="facebooklogo"
+              className="social-submit-logo"
+              src={Object {}}
+            />
+            GOOGLE
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;

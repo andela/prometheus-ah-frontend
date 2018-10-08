@@ -1,8 +1,10 @@
 import axios from 'axios';
-import alertify from 'alertify.js';
+import toastr from 'toastr';
 import jwt from 'jsonwebtoken';
 import Cookie from 'cookies-js';
 import config from '../config';
+import routes from '../constants/routes';
+import { hideSignupModal } from './modal.action';
 import {
   SET_CURRENT_USER,
   SIGN_UP_ERRORS,
@@ -55,7 +57,7 @@ export const deleteErrorMessage = () => (dispatch) => {
    */
 export const userSignUpRequest = userData => (dispatch) => {
   const user = { user: userData };
-  return axios.post(`${config.apiUrl}/api/users`, user).then(
+  return axios.post(`${config.apiUrl}${routes.SIGN_UP}`, user).then(
     (res) => {
       const { token } = res.data.user;
       const { message } = res.data;
@@ -65,9 +67,8 @@ export const userSignUpRequest = userData => (dispatch) => {
         data: res.data.message
       }));
       dispatch(setCurrentUser(jwt.decode(token)));
-      alertify.delay(3000);
-      alertify.logPosition('top right');
-      alertify.success(message);
+      dispatch(hideSignupModal());
+      toastr.success(message);
     }
   ).catch((error) => {
     dispatch(signUpError(error.response.data));

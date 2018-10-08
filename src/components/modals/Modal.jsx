@@ -1,23 +1,34 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import SignUpModal from '../modals/SignUpModal.jsx';
+import SignupModal from './SignUpModal';
+import LoginModal from './LoginModal';
 
 /**
    * @class Modal
    */
 export class Modal extends Component {
+  /**
+   * @description Render the JSX template
+   *
+   * @memberof LoginModal
+   *
+   * @returns {JSX} JSX representation of component
+   */
   render() {
-    const { current } = this.props.modal;
+    const { modal } = this.props;
+    const { current } = modal;
+
     return (
       <div
         className="modal"
         id="myModal"
-        style={{ display: !current ? 'none' : 'block'}}
+        style={{ display: !current ? 'none' : 'block' }}
       >
         <div className="modal-overlay" />
         <div className="modal-dialog">
-          <SignUpModal show={current === 'signup'} />
+          <SignupModal show={current === 'signup'} />
+          <LoginModal show={current === 'login'} />
         </div>
       </div>
     );

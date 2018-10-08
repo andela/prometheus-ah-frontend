@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[hash].min.js',
-    publicPath: '/',  
+    publicPath: '/',
   },
   module: {
     rules: [

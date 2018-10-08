@@ -6,7 +6,7 @@ const TextField = ({
   field, value, error, type, onChange, id, placeholder
 }) => (
   <div className={classnames({ 'text-danger': error })}>
-    <input 
+    <input
       className="form-control"
       type={type}
       name={field}
@@ -15,24 +15,19 @@ const TextField = ({
       placeholder={placeholder}
       id={id}
       required
-      />
+    />
     { error && <p className="text-danger">{error}</p>}
   </div>
 );
 
 TextField.propTypes = {
-  field: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  error: PropTypes.array,
-  type: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired
+  field: PropTypes.string,
+  value: PropTypes.string,
+  error: PropTypes.instanceOf(Array),
+  type: PropTypes.string,
+  placeholder: PropTypes.string,
+  onChange: PropTypes.func,
+  id: PropTypes.string
 };
-
-TextField.defaultProps = {
-  type: 'text'
-};
-
 
 export default TextField;

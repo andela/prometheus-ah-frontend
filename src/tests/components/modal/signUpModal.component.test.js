@@ -13,7 +13,7 @@ const props = {
 };
 describe('Sign Up Modal Component', () => {
   it('should ', () => {
-    const wrapper = shallow(<SignUpModal {...props}  />);
+    const wrapper = shallow(<SignUpModal {...props} />);
     const button = wrapper.find('button');
     button.simulate('click');
     expect(wrapper.exists()).toBe(true);

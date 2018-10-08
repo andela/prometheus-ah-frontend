@@ -7,4 +7,4 @@ export default {
   remove(key) {
     return delete cookieStorage[key];
   }
-}
+};

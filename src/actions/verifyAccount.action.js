@@ -1,4 +1,4 @@
-import alertify from 'alertify.js';
+import toastr from 'toastr';
 import axios from 'axios';
 import {
   VERIFY_EMAIL_SUCCESSFUL,
@@ -25,17 +25,13 @@ export const emailVerifyFailed = error => ({
 
 
 export const startVerifyEmail = token => dispatch => axios
-  .get(`${config.apiUrl}/api${routes.VERIFY_EMAIL}?emailToken=${token}`, token).then((res) => {
+  .get(`${config.apiUrl}${routes.VERIFY_EMAIL}?emailToken=${token}`, token).then((res) => {
     const { message } = res.data;
     dispatch(emailVerifySuccessToken({ token }));
     dispatch(emailVerifySuccess({ message }));
-    alertify.delay(5000);
-    alertify.logPosition('top right');
-    alertify.success(message);
+    toastr.success(message);
   }).catch((err) => {
     const error = err.response.data.message;
-    alertify.delay(5000);
-    alertify.logPosition('top right');
-    alertify.error(error);
+    toastr.error(error);
     dispatch(emailVerifyFailed(err.response.data.message));
   });

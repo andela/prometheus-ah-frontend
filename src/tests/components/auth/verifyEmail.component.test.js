@@ -8,7 +8,7 @@ import mockData from '../../__mocks__/mockData';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('Verify Email Component', () => {
-  const { token } = mockData.authResponse;
+  const { token } = mockData.authResponseEmail;
   const location = {
     search: {
       split: () => token

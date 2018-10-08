@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GuestNavigation componete should renders a snapshot of the guestNavigation component 1`] = `
+<ul
+  className="navbar-nav"
+>
+  <li
+    className="nav-item"
+  >
+    <a
+      className="nav-link"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li
+    className="nav-item"
+  >
+    <a
+      className="nav-link"
+      href="/"
+    />
+  </li>
+  <li
+    className="nav-item"
+    id="login"
+  >
+    <Link
+      className="nav-link"
+      id="logout"
+      onClick={[Function]}
+      replace={false}
+      to="#"
+    >
+      Logout
+    </Link>
+  </li>
+</ul>
+`;
