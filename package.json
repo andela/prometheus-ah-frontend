@@ -12,6 +12,11 @@
     "test:e2e": "nightwatch e2e-test",
     "e2e-setup": "./node_modules/selenium-standalone/bin/selenium-standalone install"
   },
+  "jest": {
+    "moduleNameMapper": {     
+      "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/src/tests/__mocks__/fileMock.js"
+  }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andela/prometheus-ah-frontend.git"
@@ -24,13 +29,15 @@
   "homepage": "https://github.com/andela/prometheus-ah-frontend#readme",
   "devDependencies": {
     "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
     "babel-plugin-add-module-exports": "^1.0.0",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^23.6.0",
     "css-loader": "^1.0.0",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
@@ -39,29 +46,42 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
+    "expect": "^23.6.0",
     "file-loader": "^2.0.0",
     "jest": "^23.6.0",
+    "moxios": "^0.4.0",
     "nightwatch": "^0.9.21",
     "node-sass": "^4.9.3",
+    "redux-mock-store": "^1.5.3",
     "sass-loader": "^7.1.0",
     "selenium-standalone": "^6.15.3",
+    "sinon": "^6.3.5",
     "style-loader": "^0.23.0",
     "url-loader": "^1.1.1",
     "webpack-dev-server": "^3.1.9"
   },
   "dependencies": {
+    "alertify.js": "^1.0.12",
+    "axios": "^0.18.0",
+    "classnames": "^2.2.6",
+    "cookies-js": "^1.2.3",
     "express": "^4.16.3",
     "html-webpack-plugin": "^3.2.0",
+    "is-empty": "^1.2.0",
+    "jsonwebtoken": "^8.3.0",
+    "prop-types": "^15.6.2",
     "react": "^16.5.2",
+    "react-cookie": "^3.0.4",
     "react-dom": "^16.5.2",
-    "react-router-dom": "^4.3.1",
     "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.5",
     "redux-thunk": "^2.3.0",
     "thunk": "0.0.1",
-    "webpack": "^4.20.2",
     "uglifyjs-webpack-plugin": "^2.0.1",
+    "validatorjs": "^3.14.2",
+    "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
     "webpack-merge": "^4.1.4"
   }
