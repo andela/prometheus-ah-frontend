@@ -5,7 +5,6 @@ html {
   min-height: 100%;
   position: relative;
 }
-
 .footer {
   background-color: $footer-bg-color;
   bottom: 0;
@@ -13,11 +12,9 @@ html {
   padding: 30px;
   position: absolute;
   width: 100%;
-
   .fab-color {
     color: $white;
   };
-
   .circle {
     border: 2px solid $white;
     border-radius: 50%;
@@ -26,3 +23,11 @@ html {
     width: 30px;
   }
 };
+.modal-overlay {
+  background: #000000;
+  display: block;
+  height: 100%;
+  opacity: 0.5;
+  position: absolute;
+  width: 100%;
+}

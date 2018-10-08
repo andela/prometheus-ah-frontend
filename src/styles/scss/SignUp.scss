@@ -1,0 +1,63 @@
+.form-control:not(:focus) {
+  font-style:italic;
+  }
+.form-row>.col, .form-row>[class*=col-] {
+  padding: 8px 15px 8px 15px;
+}
+form hr {
+  padding: 0;
+  border: none;
+  border-top:  1px solid #CCC;
+  color: #333;
+  text-align: center;    
+  font-size:12px;
+  width: 95%;
+}
+form hr:after {
+  content:"OR";
+  display: inline-block;
+  position: relative; 
+  top: -0.7em;  
+  font-size: 1.5em;
+  padding: 0 0.25em;
+  background: white;
+  border-radius: 50px 20px;
+  border-color: black;
+}
+.card-header {
+  color: #9F1A1A;
+  font-weight: 300;
+}
+.login-label {
+  font-weight: bold;
+  padding-top: 10px;
+}
+.login-label-2 {
+  font-weight: bold;
+}
+.social-submit-btn {
+  width: 100%;
+  color: #000000;
+  border-color: #000000;
+  background-color: #ffffff;
+  font-size: 15px;
+}
+.social-submit-logo {
+  width: 32px;
+  padding-right: 10px;
+}
+.login-btn {
+  width: 100%;
+  background-color:#C03232;
+  border-color: #C03232;
+  color: #ffffff;
+}
+div .login-label {
+  text-align: center;
+}
+div .login-label-2 {
+  text-align: center;
+}
+div .form-text {
+  text-align: center;
+}
