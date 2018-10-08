@@ -2,6 +2,7 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import moxios from 'moxios';
 import config from '../../config';
+import routes from '../../constants/routes';
 import { userSignUpRequest } from '../../actions/signUp.action';
 import { SIGN_UP_ERRORS } from '../../actions/types';
 import mockData from '../__mocks__/mockData';
@@ -19,7 +20,7 @@ describe('Sign Up Actions', () => {
 
   it('creates SIGN_UP_ERRORS when signup action is not successful', (done) => {
     const { errorResponse, signUpDetailsError } = mockData;
-    moxios.stubRequest(`${config.apiUrl}/api/users`, {
+    moxios.stubRequest(`${config.apiUrl}${routes.SIGN_UP}`, {
       status: 400,
       response: errorResponse
     });
@@ -38,7 +39,7 @@ describe('Sign Up Actions', () => {
   it('creates SIGN_UP_SUCCESS when signup action is successful', (done) => {
     const { successResponse, signUpDetails } = mockData;
 
-    moxios.stubRequest(`${config.apiUrl}/api/users`, {
+    moxios.stubRequest(`${config.apiUrl}${routes.SIGN_UP}`, {
       status: 201,
       response: successResponse
     });
@@ -47,7 +48,10 @@ describe('Sign Up Actions', () => {
         success: { data: 'message recieved', status: 201 },
         type: 'SIGN_UP_SUCCESS'
       },
-      { type: 'SET_CURRENT_USER', user: null }
+      { type: 'SET_CURRENT_USER', user: null },
+      {
+        type: 'HIDE_SIGNUP_MODAL',
+      }
     ];
     const store = mockStore({ auth: {} });
 

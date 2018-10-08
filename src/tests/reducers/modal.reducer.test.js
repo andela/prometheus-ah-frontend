@@ -1,5 +1,7 @@
 import modal from '../../reducers/modal';
-import { SHOW_SIGNUP_MODAL, HIDE_SIGNUP_MODAL } from '../../actions/types';
+import {
+  SHOW_SIGNUP_MODAL, HIDE_SIGNUP_MODAL, SHOW_LOGIN_MODAL, HIDE_LOGIN_MODAL
+} from '../../actions/types';
 
 
 describe('modal actions', () => {
@@ -16,11 +18,29 @@ describe('modal actions', () => {
     });
   });
 
-  it('should hide dispatch modal', () => {
+  it('should hide dispatch the modal', () => {
     const expectedAction = {
       type: HIDE_SIGNUP_MODAL
     };
-    expect(modal(initialState, expectedAction )).toEqual({
+    expect(modal(initialState, expectedAction)).toEqual({
+      current: null
+    });
+  });
+
+  it('should dispatch the login modal', () => {
+    const action = {
+      type: SHOW_LOGIN_MODAL
+    };
+    expect(modal(initialState, action)).toEqual({
+      current: 'login'
+    });
+  });
+
+  it('should hide dispatch the modal', () => {
+    const expectedAction = {
+      type: HIDE_LOGIN_MODAL
+    };
+    expect(modal(initialState, expectedAction)).toEqual({
       current: null
     });
   });

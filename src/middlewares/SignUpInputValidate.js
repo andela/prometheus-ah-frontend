@@ -31,7 +31,7 @@ class SignUpInputValidation {
         password_confirmation: 'required'
       },
     );
-    let isValid = false;
+    const isValid = false;
 
     if (validation.passes()) {
       return {

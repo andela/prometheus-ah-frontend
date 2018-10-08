@@ -1,5 +1,5 @@
 {
-    "extends": "airbnb",
+    "extends": [ "airbnb", "plugin:react/recommended"],
     "env": {
         "node": true,
         "es6": true,
@@ -8,17 +8,22 @@
         "jest": true
       },
     "parser": "babel-eslint",
+    "settings": {
+      "react": {
+        "version": "16"
+      }
+    },
+    "plugins": [
+      "react", "import"
+      ],
     "parserOptions": {
-        "ecmaVersion": 6,
+        "ecmaVersion": 2018,
         "sourceType": "module",
         "ecmaFeatures": {
             "jsx": true,
             "modules": true
         }
       },
-    "plugins": [
-      "react"
-      ],
     "rules": {
         "one-var": 0,
         "one-var-declaration-per-line": 0,
@@ -77,6 +82,10 @@
             }
           }
         ],
-        "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}]
+        "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
+        "jsx-a11y/label-has-associated-control": 0,
+        "jsx-a11y/anchor-is-valid": 0,
+        "react/prefer-stateless-function": 0,
+        "react/require-default-props" : 0
     }
 }

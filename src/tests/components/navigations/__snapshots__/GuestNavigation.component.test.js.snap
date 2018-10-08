@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GuestNavigation componete should renders a snapshot of the guestNavigation component 1`] = `
+<nav
+  className="navbar-nav"
+>
+  <li
+    className="nav-item"
+  >
+    <a
+      className="nav-link"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li
+    className="nav-item"
+  >
+    <Link
+      className="nav-link"
+      onClick={[MockFunction]}
+      replace={false}
+      to="#"
+    >
+      Login
+    </Link>
+    <Connect(Modal)
+      modal={Object {}}
+    />
+  </li>
+  <li
+    className="nav-item"
+    id="signup"
+  >
+    <Link
+      className="nav-link"
+      onClick={[MockFunction]}
+      replace={false}
+      to="#"
+    >
+      Sign Up
+    </Link>
+    <Connect(Modal)
+      modal={Object {}}
+    />
+  </li>
+</nav>
+`;
