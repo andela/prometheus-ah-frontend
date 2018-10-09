@@ -1,5 +1,5 @@
 {
-    "extends": "airbnb",
+    "extends": ["airbnb", "plugin:react/recommended"],
     "env": {
         "node": true,
         "es6": true,
@@ -7,6 +7,10 @@
         "browser": true,
         "jest": true
       },
+    "plugins": [
+      "react"
+    ],
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaVersion": 2018,
         "sourceType": "module",
@@ -15,6 +19,8 @@
         }
       },
     "rules": {
+        "import/extensions": ["error", "as-needed"],
+        "jsx-a11y/label-has-for": 0,
         "one-var": 0,
         "one-var-declaration-per-line": 0,
         "new-cap": 0,
@@ -65,6 +71,6 @@
             }
           }
         ],
-        "react/jsx-filename-extension": [1, {"extensions": [".js"]}]
+        "react/jsx-filename-extension": [1, {"extensions": [".js", "jsx"]}]
     }
 }
