@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import isEmpty from 'is-empty';
 import TextField from '../common/TextField';
-import loginAction, { deleteErrorMessages } from '../../actions/authentication/loginAction';
-import UserInputValidation from '../../vaidations/validateLogin';
+import loginAction, {
+  deleteErrorMessages
+} from '../../actions/authentication/loginAction';
+import UserInputValidation from '../../validations/validateLogin';
 import ErrorAlertNotification from '../common/ErrorAlertNotification';
 import SocialLogin from '../socialLogin/SocialLogin';
+import routes from '../../constants/routes';
+import { hideLoginModal } from '../../actions/modal.action';
+
 
 /**
  * @description Login form component
@@ -31,14 +36,20 @@ export class LoginForm extends Component {
       const newErrors = Object.assign({}, errors);
       delete newErrors[event.target.name];
       this.setState({
-        [event.target.name]: event.target.value, errors: newErrors
+        [event.target.name]: event.target.value,
+        errors: newErrors
       });
     } else {
       this.setState({
         [event.target.name]: event.target.value
       });
     }
-  }
+  };
+
+  closeModal = () => {
+    const { hideModal } = this.props;
+    hideModal();
+  };
 
   onSubmit = (event) => {
     const { login } = this.props;
@@ -47,26 +58,28 @@ export class LoginForm extends Component {
       this.setState({ errors: {} });
       login(this.state);
     }
-  }
+  };
 
   handleDelete = () => {
     const { deleteErrorMessage } = this.props;
     deleteErrorMessage();
     this.setState({
       password: '',
-      password_confirmation: '',
+      password_confirmation: ''
     });
-  }
+  };
 
   isValid = () => {
-    const { errors, isValid } = UserInputValidation.loginInputValidation(this.state);
+    const { errors, isValid } = UserInputValidation.loginInputValidation(
+      this.state
+    );
 
     if (!isValid) {
       this.setState({ errors, password: '' });
     }
 
     return isValid;
-  }
+  };
 
   /**
    * @description Render the JSX template
@@ -86,16 +99,17 @@ export class LoginForm extends Component {
     return (
       <div className="card border-0">
         <div>
-          <small className="form-text login-label">Welcome to Authors Haven</small>
+          <small className="form-text login-label">
+            Welcome to Authors Haven
+          </small>
         </div>
         <div className="card-body">
-          {
-            !isEmpty(error) && (<ErrorAlertNotification
+          {!isEmpty(error) && (
+            <ErrorAlertNotification
               errors={error.message}
               onClick={this.handleDelete}
             />
-            )
-          }
+          )}
           <form onSubmit={this.onSubmit}>
             <div className="form-row">
               <div className="form-group col-md-12">
@@ -107,7 +121,7 @@ export class LoginForm extends Component {
                   placeholder="username"
                   field="username"
                   type="text"
-                  id="username"
+                  className="username"
                 />
               </div>
               <div className="form-group col-md-12">
@@ -119,23 +133,35 @@ export class LoginForm extends Component {
                   placeholder="password"
                   field="password"
                   type="password"
-                  id="password"
+                  className="password"
                 />
               </div>
             </div>
             <div className="form-row">
               <div className="form-group col-md-12">
-                <button type="submit" id="submit" className="btn login-btn" onClick={this.onSubmit}>
-                    SIGN IN
+                <button
+                  type="submit"
+                  className="btn login-btn submit"
+                  onClick={this.onSubmit}
+                >
+                  SIGN IN
                 </button>
                 <div className="mt-4">
-                  <a href="#" className="form-text text-danger">Forgot your password?</a>
+                  <Link
+                    to={routes.RESET_PASSWORD}
+                    className="form-text text-danger"
+                    onClick={this.closeModal}
+                  >
+                    Forgot your password?
+                  </Link>
                 </div>
               </div>
             </div>
             <hr />
             <div>
-              <small className="form-text">sign in with one of these services</small>
+              <small className="form-text">
+                sign in with one of these services
+              </small>
               <br />
             </div>
           </form>
@@ -151,6 +177,7 @@ LoginForm.propTypes = {
   error: PropTypes.shape({}),
   login: PropTypes.func.isRequired,
   deleteErrorMessage: PropTypes.func,
+  hideModal: PropTypes.func,
 };
 
 const mapStateToProps = state => ({
@@ -160,7 +187,11 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   login: user => dispatch(loginAction(user)),
-  deleteErrorMessage: () => dispatch(deleteErrorMessages())
+  deleteErrorMessage: () => dispatch(deleteErrorMessages()),
+  hideModal: () => dispatch(hideLoginModal())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LoginForm);

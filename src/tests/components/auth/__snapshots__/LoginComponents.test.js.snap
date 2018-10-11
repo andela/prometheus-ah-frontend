@@ -24,8 +24,8 @@ exports[`Login component should renders a snapshot of the app component 1`] = `
           className="form-group col-md-12"
         >
           <TextField
+            className="username"
             field="username"
-            id="username"
             label="username"
             onChange={[Function]}
             placeholder="username"
@@ -37,8 +37,8 @@ exports[`Login component should renders a snapshot of the app component 1`] = `
           className="form-group col-md-12"
         >
           <TextField
+            className="password"
             field="password"
-            id="password"
             label="password"
             onChange={[Function]}
             placeholder="password"
@@ -54,8 +54,7 @@ exports[`Login component should renders a snapshot of the app component 1`] = `
           className="form-group col-md-12"
         >
           <button
-            className="btn login-btn"
-            id="submit"
+            className="btn login-btn submit"
             onClick={[Function]}
             type="submit"
           >
@@ -64,12 +63,14 @@ exports[`Login component should renders a snapshot of the app component 1`] = `
           <div
             className="mt-4"
           >
-            <a
+            <Link
               className="form-text text-danger"
-              href="#"
+              onClick={[Function]}
+              replace={false}
+              to="/users/request-password-reset"
             >
               Forgot your password?
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -112,13 +113,13 @@ exports[`Login component should return error for invalid form submission 1`] = `
           className="form-group col-md-12"
         >
           <TextField
+            className="username"
             error={
               Array [
                 "This username is a required field.",
               ]
             }
             field="username"
-            id="username"
             label="username"
             onChange={[Function]}
             placeholder="username"
@@ -130,13 +131,13 @@ exports[`Login component should return error for invalid form submission 1`] = `
           className="form-group col-md-12"
         >
           <TextField
+            className="password"
             error={
               Array [
                 "This password is a required field.",
               ]
             }
             field="password"
-            id="password"
             label="password"
             onChange={[Function]}
             placeholder="password"
@@ -152,8 +153,7 @@ exports[`Login component should return error for invalid form submission 1`] = `
           className="form-group col-md-12"
         >
           <button
-            className="btn login-btn"
-            id="submit"
+            className="btn login-btn submit"
             onClick={[Function]}
             type="submit"
           >
@@ -162,12 +162,14 @@ exports[`Login component should return error for invalid form submission 1`] = `
           <div
             className="mt-4"
           >
-            <a
+            <Link
               className="form-text text-danger"
-              href="#"
+              onClick={[Function]}
+              replace={false}
+              to="/users/request-password-reset"
             >
               Forgot your password?
-            </a>
+            </Link>
           </div>
         </div>
       </div>

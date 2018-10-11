@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reset Email Link should call resetPasswordRequest on click of the link 1`] = `
+<div>
+  <div>
+    <div
+      className="alert alert-success alert-dismissible fade show reset-alert"
+      role="alert"
+    >
+      <p
+        className="mb-0"
+      >
+        A password reset link has been sent to test@mymail.com, Click
+         
+        <Link
+          className="alert-link"
+          onClick={[Function]}
+          replace={false}
+          to="#"
+        >
+          Here
+        </Link>
+         
+        to get a new password reset link
+      </p>
+      <button
+        aria-label="Close"
+        className="close"
+        data-dismiss="alert"
+        type="button"
+      >
+        <span
+          aria-hidden="true"
+        >
+          ×
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Reset Email Link should correctly render Reset Email link  1`] = `
+<div>
+  <div>
+    <div
+      className="alert alert-success alert-dismissible fade show reset-alert"
+      role="alert"
+    >
+      <p
+        className="mb-0"
+      >
+        A password reset link has been sent to test@mymail.com, Click
+         
+        <Link
+          className="alert-link"
+          onClick={[Function]}
+          replace={false}
+          to="#"
+        >
+          Here
+        </Link>
+         
+        to get a new password reset link
+      </p>
+      <button
+        aria-label="Close"
+        className="close"
+        data-dismiss="alert"
+        type="button"
+      >
+        <span
+          aria-hidden="true"
+        >
+          ×
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;

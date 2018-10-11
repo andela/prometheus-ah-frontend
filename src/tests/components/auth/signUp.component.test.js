@@ -45,7 +45,8 @@ const setUp = () => {
   const props = {
     signUp: jest.fn(),
     auth: false,
-    router: undefined
+    router: undefined,
+    deleteError: jest.fn()
   };
   return shallow(<SignUpForm {...props} />);
 };
@@ -66,7 +67,7 @@ describe('SignUp page component', () => {
       }
     };
     const wrapper = setUp();
-    const username = wrapper.find('#myusername');
+    const username = wrapper.find('.myusername');
 
     username.simulate('change', event);
 
@@ -84,7 +85,7 @@ describe('SignUp page component', () => {
       }
     };
     const wrapper = setUp();
-    const email = wrapper.find('#myemail');
+    const email = wrapper.find('.myemail');
 
     email.simulate('change', event);
 
@@ -102,7 +103,7 @@ describe('SignUp page component', () => {
       }
     };
     const wrapper = setUp();
-    const email = wrapper.find('#myemail');
+    const email = wrapper.find('.myemail');
 
     email.simulate('change', event);
 
@@ -120,7 +121,7 @@ describe('SignUp page component', () => {
       }
     };
     const wrapper = setUp();
-    const password = wrapper.find('#mypassword');
+    const password = wrapper.find('.mypassword');
 
     password.simulate('change', event);
 
@@ -138,11 +139,11 @@ describe('SignUp page component', () => {
       }
     };
     const wrapper = setUp();
-    const password_confirmation = wrapper.find('#mypassword_confirmation');
+    const password_confirmation = wrapper.find('.mypassword_confirmation'); // eslint-disable-line
 
     password_confirmation.simulate('change', event);
 
-    const expectedPassword_confirmation = 'awesomeGod';
+    const expectedPassword_confirmation = 'awesomeGod'; // eslint-disable-line
 
     expect(wrapper.instance().state.password_confirmation).toBe(expectedPassword_confirmation);
   });
@@ -153,10 +154,10 @@ describe('SignUp page component', () => {
 
     };
     const wrapper = setUp();
-    const SignUpForm = wrapper.find('#register');
+    const myForm = wrapper.find('.register');
 
     wrapper.setState(signUpDetailsError.error);
-    SignUpForm.simulate('click', isValid);
+    myForm.simulate('click', isValid);
 
     const expectedUsernameError = error.username[0];
 
@@ -169,10 +170,10 @@ describe('SignUp page component', () => {
 
     };
     const wrapper = setUp();
-    const SignUpForm = wrapper.find('#register');
+    const myForm = wrapper.find('.register');
 
     wrapper.setState(signUpDetailsError.error);
-    SignUpForm.simulate('click', isValid);
+    myForm.simulate('click', isValid);
 
     const expectedEmailError = error.email[0];
 
@@ -185,10 +186,10 @@ describe('SignUp page component', () => {
 
     };
     const wrapper = setUp();
-    const SignUpForm = wrapper.find('#register');
+    const myForm = wrapper.find('.register');
 
     wrapper.setState(signUpDetailsError.error);
-    SignUpForm.simulate('click', isValid);
+    myForm.simulate('click', isValid);
 
     const expectedPasswordError = error.password[0];
 
@@ -201,10 +202,10 @@ describe('SignUp page component', () => {
 
     };
     const wrapper = setUp();
-    const SignUpForm = wrapper.find('#register');
+    const myForm = wrapper.find('.register');
 
     wrapper.setState(signUpDetailsError.error);
-    SignUpForm.simulate('click', isValid);
+    myForm.simulate('click', isValid);
 
     const expectedPasswordConfirmError = error.password_confirmation[0];
 
@@ -217,22 +218,21 @@ describe('SignUp page component', () => {
     };
 
     const wrapper = setUp();
-    const SignUpForm = wrapper.find('#register');
+    const myForm = wrapper.find('.register');
 
     wrapper.setState(signUpDetails);
-    SignUpForm.simulate('click', event);
+    myForm.simulate('click', event);
   });
 
   it('should return error when username or email already exist', () => {
     const event = {
       preventDefault: jest.fn(),
-
     };
 
     const wrapper = setUp();
-    const SignUpForm = wrapper.find('#register');
+    const myForm = wrapper.find('.register');
 
     wrapper.setState(signUpDetails2);
-    SignUpForm.simulate('click', event);
+    myForm.simulate('click', event);
   });
 });

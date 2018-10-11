@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import data from './articlesData';
+import Footer from '../components/Footer';
 import RatedArticles from '../components/landingPage/ratedArticles/RatedArticles';
 import FeaturedArticles from '../components/landingPage/featuredArticles/FeaturedArticles';
 import RecentPost from '../components/landingPage/recentPosts/RecentPosts';
@@ -35,6 +36,7 @@ class LandingPage extends Component {
             </div>
           </div>
         </section>
+        <Footer />
       </React.Fragment>
     );
   }

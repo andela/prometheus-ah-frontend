@@ -4,13 +4,15 @@ import modal from './modal';
 import verifyEmail from './verifyEmail';
 import articleReducer from './Article';
 import socialLoginReducer from './socialLogin';
+import resetPasswordReducer from './resetPasswordReducer';
 
 const appReducer = combineReducers({
   auth,
   modal,
   verifyEmail,
   articleReducer,
-  socialLoginReducer
+  socialLoginReducer,
+  passwordreset: resetPasswordReducer
 });
 
 export default appReducer;
