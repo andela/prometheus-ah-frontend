@@ -9,8 +9,9 @@ import PrivateRoute from '../utils/PrivateRoute';
 import DefaultVerifyEmail from '../components/auth/VerifyEmail';
 import ArticleListPage from '../components/article/ArticleListPage';
 import ReadArticle from '../components/article/ReadArticle';
-
 import SocialLoginContainer from '../components/socialLogin/SocialLoginContainer'; // eslint-disable-line
+import ResetPasswordRequestPage from '../components/auth/ResetPasswordRequest';
+import ResetPasswordUpdatePage from '../components/auth/ResetPasswordUpdate';
 
 const AppRoutes = () => (
   <BrowserRouter>
@@ -25,6 +26,8 @@ const AppRoutes = () => (
         <PrivateRoute exact path={routes.CREATE_ARTICLE} component={CreateArticle} />
         <PrivateRoute path={routes.CREATE_ARTICLE} component={CreateArticle} />
         <Route exact path={routes.SOCIAL} component={SocialLoginContainer} />
+        <Route exact path={routes.RESET_PASSWORD} component={ResetPasswordRequestPage} />
+        <Route exact path={routes.PASSWORD_RESET} component={ResetPasswordUpdatePage} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>

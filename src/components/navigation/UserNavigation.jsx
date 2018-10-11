@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import logoutAction from '../../actions/authentication/logoutAction';
-import defaultProfileImage from '../../images/default-profile.png';
 
 /**
  * @description class for userNavigation header
@@ -57,7 +56,7 @@ export class UserNavigation extends Component {
         </li>
         <li className="nav-item dropdown">
           <img
-            src={user.image ? user.image : defaultProfileImage}
+            src={user.image ? user.image : 'https://image.ibb.co/i48Wqf/paceholder.jpg'}
             className="img-fluid user-image rounded-circle dropdown-toggle"
             data-toggle="dropdown"
             alt=""

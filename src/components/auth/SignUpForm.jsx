@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import TextField from '../common/TextField';
-import SignUpInputValidation from '../../middlewares/SignUpInputValidate';
+import SignUpInputValidation from '../../validations/SignUpInputValidate';
 import ErrorAlertNotification from '../common/ErrorAlertNotification';
-import { userSignUpRequest, deleteErrorMessage } from '../../actions/signUp.action';
 import SocialLogin from '../socialLogin/SocialLogin';
+import { userSignUpRequest, deleteErrorMessage } from '../../actions/signUp.action';
+
 
 /**
  * @class SignUpForm
@@ -123,7 +124,7 @@ export class SignUpForm extends Component {
                   value={username}
                   placeholder="username"
                   field="username"
-                  id="myusername"
+                  className="myusername"
                 />
               </div>
               <div className="form-group col-md-6">
@@ -133,7 +134,7 @@ export class SignUpForm extends Component {
                   value={email}
                   placeholder="email"
                   field="email"
-                  id="myemail"
+                  className="myemail"
                 />
               </div>
             </div>
@@ -146,7 +147,7 @@ export class SignUpForm extends Component {
                   type="password"
                   placeholder="password"
                   field="password"
-                  id="mypassword"
+                  className="mypassword"
                 />
               </div>
               <div className="form-group col-md-6">
@@ -157,18 +158,13 @@ export class SignUpForm extends Component {
                   type="password"
                   placeholder="confirm password"
                   field="password_confirmation"
-                  id="mypassword_confirmation"
+                  className="mypassword_confirmation"
                 />
               </div>
             </div>
             <div className="form-row">
               <div className="form-group col-md-12">
-                <button
-                  id="register"
-                  type="button"
-                  className="btn login-btn"
-                  onClick={this.onSubmit}
-                >
+                <button type="button" className="btn login-btn register" onClick={this.onSubmit}>
                       SIGN UP
                 </button>
               </div>

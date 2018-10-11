@@ -181,7 +181,33 @@ const mockData = {
     description: 'feeling very excited',
     author: 'Okeremeta',
     date: '2018-09-20T13:43:12.129Z'
-  }
+  },
+
+  invalidEmail: 'fakeEmail',
+
+  resetPasswordError: 'Invalid credentials',
+
+  userEmail: {
+    email: 'test@mymail.com'
+  },
+
+  password: 'password',
+
+  password_confirmation: 'password',
+
+  passwordtoken: '?emailToken=faketoken',
+
+  fakePassword: '?',
+
+  expiredlinkMessage: 'Your verification link has expired or is invalid',
+
+  resetLinkMessage: {
+    data: { message: 'A reset password link has been sent to test@mymail.com' },
+  },
+
+  resetUpdateLinkMessage: {
+    data: { message: 'Password successfully updated, you can now login with your new password' },
+  },
 };
 
 export default mockData;

@@ -7,6 +7,7 @@ exports[`RatedArticles component should render a snapshot of the RatedArticles c
     data-ride="carousel"
     id="carouselIndicators"
   >
+    <Connect(ResetPassword) />
     <div
       className="d-flex flex-column"
     >

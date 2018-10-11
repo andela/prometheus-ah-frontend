@@ -1,4 +1,4 @@
-import validateLogin from '../../vaidations/validateLogin';
+import validateLogin from '../../validations/validateLogin';
 
 const { loginInputValidation } = validateLogin;
 

@@ -1,5 +1,5 @@
 div.carousel {
-  background: no-repeat url("/src/images/landing.png");
+  background: no-repeat url("https://image.ibb.co/kxyZbL/landing-image.png");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -57,6 +57,12 @@ div.carousel {
   padding: 5px;
   text-align: center;
   width: 150px;
+}
+
+.reset-alert {
+  margin: 0 auto;
+  position: absolute;
+  width: 60%;
 }
 
 @media (min-width: 700px) {

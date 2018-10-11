@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { LoginForm } from '../../components/auth/LoginForm';
-import mockData from '../__mocks__/mockData';
+import { LoginForm } from '../../../components/auth/LoginForm';
+import mockData from '../../__mocks__/mockData';
 
 let wrapper;
 
@@ -26,7 +26,7 @@ describe('Login component', () => {
       }
     };
 
-    const username = wrapper.find('#username');
+    const username = wrapper.find('.username');
 
     username.simulate('change', event);
 
@@ -37,19 +37,21 @@ describe('Login component', () => {
 
   it('should set password when password changes', () => {
     const event = {
+      preventDefault: jest.fn(),
       target: {
         name: 'password',
-        value: '90123456'
+        value: 'awesomeGod'
       }
     };
 
-    const password = wrapper.find('#password');
+    const password = wrapper.find('.password');
 
     password.simulate('change', event);
 
-    const expectedPassword = '90123456';
-
-    expect(wrapper.instance().state.password).toBe(expectedPassword);
+    wrapper.setState({ errors: { [event.target.name]: 'mock' } });
+    wrapper.instance().onChange(event);
+    expect(wrapper.instance().state[event.target.name])
+      .toBe(event.target.value);
   });
 
   it('should login user when correct creadentials are supplied', () => {
@@ -58,14 +60,14 @@ describe('Login component', () => {
       preventDefault: jest.fn(),
     };
 
-    const Login = wrapper.find('#submit');
+    const Login = wrapper.find('.submit');
 
     wrapper.setState(loginData);
     Login.simulate('click', event);
   });
 
   it('should return error for invalid form submission', () => {
-    wrapper.find('#submit').simulate('click', {
+    wrapper.find('.submit').simulate('click', {
       preventDefault: jest.fn(),
     });
     expect(wrapper.state('error')).not.toBe({});

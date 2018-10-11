@@ -14,7 +14,7 @@ class SignUpInputValidation {
    */
   static InputValidation(userInput) {
     const {
-      username, email, password, password_confirmation
+      username, email, password, password_confirmation // eslint-disable-line
     } = userInput;
 
     const validation = new Validator(
