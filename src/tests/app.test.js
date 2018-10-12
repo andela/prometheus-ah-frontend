@@ -16,4 +16,3 @@ describe('App component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });
-
