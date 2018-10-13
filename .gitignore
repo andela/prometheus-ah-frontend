@@ -2,7 +2,6 @@
 node_modules
 reports
 dist
-coverage/
 
 #env
 .env

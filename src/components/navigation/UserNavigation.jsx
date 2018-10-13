@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import logoutAction from '../../actions/authentication/logoutAction';
 import defaultProfileImage from '../../images/default-profile.png';
-
 /**
  * @description class for userNavigation header
  *

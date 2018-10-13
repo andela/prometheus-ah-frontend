@@ -13,6 +13,11 @@
     "test:e2e": "nightwatch e2e-test",
     "e2e-setup": "./node_modules/selenium-standalone/bin/selenium-standalone install"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/src/tests/__mocks__/fileMock.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andela/prometheus-ah-frontend.git"
@@ -61,6 +66,7 @@
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
+    "alertify.js": "^1.0.12",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "cookies-js": "^1.2.3",

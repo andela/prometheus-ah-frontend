@@ -4,6 +4,9 @@ exports[`UserNavigation component should render a snapshot of the userNavigation
 <ul
   className="navbar-nav ml-auto"
 >
+  <Connect(FollowButton)
+    username="dan"
+  />
   <li
     className="nav-item mr-4"
   >

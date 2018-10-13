@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import FeaturedAuthorPost from './FeaturedAuthorPost';
+import FollowButton from '../../follow';
 
 const FeaturedAuthor = (props) => {
   const { posts, author } = props;
@@ -17,7 +19,24 @@ const FeaturedAuthor = (props) => {
           />
           <div className="author-detail ml-4 mt-3">
             <p className="author mb-1">{`${author.firstname} ${author.lastname}`}</p>
-            <button type="button" className="btn btn-follow">Follow</button>
+            <FollowButton username="dan" />
+            <div className="card-header">
+              <ul className="nav nav-pills card-header-pills">
+                <li className="nav-item">
+                  <Link to='/followers'>
+                  <button className="nav-link active">
+                  followers
+                </button>
+                </Link>
+                </li>
+                <li className="nav-item">
+                  <Link to='/following'>
+                  <button className="nav-link">
+                  following
+                </button></Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <div className="mx-4 mt-5">

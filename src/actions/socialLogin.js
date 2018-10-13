@@ -13,7 +13,7 @@ export const socialLoginAction = (code, socialLogin) => dispatch => axios.get(
   `${config.apiUrl}/users/login/${socialLogin}/callback?code=${code}`
 ).then((response) => {
   const { token } = response.data.user;
-  Cookies.set('jwt_token', token);
+  Cookies.set('jwtToken', token);
   dispatch(setCurrentUser(response.data.user));
   return response;
 }).catch((error) => {

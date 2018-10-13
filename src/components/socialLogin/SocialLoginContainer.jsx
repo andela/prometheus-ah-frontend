@@ -44,7 +44,7 @@ export class SocialLoginContainer extends Component {
         toastr.success(message);
         return history.push('/');
       }
-      return history.push('/users/login');
+      return history.push('/');
     }).catch(error => error);
   }
 

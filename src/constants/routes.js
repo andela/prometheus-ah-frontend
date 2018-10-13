@@ -7,6 +7,9 @@ const routes = {
   READ_ARTICLE: '/articles/:slug',
   CREATE_ARTICLE: '/articles',
   SOCIAL: '/users/oauth/:socialLogin',
+  FOLLOWERS: '/followers',
+  FOLLOWING: '/following',
+
 };
 
 export default routes;

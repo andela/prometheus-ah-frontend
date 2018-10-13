@@ -4,13 +4,15 @@ import modal from './modal';
 import verifyEmail from './verifyEmail';
 import articleReducer from './Article';
 import socialLoginReducer from './socialLogin';
+import followReducer from './follow';
 
 const appReducer = combineReducers({
   auth,
   modal,
   verifyEmail,
   articleReducer,
-  socialLoginReducer
+  socialLoginReducer,
+  followReducer
 });
 
 const initialState = appReducer({}, {});
