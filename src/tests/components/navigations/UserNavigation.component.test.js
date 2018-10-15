@@ -11,7 +11,8 @@ describe('UserNavigation component', () => {
     const { user } = mockData;
     const props = {
       logoutUser: jest.fn(),
-      user
+      user,
+      profileAction: jest.fn(),
     };
     wrapper = shallow(<UserNavigation {...props} />);
   });

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import routes from '../../constants/routes';
 import logoutAction from '../../actions/authentication/logoutAction';
 
 /**
@@ -35,7 +36,7 @@ export class UserNavigation extends Component {
    * @memberof Header
    */
   render() {
-    const { user } = this.props;
+    const { profile } = this.props;
 
     return (
       <ul className="navbar-nav ml-auto">
@@ -56,14 +57,14 @@ export class UserNavigation extends Component {
         </li>
         <li className="nav-item dropdown">
           <img
-            src={user.image ? user.image : 'https://image.ibb.co/i48Wqf/paceholder.jpg'}
+            src={profile && profile.image ? profile.image : 'https://image.ibb.co/i48Wqf/paceholder.jpg'}
             className="img-fluid user-image rounded-circle dropdown-toggle"
             data-toggle="dropdown"
             alt=""
           />
           <div className="dropdown-menu dropdown-menu-right">
-            <a className="dropdown-item" href="#">View Profile</a>
             <Link to="/new-story" className="dropdown-item">Create Post</Link>
+            <Link className="dropdown-item" to={routes.PROFILE_PAGE}>View Profile</Link>
             <div className="dropdown-divider" />
             <Link
               className="dropdown-item"
@@ -83,7 +84,7 @@ export class UserNavigation extends Component {
 
 UserNavigation.propTypes = {
   logoutUser: PropTypes.func,
-  user: PropTypes.instanceOf(Object)
+  profile: PropTypes.shape({}),
 };
 
 const mapDispatchToProps = dispatch => ({
@@ -91,7 +92,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-  user: state.auth.user
+  profile: state.userProfile.user.profile
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserNavigation);

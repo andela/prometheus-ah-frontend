@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile component should render the editProfileForm component 1`] = `
+<form
+  className="form-horizontal"
+  onSubmit={[Function]}
+>
+  <div
+    className="panel panel-default"
+  >
+    <div
+      className="panel-body"
+    >
+      <div
+        className="form-group"
+      >
+        <div
+          className="container profile-img form-group text-center"
+        >
+          <img
+            alt="User avatar"
+            className="img-circle profile-avatar image"
+            id="myimage"
+            src="https://content-static.upwork.com/uploads/2014/10/01073427/profilephoto1.jpg"
+          />
+          <div
+            className="overlay"
+          >
+            <button
+              className="icon"
+              onClick={[Function]}
+              title="User Profile"
+              type="button"
+            >
+              <i
+                className="fas fa-camera-retro"
+              />
+            </button>
+          </div>
+        </div>
+        <input
+          accept="image/*"
+          className="hideInput"
+          id="profileImage"
+          name="profileImage"
+          onChange={[Function]}
+          type="file"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          htmlFor="firstname"
+        >
+          First Name
+        </label>
+        <TextField
+          field="firstname"
+          id="firstname"
+          label="First Name"
+          onChange={[Function]}
+          placeholder="enter your first name"
+          value="Travis"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          htmlFor="lastname"
+        >
+          Last Name
+        </label>
+        <TextField
+          field="lastname"
+          id="lastname"
+          label="Last Name"
+          onChange={[Function]}
+          placeholder="enter your last name"
+          value="Mocha"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          htmlFor="bio"
+        >
+          Bio
+        </label>
+        <TextArea
+          field="bio"
+          label="Bio"
+          onChange={[Function]}
+          placeholder="enter bio here..."
+          value="Web Developer with a passion for server side scripting and web-scraping skills"
+        />
+      </div>
+    </div>
+    <Link
+      replace={false}
+      to="{routes.PROFILE_PAGE}"
+    >
+      <button
+        className="btn btn-secondary"
+        type="button"
+      >
+        Cancel
+      </button>
+    </Link>
+     
+    <button
+      className="btn btn-danger"
+      id="register"
+      type="submit"
+    >
+      Save Changes
+    </button>
+  </div>
+</form>
+`;
