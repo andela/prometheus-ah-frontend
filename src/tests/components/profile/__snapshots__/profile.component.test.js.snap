@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile component should render the profile component 1`] = `
+<div
+  className="container-fluid"
+>
+  <div
+    className="emp-profile"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-sm-4"
+      >
+        <div
+          className="profile-img"
+        >
+          <img
+            alt="profile"
+            height="200px"
+            width="200px"
+          />
+        </div>
+      </div>
+      <div
+        className="col-sm-8"
+      >
+        <h5>
+           undefined  undefined 
+           
+        </h5>
+        <p>
+          <b>
+            Email: 
+          </b>
+          <span />
+        </p>
+        <h6 />
+        <br />
+        <p
+          className="text-color"
+        >
+          <span>
+            0 
+          </span>
+          Following   
+          <span>
+            0 
+          </span>
+          Followers
+        </p>
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-sm-12 profile-padding"
+      >
+        <ul
+          className="nav nav-tabs"
+          id="myTab"
+          role="tablist"
+        >
+          <li
+            className="nav-item"
+          >
+            <a
+              aria-controls="home"
+              aria-selected="true"
+              className="nav-link active"
+              data-toggle="tab"
+              href="#home"
+              id="home-tab"
+              role="tab"
+            >
+              Articles
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              aria-controls="profile"
+              aria-selected="false"
+              className="nav-link"
+              data-toggle="tab"
+              href="#profile"
+              id="profile-tab"
+              role="tab"
+            >
+              Bookmarks
+            </a>
+          </li>
+        </ul>
+        <div
+          className="tab-content"
+          id="myTabContent"
+        >
+          <br />
+          <div
+            aria-labelledby="home-tab"
+            className="tab-pane fade show active"
+            id="home"
+            role="tabpanel"
+          >
+            <div
+              className="row"
+            >
+              <div
+                className="col-sm-6"
+                key="3"
+              >
+                <ArticleCard
+                  article={
+                    Object {
+                      "body": "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+                      "createdAt": "2018-10-02T12:07:45.830Z",
+                      "description": "why code in ruby",
+                      "id": 3,
+                      "readingTime": "3 min read",
+                      "slug": "how-coding-works",
+                      "title": "Coding",
+                      "updatedAt": "2018-10-02T12:07:45.830Z",
+                      "userId": 10,
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            aria-labelledby="profile-tab"
+            className="tab-pane fade"
+            id="profile"
+            role="tabpanel"
+          >
+            <h5>
+              List of bookmarks
+            </h5>
+            <h1>
+               
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

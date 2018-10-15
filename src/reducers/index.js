@@ -5,6 +5,11 @@ import verifyEmail from './verifyEmail';
 import articleReducer from './Article';
 import socialLoginReducer from './socialLogin';
 import resetPasswordReducer from './resetPasswordReducer';
+import userProfile from './userProfile';
+import userArticles from './userArticles';
+import userFollowers from './userFollowers';
+import userFollowing from './userFollowing';
+import editProfile from './editProfile';
 
 const appReducer = combineReducers({
   auth,
@@ -12,7 +17,12 @@ const appReducer = combineReducers({
   verifyEmail,
   articleReducer,
   socialLoginReducer,
-  passwordreset: resetPasswordReducer
+  passwordreset: resetPasswordReducer,
+  userProfile,
+  userArticles,
+  userFollowers,
+  userFollowing,
+  editProfile,
 });
 
 export default appReducer;

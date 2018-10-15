@@ -4,7 +4,6 @@ import routes from '../constants/routes';
 import NotFoundPage from '../views/NotFoundPage';
 import LandingPage from '../views/LandingPage';
 import Header from '../components/Header';
-import PrivateRoute from '../utils/PrivateRoute';
 import DefaultVerifyEmail from '../components/auth/VerifyEmail';
 import ArticleListPage from '../components/article/ArticleListPage';
 import ReadArticle from '../components/article/ReadArticle';
@@ -15,6 +14,9 @@ import CreateArticlePage from '../components/article/CreateArticlePage';
 import UserArticle from '../components/article/UserArticle';
 import EditArticle from '../components/article/EditArticle';
 
+import ProfilePage from '../views/ProfilePage';
+import PrivateRoute from '../utils/PrivateRoute';
+import EditProfilePage from '../views/EditProfilePage';
 
 const AppRoutes = () => (
   <BrowserRouter>
@@ -31,6 +33,11 @@ const AppRoutes = () => (
         <Route exact path={routes.PASSWORD_RESET} component={ResetPasswordUpdatePage} />
         <Route exact path={routes.LIST_ARTICLE} component={ArticleListPage} />
         <PrivateRoute exact path={routes.NEW_ARTICLE} component={CreateArticlePage} />
+        <Route exact path={routes.SOCIAL} component={SocialLoginContainer} />
+        <Route exact path={routes.RESET_PASSWORD} component={ResetPasswordRequestPage} />
+        <Route exact path={routes.PASSWORD_RESET} component={ResetPasswordUpdatePage} />
+        <Route path={routes.EDIT_PROFILE_PAGE} component={EditProfilePage} />
+        <Route path={routes.PROFILE_PAGE} component={ProfilePage} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>

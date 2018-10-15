@@ -1,0 +1,90 @@
+.emp-profile {
+  border-radius: 0.5rem;
+  margin: 2rem;
+  padding: 2%;
+}
+
+.profile-img {
+  text-align: right;
+
+  & img {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+  }
+}
+
+.profile-padding {
+  padding: 2rem;
+}
+
+.loading-center {
+  margin-top: 10%;
+  text-align: center;
+}
+
+.text-color {
+  color: $red;
+}
+
+.container {
+  max-width: 100%;
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .3s ease;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.icon {
+  background: 0;
+  color: $white;
+  font-size: 50px;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-head {
+  font-size: 30px;
+}
+
+.nav-item a {
+  color: $black;
+}
+
+@media (max-width: 512px) {
+	.profile-img {
+    margin-bottom: 10px;
+    text-align: center;
+  
+    & img {
+      border-radius: 50%;
+      height: 150px;
+      width: 150px;
+    }
+  }
+}
+
+.hideInput {
+  display: none;
+}

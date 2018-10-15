@@ -208,6 +208,29 @@ const mockData = {
   resetUpdateLinkMessage: {
     data: { message: 'Password successfully updated, you can now login with your new password' },
   },
+  profile: {
+    bio: 'Web Developer with a passion for server side scripting and web-hunting',
+    email: 'mocha@gmail.com',
+    firstname: 'Mocha',
+    id: 9,
+    image: 'https://content-static.upwork.com/uploads/2014/10/01073427/profilephoto1.jpg',
+    lastname: 'Chai',
+    username: 'kingslife',
+  },
+
+  editProfileError: {
+    image: 'https://content-static.upwork.com/uploads/2014/10/01073427/profilephoto1.jpg',
+    firstname: '',
+    lastname: '',
+    email: '',
+    bio: '',
+    errors: {
+      firstname: 'The firstname field is required.',
+      lastname: 'The lastname field is required.',
+      email: 'The email field is required.',
+      bio: 'The bio field is required.'
+    },
+  }
 };
 
 export default mockData;

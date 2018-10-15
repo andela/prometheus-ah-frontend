@@ -10,7 +10,9 @@ const routes = {
   NEW_ARTICLE: '/new-story',
   USER_ARTICLE: '/articles/user',
   EDIT_ARTICLE: '/articles/:slug/edit',
-  READ_ARTICLE: '/articles/:slug/'
+  READ_ARTICLE: '/articles/:slug/',
+  PROFILE_PAGE: '/profiles',
+  EDIT_PROFILE_PAGE: '/profiles/edit',
 };
 
 export default routes;
