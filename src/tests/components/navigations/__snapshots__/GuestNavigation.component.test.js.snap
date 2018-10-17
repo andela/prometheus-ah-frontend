@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GuestNavigation componete should renders a snapshot of the guestNavigation component 1`] = `
-<nav
-  className="navbar-nav"
+exports[`GuestNavigation component should renders a snapshot of the guestNavigation component 1`] = `
+<ul
+  className="navbar-nav ml-auto"
 >
   <li
-    className="nav-item"
+    className="nav-item mr-4"
   >
     <a
       className="nav-link"
@@ -14,11 +14,25 @@ exports[`GuestNavigation componete should renders a snapshot of the guestNavigat
       Home
     </a>
   </li>
+  <form
+    className="form-inline mr-3"
+  >
+    <i
+      className="mdi mdi-magnify mdi-24px mr-2 d-none d-md-block"
+    />
+    <input
+      aria-label="Search"
+      className="form-control mr-sm-2 border-0"
+      placeholder="Search..."
+      type="search"
+    />
+  </form>
   <li
-    className="nav-item"
+    className="nav-item nav-btn mr-4"
+    id="login"
   >
     <Link
-      className="nav-link"
+      className="nav-link login-link"
       onClick={[MockFunction]}
       replace={false}
       to="#"
@@ -30,20 +44,20 @@ exports[`GuestNavigation componete should renders a snapshot of the guestNavigat
     />
   </li>
   <li
-    className="nav-item"
+    className="nav-item nav-btn"
     id="signup"
   >
     <Link
-      className="nav-link"
+      className="nav-link register-link"
       onClick={[MockFunction]}
       replace={false}
       to="#"
     >
-      Sign Up
+      Register
     </Link>
     <Connect(Modal)
       modal={Object {}}
     />
   </li>
-</nav>
+</ul>
 `;

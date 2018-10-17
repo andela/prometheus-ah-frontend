@@ -1,0 +1,72 @@
+div.carousel {
+  background: no-repeat url("/src/images/landing.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 500px;
+}
+
+.carousel-item {
+  color: $white;
+  flex-shrink: 1;
+  margin-left: 30px;
+  max-width: 465px;
+  min-width: 300px;
+  width: 50%;
+
+  p {
+    font-weight: 300;
+  }
+}
+
+.author-image {
+  height: 80px;
+  width: 80px;
+}
+
+.carousel-inner {
+  top: 100px;
+}
+
+.carousel-author-name {
+  font-family: 'raleway', sans-serif;
+  font-weight: lighter;
+}
+
+.carousel-article-title {
+  font-weight: 700;
+}
+
+.read-more {
+  background: $red;
+  color: $white;
+  font-size: 15px;
+}
+
+.read-more:hover {
+  background: $dark-red;
+  color: $white;
+}
+
+.landing-label {
+  align-self: flex-end;
+  background: #FCE158;
+  border-radius: 20px 0 0 20px;
+  font-weight: 700;
+  margin-top: 50px;
+  padding: 5px;
+  text-align: center;
+  width: 150px;
+}
+
+@media (min-width: 700px) {
+  .carousel-inner {
+    top: 110px;
+  }
+}
+
+@media (min-width: 992px) {
+  .carousel-inner {
+    padding-left: 100px;
+  }
+ }

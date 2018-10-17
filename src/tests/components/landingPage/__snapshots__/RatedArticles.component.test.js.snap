@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RatedArticles component should render a snapshot of the RatedArticles component 1`] = `
+<div>
+  <div
+    className="carousel slide"
+    data-ride="carousel"
+    id="carouselIndicators"
+  >
+    <div
+      className="d-flex flex-column"
+    >
+      <div
+        className="landing-label"
+      >
+        TOP-RATED
+      </div>
+      <ol
+        className="carousel-indicators"
+      >
+        <li
+          className="active"
+          data-slide-to="0"
+          data-target="#carouselIndicators"
+        />
+        <li
+          data-slide-to="1"
+          data-target="#carouselIndicators"
+        />
+        <li
+          data-slide-to="2"
+          data-target="#carouselIndicators"
+        />
+        <li
+          data-slide-to="3"
+          data-target="#carouselIndicators"
+        />
+        <li
+          data-slide-to="4"
+          data-target="#carouselIndicators"
+        />
+      </ol>
+      <div
+        className="carousel-inner"
+      >
+        <RatedArticle
+          active={0}
+          author="Joeeasy"
+          body="My task is getting bigger and I am equal to the task.
+        Music gives a soul to the universe, wings to the mind,
+        flight to the imagination and life to everything"
+          date="2018-09-20T13:43:12.129Z"
+          key="1"
+          title="My Broken Mother, My Broken Heart"
+        />
+        <RatedArticle
+          active={1}
+          author="Joeeasy"
+          body="My task is getting bigger and I am equal to the task.
+      Music gives a soul to the universe, wings to the mind,
+      flight to the imagination and life to everything"
+          date="2018-09-20T13:43:12.129Z"
+          key="1"
+          title="My Broken Mother, My Broken Heart"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

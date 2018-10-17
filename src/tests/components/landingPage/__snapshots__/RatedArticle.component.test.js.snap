@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecentPost component should render a snapshot of the RecentPost component 1`] = `
+<div
+  className="carousel-item active slide"
+>
+  <h2
+    className="carousel-article-title"
+  >
+    My Broken Mother, My Broken Heart
+  </h2>
+  <p
+    className="carousel-author-name"
+  >
+    Okeremeta - Sep 20, 2018
+  </p>
+  <p>
+    My task is getting bigger and I am equal to the task.
+      Music gives a soul to the universe, wings to the mind,
+     ...
+  </p>
+  <button
+    className="btn read-more"
+    type="button"
+  >
+    Read more
+  </button>
+</div>
+`;

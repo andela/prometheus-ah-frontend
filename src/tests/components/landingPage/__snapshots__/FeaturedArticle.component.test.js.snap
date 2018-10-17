@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeaturedArticles component should render a snapshot of the FeaturedArticles component 1`] = `
+<div
+  className="card shadow-lg border-0 mb-5 featured-post"
+>
+  <img
+    alt=""
+    className="img-fluid featured-post-image"
+    src="https://image.ibb.co/eLVQwL/kids.jpg"
+  />
+  <div
+    className="card-body"
+  >
+    <h3
+      className="card-title post-title"
+    >
+      My Broken Mother, My Broken Heart
+    </h3>
+    <p
+      className="card-text post-date"
+    >
+      Sep 20, 2018
+      <span
+        className="ml-4 font-weight-light font-italic"
+      >
+        TECHNOLOGY
+      </span>
+    </p>
+    <p
+      className="card-text post-description"
+    >
+      feeling very excited
+    </p>
+    <div
+      className="d-flex justify-content-between"
+    >
+      <div
+        className="card-text post-author"
+      >
+        <p
+          className="author"
+        >
+          Okeremeta
+        </p>
+        <p>
+          <small
+            className="text-muted font-italic"
+          >
+            1 min read
+          </small>
+        </p>
+      </div>
+      <i
+        className="far fa-bookmark"
+      />
+    </div>
+  </div>
+</div>
+`;

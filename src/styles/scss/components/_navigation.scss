@@ -1,0 +1,91 @@
+.main-navbar {
+  background-color: $nav-background;
+
+  .nav-item .nav-link,
+  .nav-link {
+    color: $red;
+  }
+
+  .categories {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .dropdown-item {
+    color: #495057;
+  }
+
+  .categories .nav-link {
+    font-weight: 300;
+  }
+
+  .categories .nav-link:hover {
+    font-weight: 400;
+  }
+}
+
+.main-navbar .nav-divider {
+  background-color: $light-red;
+  height: 0.1px;;
+}
+
+li .login-link,
+li .register-link {
+  border: 0;
+  padding: 8px 0 !important;
+}
+
+.main-navbar .form-control {
+  background-color: $nav-background;
+  padding-left: 2px;
+}
+
+.main-navbar .user-image {
+  height: 40px;
+  width: 40px;
+}
+
+.main-nav .mdi-magnify,
+.main-nav .mdi-bell-outline {
+   color: $red;
+}
+
+.main-nav .bell,
+.main-nav .search {
+   margin-top: 2px;
+}
+
+.main-navbar .dropdown-menu,
+.dropdown-divider {
+  border: thin solid $light-red;
+}
+
+@media (min-width: 576px) {
+  .navbar-nav {
+    .nav-item .login-link,
+    .nav-item .register-link {
+      border: thin solid $red;
+      font-size: 15px;
+      font-weight: 300;
+      margin-top: 6px;
+      padding: 2px 15px !important;
+    }
+
+    .nav-item .login-link:hover,
+    .nav-item .register-link:hover {
+      background-color: $red;
+      color: $white;
+    }
+
+  }
+}
+
+@media (min-width: 700px) {
+  .navbar .logo {
+    margin-left: 15px;
+  }
+
+  .main-navbar .main-nav {
+    margin-right: 20px;
+  }
+}

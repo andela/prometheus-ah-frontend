@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GuestNavigation componete should renders a snapshot of the guestNavigation component 1`] = `
+exports[`UserNavigation component should render a snapshot of the userNavigation component 1`] = `
 <ul
-  className="navbar-nav"
+  className="navbar-nav ml-auto"
 >
   <li
-    className="nav-item"
+    className="nav-item mr-4"
   >
     <a
       className="nav-link"
@@ -14,27 +14,63 @@ exports[`GuestNavigation componete should renders a snapshot of the guestNavigat
       Home
     </a>
   </li>
-  <li
-    className="nav-item"
+  <form
+    className="form-inline mr-3 search"
   >
-    <a
-      className="nav-link"
-      href="/"
+    <i
+      className="mdi mdi-magnify mdi-24px mr-2 d-none d-md-block"
+    />
+    <input
+      aria-label="Search"
+      className="form-control mr-sm-2 border-0"
+      placeholder="Search..."
+      type="search"
+    />
+  </form>
+  <li
+    className="nav-item nav-btn mr-4 bell"
+  >
+    <i
+      className="mdi mdi-bell-outline mdi-24px mr-2"
     />
   </li>
   <li
-    className="nav-item"
-    id="login"
+    className="nav-item dropdown"
   >
-    <Link
-      className="nav-link"
-      id="logout"
-      onClick={[Function]}
-      replace={false}
-      to="#"
+    <img
+      alt=""
+      className="img-fluid user-image rounded-circle dropdown-toggle"
+      data-toggle="dropdown"
+      src={Object {}}
+    />
+    <div
+      className="dropdown-menu dropdown-menu-right"
     >
-      Logout
-    </Link>
+      <a
+        className="dropdown-item"
+        href="#"
+      >
+        View Profile
+      </a>
+      <a
+        className="dropdown-item"
+        href="#"
+      >
+        Create Post
+      </a>
+      <div
+        className="dropdown-divider"
+      />
+      <Link
+        className="dropdown-item"
+        id="logout"
+        onClick={[Function]}
+        replace={false}
+        to="#"
+      >
+        Logout
+      </Link>
+    </div>
   </li>
 </ul>
 `;

@@ -4,6 +4,7 @@ import routes from '../constants/routes';
 import NotFoundPage from '../views/NotFoundPage';
 import LandingPage from '../views/LandingPage';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import CreateArticle from '../components/CreateArticle';
 import PrivateRoute from '../utils/PrivateRoute';
 import DefaultVerifyEmail from '../components/auth/VerifyEmail';
@@ -27,6 +28,7 @@ const AppRoutes = () => (
         <Route exact path={routes.SOCIAL} component={SocialLoginContainer} />
         <Route component={NotFoundPage} />
       </Switch>
+      <Footer />
     </div>
   </BrowserRouter>
 );
