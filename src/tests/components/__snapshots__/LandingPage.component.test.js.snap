@@ -1,0 +1,454 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LandingPage component should render a snapshot of the userNavigation component 1`] = `
+<Fragment>
+  <RatedArticles
+    posts={
+      Array [
+        Object {
+          "Tags": Array [
+            "Technolgy",
+          ],
+          "User": Object {
+            "email": "joeeasy@gmail.com",
+            "firstname": "Tega",
+            "id": 1,
+            "image": null,
+            "lastname": "Okeremeta",
+            "role": "user",
+            "status": "active",
+            "username": "Joeeasy",
+          },
+          "body": "My task is getting bigger and I am equal to the task. Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything. This doesn't make sense actually. I Just want to make long text",
+          "createdAt": "2018-09-20T13:43:12.129Z",
+          "description": "feeling very excited",
+          "id": 1,
+          "image": "https://image.ibb.co/eLVQwL/kids.jpg",
+          "readingTime": "1 min read",
+          "slug": "this-is-how-i-feel",
+          "title": "My Broken Mother, My Broken Heart",
+          "updatedAt": "2018-09-20T13:48:33.958Z",
+          "userId": 1,
+        },
+        Object {
+          "Tags": Array [
+            "Technolgy",
+          ],
+          "User": Object {
+            "email": "joeeasy@gmail.com",
+            "firstname": "Tega",
+            "id": 1,
+            "image": null,
+            "lastname": "Okeremeta",
+            "role": "user",
+            "status": "active",
+            "username": "Faksam",
+          },
+          "body": "My task is getting bigger and I am equal to the task. Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything. This doesn't make sense actually. I Just want to make long text",
+          "createdAt": "2018-09-20T13:49:49.763Z",
+          "description": "feeling very excited",
+          "id": 2,
+          "image": "https://image.ibb.co/eLVQwL/kids.jpg",
+          "readingTime": "5 min read",
+          "slug": "this-is-how-i-feel-1",
+          "title": "It’s Not What You Know, It’s How You Think",
+          "updatedAt": "2018-09-20T13:49:49.763Z",
+          "userId": 1,
+        },
+        Object {
+          "Tags": Array [
+            "Technolgy",
+          ],
+          "User": Object {
+            "email": "joeeasy@gmail.com",
+            "firstname": "Tega",
+            "id": 1,
+            "image": null,
+            "lastname": "Okeremeta",
+            "role": "user",
+            "status": "active",
+            "username": "Dinma",
+          },
+          "body": "My task is getting bigger and I am equal to the task. Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything. This doesn't make sense actually. I Just want to make long text",
+          "createdAt": "2018-09-20T14:06:09.630Z",
+          "description": "feeling very excited",
+          "id": 3,
+          "image": "https://image.ibb.co/eLVQwL/kids.jpg",
+          "readingTime": "6 min read",
+          "slug": "this-is-how-i-feel-2",
+          "title": "This is how I feel",
+          "updatedAt": "2018-09-20T14:06:09.630Z",
+          "userId": 1,
+        },
+        Object {
+          "Tags": Array [
+            "Technolgy",
+          ],
+          "User": Object {
+            "email": "joeeasy@gmail.com",
+            "firstname": "Tega",
+            "id": 1,
+            "image": null,
+            "lastname": "Okeremeta",
+            "role": "user",
+            "status": "active",
+            "username": "Blaze",
+          },
+          "body": "My task is getting bigger and I am equal to the task",
+          "createdAt": "2018-09-20T14:06:09.630Z",
+          "description": "feeling very excited",
+          "id": 4,
+          "image": "https://image.ibb.co/eLVQwL/kids.jpg",
+          "readingTime": "6 min read",
+          "slug": "this-is-how-i-feel-2",
+          "title": "How to Make Time to Make Things",
+          "updatedAt": "2018-09-20T14:06:09.630Z",
+          "userId": 1,
+        },
+        Object {
+          "Tags": Array [
+            "Technolgy",
+          ],
+          "User": Object {
+            "email": "joeeasy@gmail.com",
+            "firstname": "Tega",
+            "id": 1,
+            "image": null,
+            "lastname": "Okeremeta",
+            "role": "user",
+            "status": "active",
+            "username": "JustTega",
+          },
+          "body": "My task is getting bigger and I am equal to the task. Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything. This doesn't make sense actually. I Just want to make long text",
+          "createdAt": "2018-09-20T14:06:09.630Z",
+          "description": "feeling very excited",
+          "id": 5,
+          "image": "https://image.ibb.co/eLVQwL/kids.jpg",
+          "readingTime": "6 min read",
+          "slug": "this-is-how-i-feel-2",
+          "title": "The End of Snap and Telsa",
+          "updatedAt": "2018-09-20T14:06:09.630Z",
+          "userId": 1,
+        },
+      ]
+    }
+  />
+  <section
+    className="main-content my-5"
+  >
+    <div
+      className="row"
+    >
+      <FeaturedArticles
+        posts={
+          Array [
+            Object {
+              "Tags": Array [
+                "Technolgy",
+              ],
+              "User": Object {
+                "email": "joeeasy@gmail.com",
+                "firstname": "Tega",
+                "id": 1,
+                "image": null,
+                "lastname": "Okeremeta",
+                "role": "user",
+                "status": "active",
+                "username": "Joeeasy",
+              },
+              "body": "My task is getting bigger and I am equal to the task. Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything. This doesn't make sense actually. I Just want to make long text",
+              "createdAt": "2018-09-20T13:43:12.129Z",
+              "description": "feeling very excited",
+              "id": 1,
+              "image": "https://image.ibb.co/eLVQwL/kids.jpg",
+              "readingTime": "1 min read",
+              "slug": "this-is-how-i-feel",
+              "title": "My Broken Mother, My Broken Heart",
+              "updatedAt": "2018-09-20T13:48:33.958Z",
+              "userId": 1,
+            },
+            Object {
+              "Tags": Array [
+                "Technolgy",
+              ],
+              "User": Object {
+                "email": "joeeasy@gmail.com",
+                "firstname": "Tega",
+                "id": 1,
+                "image": null,
+                "lastname": "Okeremeta",
+                "role": "user",
+                "status": "active",
+                "username": "Faksam",
+              },
+              "body": "My task is getting bigger and I am equal to the task. Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything. This doesn't make sense actually. I Just want to make long text",
+              "createdAt": "2018-09-20T13:49:49.763Z",
+              "description": "feeling very excited",
+              "id": 2,
+              "image": "https://image.ibb.co/eLVQwL/kids.jpg",
+              "readingTime": "5 min read",
+              "slug": "this-is-how-i-feel-1",
+              "title": "It’s Not What You Know, It’s How You Think",
+              "updatedAt": "2018-09-20T13:49:49.763Z",
+              "userId": 1,
+            },
+            Object {
+              "Tags": Array [
+                "Technolgy",
+              ],
+              "User": Object {
+                "email": "joeeasy@gmail.com",
+                "firstname": "Tega",
+                "id": 1,
+                "image": null,
+                "lastname": "Okeremeta",
+                "role": "user",
+                "status": "active",
+                "username": "Dinma",
+              },
+              "body": "My task is getting bigger and I am equal to the task. Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything. This doesn't make sense actually. I Just want to make long text",
+              "createdAt": "2018-09-20T14:06:09.630Z",
+              "description": "feeling very excited",
+              "id": 3,
+              "image": "https://image.ibb.co/eLVQwL/kids.jpg",
+              "readingTime": "6 min read",
+              "slug": "this-is-how-i-feel-2",
+              "title": "This is how I feel",
+              "updatedAt": "2018-09-20T14:06:09.630Z",
+              "userId": 1,
+            },
+            Object {
+              "Tags": Array [
+                "Technolgy",
+              ],
+              "User": Object {
+                "email": "joeeasy@gmail.com",
+                "firstname": "Tega",
+                "id": 1,
+                "image": null,
+                "lastname": "Okeremeta",
+                "role": "user",
+                "status": "active",
+                "username": "Blaze",
+              },
+              "body": "My task is getting bigger and I am equal to the task",
+              "createdAt": "2018-09-20T14:06:09.630Z",
+              "description": "feeling very excited",
+              "id": 4,
+              "image": "https://image.ibb.co/eLVQwL/kids.jpg",
+              "readingTime": "6 min read",
+              "slug": "this-is-how-i-feel-2",
+              "title": "How to Make Time to Make Things",
+              "updatedAt": "2018-09-20T14:06:09.630Z",
+              "userId": 1,
+            },
+            Object {
+              "Tags": Array [
+                "Technolgy",
+              ],
+              "User": Object {
+                "email": "joeeasy@gmail.com",
+                "firstname": "Tega",
+                "id": 1,
+                "image": null,
+                "lastname": "Okeremeta",
+                "role": "user",
+                "status": "active",
+                "username": "JustTega",
+              },
+              "body": "My task is getting bigger and I am equal to the task. Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything. This doesn't make sense actually. I Just want to make long text",
+              "createdAt": "2018-09-20T14:06:09.630Z",
+              "description": "feeling very excited",
+              "id": 5,
+              "image": "https://image.ibb.co/eLVQwL/kids.jpg",
+              "readingTime": "6 min read",
+              "slug": "this-is-how-i-feel-2",
+              "title": "The End of Snap and Telsa",
+              "updatedAt": "2018-09-20T14:06:09.630Z",
+              "userId": 1,
+            },
+          ]
+        }
+      />
+      <div
+        className="col-12 col-md-5 col-lg-5"
+      >
+        <FeaturedAuthor
+          author={
+            Object {
+              "email": "joeeasy@gmail.com",
+              "firstname": "Jon",
+              "id": 5,
+              "image": "https://image.ibb.co/chF3i0/author2.jpg",
+              "lastname": "Snow",
+              "role": "user",
+              "status": "active",
+              "username": "Blaze",
+            }
+          }
+          posts={
+            Array [
+              Object {
+                "Tags": Array [
+                  "Technolgy",
+                ],
+                "User": Object {
+                  "email": "joeeasy@gmail.com",
+                  "firstname": "Tega",
+                  "id": 1,
+                  "image": null,
+                  "lastname": "Okeremeta",
+                  "role": "user",
+                  "status": "active",
+                  "username": "JustTega",
+                },
+                "body": "My task is getting bigger and I am equal to the task. Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything. This doesn't make sense actually. I Just want to make long text",
+                "createdAt": "2018-09-20T14:06:09.630Z",
+                "description": "feeling very excited",
+                "id": 5,
+                "image": "https://image.ibb.co/eLVQwL/kids.jpg",
+                "readingTime": "6 min read",
+                "slug": "this-is-how-i-feel-2",
+                "title": "The End of Snap and Telsa",
+                "updatedAt": "2018-09-20T14:06:09.630Z",
+                "userId": 1,
+              },
+              Object {
+                "Tags": Array [
+                  "Technolgy",
+                ],
+                "User": Object {
+                  "email": "joeeasy@gmail.com",
+                  "firstname": "Tega",
+                  "id": 1,
+                  "image": null,
+                  "lastname": "Okeremeta",
+                  "role": "user",
+                  "status": "active",
+                  "username": "joeeasy",
+                },
+                "body": "My task is getting bigger and I am equal to the task",
+                "createdAt": "2018-10-17T08:06:09.630Z",
+                "description": "feeling very excited",
+                "id": 6,
+                "image": "https://image.ibb.co/eLVQwL/kids.jpg",
+                "readingTime": "6 min read",
+                "slug": "this-is-how-i-feel-2",
+                "title": "This is how I feel",
+                "updatedAt": "2018-09-20T14:06:09.630Z",
+                "userId": 1,
+              },
+              Object {
+                "Tags": Array [
+                  "Technolgy",
+                ],
+                "User": Object {
+                  "email": "joeeasy@gmail.com",
+                  "firstname": "Tega",
+                  "id": 1,
+                  "image": null,
+                  "lastname": "Okeremeta",
+                  "role": "user",
+                  "status": "active",
+                  "username": "joeeasy",
+                },
+                "body": "My task is getting bigger and I am equal to the task",
+                "createdAt": "2018-10-16T14:06:09.630Z",
+                "description": "feeling very excited",
+                "id": 7,
+                "image": "https://image.ibb.co/eLVQwL/kids.jpg",
+                "readingTime": "6 min read",
+                "slug": "this-is-how-i-feel-2",
+                "title": "This is how I feel",
+                "updatedAt": "2018-09-20T14:06:09.630Z",
+                "userId": 1,
+              },
+            ]
+          }
+        />
+        <RecentPosts
+          posts={
+            Array [
+              Object {
+                "Tags": Array [
+                  "Technolgy",
+                ],
+                "User": Object {
+                  "email": "joeeasy@gmail.com",
+                  "firstname": "Tega",
+                  "id": 1,
+                  "image": null,
+                  "lastname": "Okeremeta",
+                  "role": "user",
+                  "status": "active",
+                  "username": "joeeasy",
+                },
+                "body": "My task is getting bigger and I am equal to the task",
+                "createdAt": "2018-10-17T08:06:09.630Z",
+                "description": "feeling very excited",
+                "id": 6,
+                "image": "https://image.ibb.co/eLVQwL/kids.jpg",
+                "readingTime": "6 min read",
+                "slug": "this-is-how-i-feel-2",
+                "title": "This is how I feel",
+                "updatedAt": "2018-09-20T14:06:09.630Z",
+                "userId": 1,
+              },
+              Object {
+                "Tags": Array [
+                  "Technolgy",
+                ],
+                "User": Object {
+                  "email": "joeeasy@gmail.com",
+                  "firstname": "Tega",
+                  "id": 1,
+                  "image": null,
+                  "lastname": "Okeremeta",
+                  "role": "user",
+                  "status": "active",
+                  "username": "joeeasy",
+                },
+                "body": "My task is getting bigger and I am equal to the task",
+                "createdAt": "2018-10-16T14:06:09.630Z",
+                "description": "feeling very excited",
+                "id": 7,
+                "image": "https://image.ibb.co/eLVQwL/kids.jpg",
+                "readingTime": "6 min read",
+                "slug": "this-is-how-i-feel-2",
+                "title": "This is how I feel",
+                "updatedAt": "2018-09-20T14:06:09.630Z",
+                "userId": 1,
+              },
+              Object {
+                "Tags": Array [
+                  "Technolgy",
+                ],
+                "User": Object {
+                  "email": "joeeasy@gmail.com",
+                  "firstname": "Tega",
+                  "id": 1,
+                  "image": null,
+                  "lastname": "Okeremeta",
+                  "role": "user",
+                  "status": "active",
+                  "username": "joeeasy",
+                },
+                "body": "My task is getting bigger and I am equal to the task",
+                "createdAt": "2018-09-20T14:06:09.630Z",
+                "description": "feeling very excited",
+                "id": 8,
+                "image": "https://image.ibb.co/eLVQwL/kids.jpg",
+                "readingTime": "6 min read",
+                "slug": "this-is-how-i-feel-2",
+                "title": "This is how I feel",
+                "updatedAt": "2018-09-20T14:06:09.630Z",
+                "userId": 1,
+              },
+            ]
+          }
+        />
+      </div>
+    </div>
+  </section>
+</Fragment>
+`;

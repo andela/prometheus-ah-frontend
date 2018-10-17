@@ -4,7 +4,7 @@ import GuestNavigation from '../../../components/navigation/GuestNavigation';
 
 let wrapper;
 
-describe('GuestNavigation componete', () => {
+describe('GuestNavigation component', () => {
   beforeEach(() => {
     const props = {
       showLoginModal: jest.fn(),

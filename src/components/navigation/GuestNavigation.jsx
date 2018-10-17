@@ -22,31 +22,40 @@ class GuestNavigation extends Component {
   render() {
     const { showLoginModal, showSignupModal, modal } = this.props;
     return (
-      <nav className="navbar-nav">
-        <li className="nav-item">
+      <ul className="navbar-nav ml-auto">
+        <li className="nav-item mr-4">
           <a className="nav-link" href="/">Home</a>
         </li>
-        <li className="nav-item">
+        <form className="form-inline mr-3">
+          <i className="mdi mdi-magnify mdi-24px mr-2 d-none d-md-block" />
+          <input
+            className="form-control mr-sm-2 border-0"
+            type="search"
+            placeholder="Search..."
+            aria-label="Search"
+          />
+        </form>
+        <li className="nav-item nav-btn mr-4" id="login">
           <Link
             to="#"
-            className="nav-link"
+            className="nav-link login-link"
             onClick={showLoginModal}
           >
             Login
           </Link>
           <ModalForm modal={modal} />
         </li>
-        <li className="nav-item" id="signup">
+        <li className="nav-item nav-btn" id="signup">
           <Link
             to="#"
-            className="nav-link"
+            className="nav-link register-link"
             onClick={showSignupModal}
           >
-            Sign Up
+            Register
           </Link>
           <ModalForm modal={modal} />
         </li>
-      </nav>
+      </ul>
     );
   }
 }

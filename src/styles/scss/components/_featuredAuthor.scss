@@ -1,0 +1,29 @@
+.featured-author .featured-author-image {
+  height: 140px;
+  width: 140px;
+}
+
+.author-detail .author {
+  color: #353535;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.author-detail .btn-follow {
+  border: 1px solid $red;
+  color: $red;
+  padding-bottom: 2px;
+  padding-top: 2px;
+}
+
+.featured-author-post .post-image {
+  height: 60px;
+  width: 100px;
+}
+
+.featured-author-post .post-title {
+  color: #353535;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}

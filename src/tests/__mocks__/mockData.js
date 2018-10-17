@@ -100,6 +100,88 @@ const mockData = {
     token:
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3'
   },
+
+  user: {
+    userId: 2,
+    username: 'faksam',
+    role: 'user',
+    isVerified: true,
+    image: null,
+    email: 'fakunlesamuel@gmail.com',
+    iat: 1539785356,
+    exp: 1539871756
+  },
+
+  posts: [
+    {
+      id: 1,
+      active: 0,
+      category: 'Technology',
+      slug: 'this-is-how-i-feel',
+      image: 'https://image.ibb.co/eLVQwL/kids.jpg',
+      title: 'My Broken Mother, My Broken Heart',
+      body: `My task is getting bigger and I am equal to the task.
+        Music gives a soul to the universe, wings to the mind,
+        flight to the imagination and life to everything`,
+      userId: 1,
+      description: 'feeling very excited',
+      readingTime: '1 min read',
+      createdAt: '2018-09-20T13:43:12.129Z',
+      updatedAt: '2018-09-20T13:48:33.958Z',
+      User: {
+        id: 1,
+        username: 'Joeeasy',
+        email: 'joeeasy@gmail.com',
+        firstname: 'Tega',
+        lastname: 'Okeremeta',
+        role: 'user',
+        status: 'active',
+        image: null
+      },
+      Tags: ['Technolgy']
+    },
+    {
+      id: 1,
+      active: 1,
+      category: 'Technology',
+      slug: 'this-is-how-i-feel',
+      image: 'https://image.ibb.co/eLVQwL/kids.jpg',
+      title: 'My Broken Mother, My Broken Heart',
+      body: `My task is getting bigger and I am equal to the task.
+      Music gives a soul to the universe, wings to the mind,
+      flight to the imagination and life to everything`,
+      userId: 1,
+      description: 'feeling very excited',
+      readingTime: '1 min read',
+      createdAt: '2018-09-20T13:43:12.129Z',
+      updatedAt: '2018-09-20T13:48:33.958Z',
+      User: {
+        id: 1,
+        username: 'Joeeasy',
+        email: 'joeeasy@gmail.com',
+        firstname: 'Tega',
+        lastname: 'Okeremeta',
+        role: 'user',
+        status: 'active',
+        image: null
+      },
+      Tags: ['Technolgy']
+    }
+  ],
+
+  postProps: {
+    active: 0,
+    category: 'Technology',
+    title: 'My Broken Mother, My Broken Heart',
+    readTime: '1 min read',
+    body: `My task is getting bigger and I am equal to the task.
+      Music gives a soul to the universe, wings to the mind,
+      flight to the imagination and life to everything`,
+    image: 'https://image.ibb.co/eLVQwL/kids.jpg',
+    description: 'feeling very excited',
+    author: 'Okeremeta',
+    date: '2018-09-20T13:43:12.129Z'
+  }
 };
 
 export default mockData;

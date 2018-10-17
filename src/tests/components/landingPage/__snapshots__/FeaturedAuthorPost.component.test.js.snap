@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeaturedAuthorPost component should render a snapshot of the FeaturedAuthorPost component 1`] = `
+<div
+  className="d-flex justify-content-between featured-author-post mb-3"
+>
+  <div
+    className="author-post"
+  >
+    <h3
+      className="post-title"
+    >
+      My Broken Mother, My Broken Heart
+    </h3>
+    <p>
+      <small
+        className="text-muted font-italic"
+      >
+        1 min read
+      </small>
+    </p>
+  </div>
+  <img
+    alt=""
+    className="img-fluid post-image"
+    src="https://image.ibb.co/eLVQwL/kids.jpg"
+  />
+</div>
+`;

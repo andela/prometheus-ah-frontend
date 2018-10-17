@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`App component renders a snapshot of the app component 1`] = `
-<div>
-  <h1>
-    Welcome to Authors haven
-  </h1>
-</div>
-`;

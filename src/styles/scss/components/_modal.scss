@@ -8,22 +8,10 @@ html {
   background-color: $footer-bg-color;
   bottom: 0;
   color: $white;
-  padding: 30px;
-  position: absolute;
+  margin-top: 50px;
+  padding: 10px;
   width: 100%;
-
-  .fab-color {
-    color: $white;
-  };
-
-  .circle {
-    border: 2px solid $white;
-    border-radius: 50%;
-    display: inline-block;
-    height: 30px;
-    width: 30px;
-  }
-};
+}
 
 .modal-overlay {
   background: $black;

@@ -1,70 +1,224 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header Component should render a component 1`] = `
-<nav
-  className="navbar navbar-expand-sm bg-dark navbar-dark"
+<div
+  className="sticky-top main-navbar"
 >
-  <a
-    className="navbar-brand"
-    href="/"
+  <nav
+    className="navbar navbar-expand-sm navbar-light bg-light main-nav"
   >
-    Authors Haven
-  </a>
-  <button
-    className="navbar-toggler"
-    data-target="#collapsibleNavbar"
-    data-toggle="collapse"
-    type="button"
-  >
-    <span
-      className="navbar-toggler-icon"
-    />
-  </button>
-  <div
-    className="collapse navbar-collapse"
-    id="collapsibleNavbar"
-  >
-    <ul
-      className="navbar-nav"
+    <a
+      className="navbar-brand"
+      href="/"
+    >
+      <img
+        alt="logo"
+        className="logo"
+        src={Object {}}
+      />
+    </a>
+    <button
+      className="navbar-toggler"
+      data-target="#collapsibleNavbar"
+      data-toggle="collapse"
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      className="collapse navbar-collapse"
+      id="collapsibleNavbar"
     >
       <Connect(UserNavigation) />
-    </ul>
-  </div>
-</nav>
+    </div>
+  </nav>
+  <hr
+    className="my-0 nav-divider"
+  />
+  <nav
+    className="navbar container bg-light categories"
+  >
+    <a
+      className="nav-link"
+      href="#"
+    >
+      Science
+    </a>
+    <a
+      className="nav-link"
+      href="#"
+    >
+      Technology
+    </a>
+    <a
+      className="nav-link"
+      href="#"
+    >
+      Nature
+    </a>
+    <a
+      className="nav-link"
+      href="#"
+    >
+      Music
+    </a>
+    <a
+      className="nav-link"
+      href="#"
+    >
+      Religion
+    </a>
+    <a
+      className="nav-link"
+      href="#"
+    >
+      Business
+    </a>
+    <a
+      className="nav-link"
+      href="#"
+    >
+      Education
+    </a>
+    <a
+      className="nav-link"
+      href="#"
+    >
+      Art
+    </a>
+    <a
+      className="nav-link"
+      href="#"
+    >
+      Relationship
+    </a>
+    <a
+      className="nav-link"
+      href="#"
+    >
+      Food
+    </a>
+    <a
+      className="nav-link"
+      href="#"
+    >
+      Health
+    </a>
+  </nav>
+</div>
 `;
 
 exports[`Header Component should render the header component correctly 1`] = `
-<nav
-  className="navbar navbar-expand-sm bg-dark navbar-dark"
+<div
+  className="sticky-top main-navbar"
 >
-  <a
-    className="navbar-brand"
-    href="/"
+  <nav
+    className="navbar navbar-expand-sm navbar-light bg-light main-nav"
   >
-    Authors Haven
-  </a>
-  <button
-    className="navbar-toggler"
-    data-target="#collapsibleNavbar"
-    data-toggle="collapse"
-    type="button"
-  >
-    <span
-      className="navbar-toggler-icon"
-    />
-  </button>
-  <div
-    className="collapse navbar-collapse"
-    id="collapsibleNavbar"
-  >
-    <ul
-      className="navbar-nav"
+    <a
+      className="navbar-brand"
+      href="/"
+    >
+      <img
+        alt="logo"
+        className="logo"
+        src={Object {}}
+      />
+    </a>
+    <button
+      className="navbar-toggler"
+      data-target="#collapsibleNavbar"
+      data-toggle="collapse"
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      className="collapse navbar-collapse"
+      id="collapsibleNavbar"
     >
       <GuestNavigation
         showLoginModal={[MockFunction]}
         showSignupModal={[MockFunction]}
       />
-    </ul>
-  </div>
-</nav>
+    </div>
+  </nav>
+  <hr
+    className="my-0 nav-divider"
+  />
+  <nav
+    className="navbar container bg-light categories"
+  >
+    <a
+      className="nav-link"
+      href="#"
+    >
+      Science
+    </a>
+    <a
+      className="nav-link"
+      href="#"
+    >
+      Technology
+    </a>
+    <a
+      className="nav-link"
+      href="#"
+    >
+      Nature
+    </a>
+    <a
+      className="nav-link"
+      href="#"
+    >
+      Music
+    </a>
+    <a
+      className="nav-link"
+      href="#"
+    >
+      Religion
+    </a>
+    <a
+      className="nav-link"
+      href="#"
+    >
+      Business
+    </a>
+    <a
+      className="nav-link"
+      href="#"
+    >
+      Education
+    </a>
+    <a
+      className="nav-link"
+      href="#"
+    >
+      Art
+    </a>
+    <a
+      className="nav-link"
+      href="#"
+    >
+      Relationship
+    </a>
+    <a
+      className="nav-link"
+      href="#"
+    >
+      Food
+    </a>
+    <a
+      className="nav-link"
+      href="#"
+    >
+      Health
+    </a>
+  </nav>
+</div>
 `;
