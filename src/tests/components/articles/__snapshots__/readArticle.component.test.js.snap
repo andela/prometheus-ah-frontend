@@ -1,5 +1,142 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Read Article component ComponentDidMount 1`] = `
+<div
+  className="read-article my-5"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-12 col-lg-8 offset-lg-2"
+    >
+      <div
+        className="article-title"
+      >
+        <h1
+          className="title"
+        >
+          new article
+        </h1>
+        <div>
+          <span
+            className="mr-5 text-muted"
+          >
+            1 min read
+          </span>
+          <span
+            className="text-muted"
+          >
+            Oct 15, 2018
+          </span>
+        </div>
+        <p
+          className="mt-3 description font-italic text-muted"
+        >
+          &lt;p&gt;the description&lt;/p&gt;
+        </p>
+        <div
+          className="article-reactions mt-2 d-flex justify-content-around"
+        >
+          <i
+            className="mdi mdi-thumb-up-outline"
+          >
+            <span
+              className="likes-num"
+            >
+               30
+            </span>
+          </i>
+          <i
+            className="mdi mdi-twitter"
+          />
+          <i
+            className="mdi mdi-facebook"
+          />
+          <i
+            className="mdi mdi-bookmark"
+          />
+          <i
+            className="mdi mdi-email"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="col-12 mt-5 col-lg-8 offset-lg-2"
+    >
+      <p
+        className="post-body"
+      >
+        <p
+          key="0"
+        >
+          The story started few years back
+        </p>
+      </p>
+    </div>
+    <div
+      className="col-12 col-md-9 offset-md-1 mt-4 col-lg-6 offset-lg-3"
+    >
+      <div
+        className="shadow-lg border-0 card p-3 p-lg-4"
+      >
+        <div
+          className="d-flex mb-3"
+        >
+          <img
+            alt=""
+            className="img-fluid article-author-image rounded-circle"
+            src="https://image.ibb.co/i48Wqf/paceholder.jpg"
+          />
+          <div
+            className="ml-3 ml-md-3 ml-lg-4 text-center"
+          >
+            <p
+              className="my-2 author-name"
+            />
+            <button
+              className="btn follow-btn"
+              type="button"
+            >
+              follow
+            </button>
+          </div>
+        </div>
+        <p
+          className="author-bio"
+        />
+      </div>
+      <div
+        className="article-reactions mt-4 d-flex justify-content-around"
+      >
+        <i
+          className="mdi mdi-thumb-up-outline"
+        >
+          <span
+            className="likes-num"
+          >
+             30
+          </span>
+        </i>
+        <i
+          className="mdi mdi-twitter"
+        />
+        <i
+          className="mdi mdi-facebook"
+        />
+        <i
+          className="mdi mdi-bookmark"
+        />
+        <i
+          className="mdi mdi-email"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Read Article component should render Article page correctly 1`] = `
 <Provider
   store={
@@ -67,147 +204,23 @@ exports[`Read Article component should render Article page correctly 1`] = `
         }
       }
     >
-      <div>
+      <div
+        className="read-article my-5"
+      >
         <div
           className="row"
         >
-          <div
-            className="col-sm-2 col-md-3"
-          />
-          <div
-            className="col-sm-8 col-md-8 title"
-          >
-            <h2
-              className="text-center"
-            />
+          <Loading>
             <div
-              className="row text-center"
+              className="loading-center"
             >
-              <span
-                className="col-sm-2 col-md-1"
-              />
-              <span
-                className="col-sm-3 col-md-3"
-              >
-                ART
-              </span>
-              <span
-                className="col-sm-3 col-md-3"
-              />
-              <span
-                className="col-sm-3 col-md-3"
+              <img
+                alt="Loading..."
+                className="text"
+                src={Object {}}
               />
             </div>
-          </div>
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="col-sm-5 col-md-4"
-          >
-            <div
-              className="card author-card"
-            >
-              <div
-                className="card-body"
-              >
-                <div
-                  className="text-center"
-                >
-                  <div
-                    className="author-image"
-                  >
-                    <EmptyImage>
-                      <img
-                        alt="Author"
-                        className="image-placeholder"
-                        src={Object {}}
-                      />
-                    </EmptyImage>
-                  </div>
-                  <p />
-                  <div
-                    className="author-btn"
-                  >
-                    <button
-                      className="btn btn-primary author-button"
-                      type="button"
-                    >
-                      Hire
-                    </button>
-                    <button
-                      className="btn btn-primary author-button"
-                      type="button"
-                    >
-                      Follow
-                    </button>
-                  </div>
-                  <div
-                    className="author-bio"
-                  >
-                    Authors Biography... I want to write
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="row text-center"
-            >
-              <div
-                className="col-sm-8 col-md-4"
-              />
-              <div
-                className="col-sm-8 col-md-8 card social-card"
-              >
-                <div
-                  className="card-body text-left social-responsive"
-                >
-                  <p>
-                    <img
-                      alt="Likes"
-                      src={Object {}}
-                    />
-                    <span>
-                      50
-                    </span>
-                  </p>
-                  <p>
-                    <img
-                      alt="Twitter"
-                      src={Object {}}
-                    />
-                  </p>
-                  <p>
-                    <img
-                      alt="Facebook"
-                      src={Object {}}
-                    />
-                  </p>
-                  <p>
-                    <img
-                      alt="bookmark"
-                      src={Object {}}
-                    />
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className="col-sm-7 col-md-7"
-          >
-            <div
-              className="row row-margin"
-            >
-              <div
-                className="col-sm-2 col-md-2"
-              />
-              <div
-                className="col-sm-11 col-md-11 article-body"
-              />
-            </div>
-          </div>
+          </Loading>
         </div>
       </div>
     </ReadArticle>

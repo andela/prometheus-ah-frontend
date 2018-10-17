@@ -58,7 +58,6 @@ export default class Article {
             type: 'GET_ARTICLE_SUCCESSFUL',
             article: response.data.article,
           });
-          return response;
         })
         .catch((err) => {
           if (err.response.status === 500) {

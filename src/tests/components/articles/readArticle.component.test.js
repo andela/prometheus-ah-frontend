@@ -92,15 +92,25 @@ describe('Read Article component', () => {
       </Provider>
     );
   });
+
   it('should render Article page correctly', () => {
     expect(wrapper).toMatchSnapshot();
   });
+
   it('ComponentDidMount', () => {
     wrapper = shallow(<ReadArticle {...props} />);
     expect(fetchSingleArticle.calledOnce).toBe(true);
   });
+
   it('should display the necessary element', () => {
     expect(wrapper.find('div').exists()).toBe(true);
-    expect(wrapper.find('div').length).toBe(21);
+    expect(wrapper.find('div').length).toBe(3);
+  });
+
+  it('ComponentDidMount', () => {
+    const newProp = { ...props, artcile: null };
+    wrapper = shallow(<ReadArticle {...newProp} />);
+    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find('Loading')).toBeDefined();
   });
 });

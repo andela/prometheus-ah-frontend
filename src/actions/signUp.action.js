@@ -8,7 +8,6 @@ import { hideSignupModal } from './modal.action';
 import {
   SET_CURRENT_USER,
   SIGN_UP_ERRORS,
-  SIGN_UP_SUCCESS,
   DELETE_ERROR_MESSAGE
 } from './types';
 
@@ -29,11 +28,6 @@ export const signUpError = error => ({
 
 export const deleteErrorMessageSuccess = () => ({
   type: DELETE_ERROR_MESSAGE,
-});
-
-export const signUpSuccess = success => ({
-  type: SIGN_UP_SUCCESS,
-  success
 });
 
 /**
@@ -62,10 +56,6 @@ export const userSignUpRequest = userData => (dispatch) => {
       const { token } = res.data.user;
       const { message } = res.data;
       Cookie.set('jwtToken', token);
-      dispatch(signUpSuccess({
-        status: res.status,
-        data: res.data.message
-      }));
       dispatch(setCurrentUser(jwt.decode(token)));
       dispatch(hideSignupModal());
       toastr.success(message);

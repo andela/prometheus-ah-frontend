@@ -4,12 +4,8 @@ import { bindActionCreators } from 'redux';
 import moment from 'moment';
 import ReactHtmlParser from 'react-html-parser';
 import PropTypes from 'prop-types';
-import EmptyImage from './EmptyImage';
 import Article from '../../actions/articleActions';
-import likes from '../../images/likes.svg';
-import twitter from '../../images/twitter.png';
-import facebook from '../../images/facebook.png';
-import bookmark from '../../images/bookmark.svg';
+import Loading from '../common/Loading';
 
 
 /**
@@ -29,65 +25,74 @@ export class ReadArticle extends Component {
    */
   render() {
     const { article } = this.props;
-    return (
-      <div>
-        <div className="row">
-          <div className="col-sm-2 col-md-3" />
-          <div className="col-sm-8 col-md-8 title">
-            <h2 className="text-center">{article ? ReactHtmlParser(article.title) : ''}</h2>
-            <div className="row text-center">
-              <span className="col-sm-2 col-md-1" />
-              <span className="col-sm-3 col-md-3">
-                ART
-              </span>
-              <span className="col-sm-3 col-md-3">
-                {article ? moment(article.createdAt).format('MMM D, YYYY') : ''}
-              </span>
-              <span className="col-sm-3 col-md-3">{article ? article.readingTime : ''}</span>
-            </div>
+    if (!article) {
+      return (
+        <div className="read-article my-5">
+          <div className="row">
+            <Loading />
           </div>
         </div>
+      );
+    }
+
+    return (
+      <div className="read-article my-5">
         <div className="row">
-          <div className="col-sm-5 col-md-4">
-            <div className="card author-card">
-              <div className="card-body">
-                <div className="text-center">
-                  <div className="author-image">
-                    {article && article.User.image !== null ? article.User.image : <EmptyImage />}
-                  </div>
-                  <p>{article ? article.User.username : ''}</p>
-                  <div className="author-btn">
-                    <button type="button" className="btn btn-primary author-button">Hire</button>
-                    <button type="button" className="btn btn-primary author-button">Follow</button>
-                  </div>
-                  <div className="author-bio">
-                    {article && article.User.bio !== null
-                      ? article.User.bio : 'Authors Biography... I want to write'}
-                  </div>
-                </div>
+          <div className="col-12 col-lg-8 offset-lg-2">
+            <div className="article-title">
+              <h1 className="title">{ReactHtmlParser(article.title)}</h1>
+              <div>
+                <span className="mr-5 text-muted">{article.readingTime}</span>
+                <span className="text-muted">
+                  {moment(article.createdAt).format('MMM D, YYYY')}
+                </span>
               </div>
-            </div>
-            <div className="row text-center">
-              <div className="col-sm-8 col-md-4" />
-              <div className="col-sm-8 col-md-8 card social-card">
-                <div className="card-body text-left social-responsive">
-                  <p>
-                    <img src={likes} alt="Likes" />
-                    <span>50</span>
-                  </p>
-                  <p><img src={twitter} alt="Twitter" /></p>
-                  <p><img src={facebook} alt="Facebook" /></p>
-                  <p><img src={bookmark} alt="bookmark" /></p>
-                </div>
+              <p className="mt-3 description font-italic text-muted">
+                {article.description}
+              </p>
+              <div className="article-reactions mt-2 d-flex justify-content-around">
+                <i className="mdi mdi-thumb-up-outline">
+                  <span className="likes-num"> 30</span>
+                </i>
+                <i className="mdi mdi-twitter" />
+                <i className="mdi mdi-facebook" />
+                <i className="mdi mdi-bookmark" />
+                <i className="mdi mdi-email" />
               </div>
             </div>
           </div>
-          <div className="col-sm-7 col-md-7">
-            <div className="row row-margin">
-              <div className="col-sm-2 col-md-2" />
-              <div className="col-sm-11 col-md-11 article-body">
-                {article ? ReactHtmlParser(article.body) : ''}
+
+          <div className="col-12 mt-5 col-lg-8 offset-lg-2">
+            <p className="post-body">{ReactHtmlParser(article.body)}</p>
+          </div>
+
+          <div className="col-12 col-md-9 offset-md-1 mt-4 col-lg-6 offset-lg-3">
+            <div className="shadow-lg border-0 card p-3 p-lg-4">
+              <div className="d-flex mb-3">
+                <img
+                  src={article.User.image !== null
+                    ? article.User.image : 'https://image.ibb.co/i48Wqf/paceholder.jpg'}
+                  className="img-fluid article-author-image rounded-circle"
+                  alt=""
+                />
+                <div className="ml-3 ml-md-3 ml-lg-4 text-center">
+                  <p className="my-2 author-name">{article.User.username}</p>
+                  <button className="btn follow-btn" type="button">follow</button>
+                </div>
               </div>
+              <p className="author-bio">
+                {article.User.bio !== null
+                  ? article.User.bio : 'I love to write'}
+              </p>
+            </div>
+            <div className="article-reactions mt-4 d-flex justify-content-around">
+              <i className="mdi mdi-thumb-up-outline">
+                <span className="likes-num"> 30</span>
+              </i>
+              <i className="mdi mdi-twitter" />
+              <i className="mdi mdi-facebook" />
+              <i className="mdi mdi-bookmark" />
+              <i className="mdi mdi-email" />
             </div>
           </div>
         </div>
