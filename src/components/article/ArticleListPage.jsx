@@ -5,7 +5,6 @@ import ReactHtmlParser from 'react-html-parser';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import Article from '../../actions/articleActions';
-import Footer from '../Footer';
 
 /**
  * class ArticleListPage
@@ -40,7 +39,6 @@ class ArticleListPage extends Component {
               </ul>
             )))}
         </div>
-        <Footer />
       </div>
     );
   }

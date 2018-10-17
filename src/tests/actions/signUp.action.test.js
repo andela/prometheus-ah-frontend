@@ -44,10 +44,6 @@ describe('Sign Up Actions', () => {
       response: successResponse
     });
     const expectedActions = [
-      {
-        success: { data: 'message recieved', status: 201 },
-        type: 'SIGN_UP_SUCCESS'
-      },
       { type: 'SET_CURRENT_USER', user: null },
       {
         type: 'HIDE_SIGNUP_MODAL',

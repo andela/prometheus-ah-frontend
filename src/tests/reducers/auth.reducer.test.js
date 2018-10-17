@@ -2,8 +2,8 @@ import authReducer from '../../reducers/auth';
 import {
   SET_CURRENT_USER,
   SIGN_UP_ERRORS,
-  SIGN_UP_SUCCESS,
   DELETE_ERROR_MESSAGE,
+  LOGOUT_USER,
 } from '../../actions/types';
 import mockData from '../__mocks__/mockData';
 
@@ -46,20 +46,6 @@ describe('Auth reducer', () => {
     done();
   });
 
-  it('should set the current user a success message when passed SIGN_UP_SUCCESS', (done) => {
-    const state = {};
-    const success = mockData.successResponse;
-    const successMessage = mockData.successResponse;
-    const action = {
-      type: SIGN_UP_SUCCESS,
-      success
-    };
-
-    const newState = authReducer(state, action);
-    expect(newState.success.success).toEqual(successMessage.success);
-    done();
-  });
-
   it('should delete error message coming from server', (done) => {
     const state = {};
     const errorMessage = {
@@ -72,6 +58,24 @@ describe('Auth reducer', () => {
 
     const newState = authReducer(state, action);
     expect(newState).toEqual(errorMessage);
+    done();
+  });
+
+  it('should remove the user details when logging out', (done) => {
+    const state = {
+      isAuthenticated: true,
+    };
+    const newState = {
+      isAuthenticated: false,
+      user: {},
+      error: {}
+    };
+    const action = {
+      type: LOGOUT_USER
+    };
+
+    const logoutResultState = authReducer(state, action);
+    expect(logoutResultState).toEqual(newState);
     done();
   });
 });
