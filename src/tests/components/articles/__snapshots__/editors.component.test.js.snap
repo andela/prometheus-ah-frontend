@@ -5,33 +5,32 @@ exports[`Editor component should render Body Editor correctly 1`] = `
   apiKey="zre5x72iyosuc7o3z1vg6lfbkxwdw4b5lr9yrwpgjsnfsca7"
   init={
     Object {
-      "images_reuse_filename": true,
+      "content_css": Array [
+        "//fonts.googleapis.com/css?family=Frank+Ruhl+Libre:300,400,500,700",
+      ],
       "inline": true,
       "menubar": false,
-      "mobile": Object {
-        "plugins": Array [
-          "autosave",
-          "lists",
-          "autolink",
-        ],
-        "theme": "mobile",
-      },
       "plugins": Array [
-        "autolink",
-        "codesample",
         "link",
-        "linkchecker",
-        "lists",
-        "mediaembed",
         "textcolor",
-        "image",
-        "emoticons",
+        "lists",
+        "powerpaste",
+        "linkchecker",
+        "contextmenu",
+        "autolink",
+        "tinymcespellchecker",
       ],
-      "selection_toolbar": "bold italic underline strikethrough|
-            h2 h3 | blockquote quicklink | alignleft aligncenter alignright alignjustify |
-            forecolor fontsize underlinr",
-      "theme": "inlite",
-      "toolbar": "emoticons",
+      "powerpaste_html_import": "clean",
+      "powerpaste_word_import": "clean",
+      "toolbar": Array [
+        "undo redo | bold italic underline | fontselect fontsizeselect",
+        "forecolor backcolor | alignleft aligncenter alignjustify
+            alignright alignfull| numlist bullist outdent indent",
+      ],
+      "valid_elements": "p[style],strong,em,span[style],a[href],ul,ol,li",
+      "valid_styles": Object {
+        "*": "font-size,font-family,color,text-decoration,text-align",
+      },
     }
   }
 />
@@ -42,11 +41,26 @@ exports[`Editor component should render Title Editor correctly 1`] = `
   apiKey="zre5x72iyosuc7o3z1vg6lfbkxwdw4b5lr9yrwpgjsnfsca7"
   init={
     Object {
+      "content_css": Array [
+        "//fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i",
+      ],
       "inline": true,
-      "insert_toolbar": "undo redo",
       "menubar": false,
-      "selection_toolbar": "italic underline",
-      "theme": "inlite",
+      "plugins": Array [
+        "textcolor",
+        "lists",
+        "powerpaste",
+        "linkchecker",
+        "contextmenu",
+        "autolink",
+      ],
+      "powerpaste_html_import": "clean",
+      "powerpaste_word_import": "clean",
+      "toolbar": "undo redo | bold italic underline",
+      "valid_elements": "strong,em,span[style],a[href]",
+      "valid_styles": Object {
+        "*": "font-size,font-family,color,text-decoration,text-align",
+      },
     }
   }
   name="title-editor"

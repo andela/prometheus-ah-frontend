@@ -100,7 +100,6 @@ const mockData = {
     token:
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3'
   },
-
   user: {
     userId: 2,
     username: 'faksam',
@@ -230,7 +229,46 @@ const mockData = {
       email: 'The email field is required.',
       bio: 'The bio field is required.'
     },
-  }
+  },
+  reportArticleDetails: {
+    categoryId: '1',
+    details: 'send this report requesting investigation.',
+    slug: 'nigeria-my-country'
+  },
+
+  reportArticleDetailsError: {
+    categoryId: '1',
+    details: '',
+    slug: null
+
+  },
+
+  reportCategoryDetails: {
+    0: {
+      id: 1,
+      title: 'Plagiarised',
+      description: 'Plagiarism content from this link',
+      deletedAt: null,
+      createdAt: '2018-10-17T13:30:51.520Z'
+    },
+    1: {
+      id: 2,
+      title: 'Violate terms of agreement',
+      description: 'Violates terms of agreement in section 2.7',
+      deletedAt: null,
+      createdAt: '2018-10-17T13:30:51.520Z'
+    }
+  },
+
+  reportSuccessMessage: {
+    success: {
+      message: 'message received'
+    }
+  },
+
+  expectedReport: {
+    report: undefined
+  },
 };
 
 export default mockData;

@@ -37,7 +37,7 @@ class ArticleListPage extends Component {
                   </Link>
                   <br />
                   <span key={article.User.username}>{ReactHtmlParser(article.User.username)}</span>
-                  <p key={article.description}>{ReactHtmlParser(article.description)}</p>
+                  <div key={article.description}>{ReactHtmlParser(article.description)}</div>
                   <p key={article.readingTime}>{ReactHtmlParser(article.readingTime)}</p>
                 </li>
               </ul>

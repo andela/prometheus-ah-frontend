@@ -72,7 +72,7 @@ class UserArticle extends Component {
 }
 UserArticle.propTypes = {
   fetchUserArticle: PropTypes.func.isRequired,
-  articles: PropTypes.shape([]),
+  articles: PropTypes.instanceOf(Array),
   deleteUserArticle: PropTypes.func.isRequired,
   deleted: PropTypes.shape({}),
   user: PropTypes.shape({})

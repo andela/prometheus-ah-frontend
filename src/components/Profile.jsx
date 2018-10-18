@@ -25,12 +25,16 @@ class Profile extends Component {
           <div className="row">
             <div className="col-sm-4">
               <div className="profile-img">
-                <img src={profile.image ? profile.image : 'https://image.ibb.co/i48Wqf/paceholder.jpg'} alt="profile" height="200px" width="200px" />
+                <img src={profile.image
+                  ? profile.image : 'https://image.ibb.co/i48Wqf/paceholder.jpg'}
+                  alt="profile" height="200px" width="200px"
+                />
               </div>
             </div>
             <div className="col-sm-8">
               <h5>
-                { profile.firstname ? `${profile.firstname}  ${profile.lastname}` : 'Update Your Profile'}
+                { profile.firstname
+                  ? `${profile.firstname}  ${profile.lastname}` : 'Update Your Profile'}
                 &nbsp;
                 {
                   userId === profile.id ? (
@@ -92,13 +96,12 @@ class Profile extends Component {
                   role="tabpanel" aria-labelledby="profile-tab"
                 >
                   <div className="row">
-                    {bookmarks.articles && bookmarks.articles.length > 0 ? bookmarks.articles.map(article => (
-                      <div className="col-sm-6" key={article.id}>
-                        <ArticleCard
-                          article={article}
-                        />
-                      </div>
-                    )) : 'You have not published any article'}
+                    {bookmarks.articles && bookmarks.articles.length > 0
+                      ? bookmarks.articles.map(article => (
+                        <div className="col-sm-6" key={article.id}>
+                          <ArticleCard article={article} />
+                        </div>
+                      )) : 'You have not published any article'}
                   </div>
                 </div>
               </div>

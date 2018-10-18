@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Report form should render Article page correctly 1`] = `
+<div>
+  <div>
+    <div
+      className="modal-body"
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-md-12"
+          >
+            <div
+              className="form-group"
+            >
+              <select
+                className="form-control"
+                id="selectText"
+                name="categoryId"
+                onChange={[Function]}
+                value="1"
+              >
+                <option />
+                <option />
+              </select>
+            </div>
+            <div
+              className="md-form mb-4"
+            >
+              <textarea
+                className="form-control"
+                id="myreport"
+                name="details"
+                onChange={[Function]}
+                placeholder="Kindly provide us with more details"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              className="col-md-12"
+            >
+              <button
+                className="btn btn-danger"
+                data-dismiss="modal"
+                onClick={[Function]}
+                type="submit"
+              >
+                Report
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

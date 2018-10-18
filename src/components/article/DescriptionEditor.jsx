@@ -24,9 +24,24 @@ class DescriptionEditor extends Component {
         init={{
           menubar: false,
           inline: true,
-          theme: 'inlite',
-          insert_toolbar: 'undo redo',
-          selection_toolbar: 'italic underline',
+          plugins: [
+            'textcolor',
+            'lists',
+            'powerpaste',
+            'linkchecker',
+            'contextmenu',
+            'autolink'
+          ],
+          toolbar: 'undo redo | bold italic underline',
+          valid_elements: 'strong,em,span[style],a[href]',
+          powerpaste_word_import: 'clean',
+          powerpaste_html_import: 'clean',
+          valid_styles: {
+            '*': 'font-size,font-family,color,text-decoration,text-align'
+          },
+          content_css: [
+            '//fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i',
+          ]
         }}
       />
     );

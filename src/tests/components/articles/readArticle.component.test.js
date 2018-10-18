@@ -1,8 +1,7 @@
 import configureMockStore from 'redux-mock-store';
 import React from 'react';
 import thunk from 'redux-thunk';
-import { Provider } from 'react-redux';
-import { mount, shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import DefaultReadArticle, { ReadArticle } from '../../../components/article/ReadArticle';
 
 const mockStore = configureMockStore([thunk]);
@@ -42,16 +41,43 @@ describe('Read Article component', () => {
           image: null
         }
       },
-      fetchSingleArticle: jest.fn(),
+      user: {
+        userId: 5
+      },
+      fetchSingleArticle: jest.fn().mockResolvedValue(Promise.resolve()),
+      deleteUserArticle: jest.fn().mockResolvedValue(Promise.resolve()),
       loadCommentsAction: jest.fn(),
       match: {
         params: { slug: 'new-article' },
         url: '/articles/new-article'
       },
       location: { pathname: '/articles/new-article' },
-      history: {}
+      history: {},
+      style: {
+        display: {
+          modal: {
+            current: 'report'
+          },
+        },
+      },
+      showReportModal: jest.fn(),
+      getUserReport: jest.fn(),
+      reported: {
+        reports: {}
+      }
     };
     initialState = {
+      postReport: {
+        reports: {}
+      },
+      auth: {
+        user: {
+          userId: 5
+        }
+      },
+      modal: {
+        current: null,
+      },
       articleReducer: {
         articles: [
           {
@@ -144,11 +170,6 @@ describe('Read Article component', () => {
       }
     };
     store = mockStore(initialState);
-    wrapper = mount(
-      <Provider store={store}>
-        <DefaultReadArticle {...props} />
-      </Provider>
-    );
   });
 
   it('should render Article page correctly', () => {
@@ -158,7 +179,7 @@ describe('Read Article component', () => {
   it('ComponentDidMount', () => {
     const props = { // eslint-disable-line
       article: null,
-      fetchSingleArticle: jest.fn(),
+      fetchSingleArticle: jest.fn().mockResolvedValue(Promise.resolve()),
       loadCommentsAction: jest.fn(),
       match: {
         params: { slug: 'new-article' },
@@ -170,18 +191,60 @@ describe('Read Article component', () => {
     wrapper = shallow(<ReadArticle store={store} {...props} />);
     expect(props.fetchSingleArticle).toHaveBeenCalled();
     expect(props.loadCommentsAction).toHaveBeenCalled();
-    wrapper = shallow(<ReadArticle {...props} />);
   });
 
   it('should display the necessary element', () => {
+    wrapper = shallow(<ReadArticle {...props} />);
     expect(wrapper.find('div').exists()).toBe(true);
-    expect(wrapper.find('div').length).toEqual(3);
+    expect(wrapper.find('div').length).toEqual(26);
   });
 
-  it('ComponentDidMount', () => {
-    const newProp = { ...props, artcile: null };
+  it('Display loading if no article', () => {
+    const newProp = {
+      user: {
+        userId: 5
+      },
+      fetchSingleArticle: jest.fn().mockResolvedValue(Promise.resolve()),
+      deleteUserArticle: jest.fn().mockResolvedValue(Promise.resolve()),
+      loadCommentsAction: jest.fn(),
+      match: {
+        params: { slug: 'new-article' },
+        url: '/articles/new-article'
+      },
+      location: { pathname: '/articles/new-article' },
+      history: {},
+      style: {
+        display: {
+          modal: {
+            current: 'report'
+          },
+        },
+      },
+      showReportModal: jest.fn(),
+      getUserReport: jest.fn(),
+    };
     wrapper = shallow(<ReadArticle {...newProp} />);
     expect(wrapper).toMatchSnapshot();
     expect(wrapper.find('Loading')).toBeDefined();
+    expect(wrapper.find('div').length).toBe(2);
+    expect(newProp.fetchSingleArticle).toHaveBeenCalled();
+  });
+  it('should call the delete function on delete', () => {
+    wrapper = shallow(<ReadArticle {...props} />);
+    const instance = wrapper.instance();
+    instance.handleDelete();
+    expect(props.deleteUserArticle).toHaveBeenCalled();
+  });
+  it('should set state to props', () => {
+    wrapper = shallow(<DefaultReadArticle store={store} {...props} />);
+    expect(wrapper.state()).toEqual({});
+    expect(props.article).toBeTruthy();
+    expect(props.user).toBeTruthy();
+  });
+  it('should call handleDelete function on click', () => {
+    wrapper = shallow(<ReadArticle {...props} />);
+    const instance = wrapper.instance();
+    instance.onDelete();
+    expect(props.deleteUserArticle).toHaveBeenCalled();
   });
 });

@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import ReactHtmlParser from 'react-html-parser';
 import PropTypes from 'prop-types';
 
 const RatedArticle = ({
@@ -15,7 +16,7 @@ const RatedArticle = ({
     <div className={classname}>
       <h2 className="carousel-article-title">{title}</h2>
       <p className="carousel-author-name">{`${author} - ${formatedDate}`}</p>
-      <p>{`${truncatedString}...`}</p>
+      <p>{`${ReactHtmlParser(truncatedString)}...`}</p>
       <button type="button" className="btn read-more">Read more</button>
     </div>
   );

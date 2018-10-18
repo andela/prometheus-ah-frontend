@@ -49,7 +49,7 @@ exports[`RecentPost component should render a snapshot of the RecentPost compone
         <p
           className="time"
         >
-          a month ago
+          2 months ago
         </p>
       </div>
     </div>

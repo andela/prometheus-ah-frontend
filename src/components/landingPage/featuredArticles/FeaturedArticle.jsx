@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ReactHtmlParser from 'react-html-parser';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 
@@ -30,7 +31,7 @@ const FeaturedArticle = ({
           {formatedDate}
           <span className="ml-4 font-weight-light font-italic text-uppercase">{category}</span>
         </p>
-        <p className="card-text post-description">{description}</p>
+        <p className="card-text post-description">{ReactHtmlParser(description)}</p>
         <div className="d-flex justify-content-between">
           <div className="card-text post-author">
             <p className="author">{authorName}</p>

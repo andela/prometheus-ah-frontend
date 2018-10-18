@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import ReactHtmlParser from 'react-html-parser';
 import RatedArticle from './RatedArticle';
 import ResetPassword from '../../ResetLink';
 
@@ -36,7 +37,7 @@ class RatedArticles extends Component {
                     key={post.id}
                     author={post.User.username}
                     title={post.title}
-                    body={post.body}
+                    body={ReactHtmlParser(post.body)}
                     date={post.createdAt}
                     active={index}
                   />))

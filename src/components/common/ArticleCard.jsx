@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import ReactHtmlParser from 'react-html-parser';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -18,12 +19,16 @@ const ArticleCard = ({ article }) => (
         </span>
       </p>
       <div className="card-text post-description">
-        {article.body.length < 200 ? article.body : `${article.body.substring(0, 200)}...`}
+        {article.body.length < 200
+          ? ReactHtmlParser(article.body)
+          : ReactHtmlParser(`${article.body.substring(0, 200)}...`)
+          }
       </div>
       <br />
       <div className="row">
         <div className="col-sm-6 author">
-          {`${article.User.firstname} ${article.User.lastname}`}
+          {article.User.firstname !== null && article.User.lastname !== null
+            ? `${article.User.firstname} ${article.User.lastname}` : article.User.username}
           <br />
           <p>
             <small className="text-muted font-italic">
