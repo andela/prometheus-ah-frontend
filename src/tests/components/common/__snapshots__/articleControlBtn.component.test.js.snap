@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders component correctly should render ArticleControlBtn 1`] = `
+<div>
+  <Link
+    className="dropdown-item"
+    replace={false}
+  >
+    Edit
+  </Link>
+  <a
+    className="dropdown-item"
+    href="#"
+    onClick={[Function]}
+  >
+    Delete
+  </a>
+</div>
+`;
+
+exports[`renders component correctly should render ReportBtn 1`] = `
+<a
+  className="dropdown-item"
+  href="#"
+>
+  Report
+</a>
+`;

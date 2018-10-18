@@ -69,11 +69,11 @@ export default class Article {
   */
   static fetchArticle() {
     return (dispatch) => {
-      dispatch({ type: 'GET_ARTICLES_BEGINS' });
+      dispatch({ type: actionTypes.GET_ARTICLES_BEGINS });
       return axios.get(`${config.apiUrl}/articles`)
         .then((response) => {
           dispatch({
-            type: 'GET_ARTICLES',
+            type: actionTypes.GET_ARTICLES,
             articles: response.data.articles,
             paginationMeta: response.data.articles.paginationMeta
           });
@@ -81,12 +81,12 @@ export default class Article {
         .catch((err) => {
           if (err.response.status === 500) {
             dispatch({
-              type: 'GET_ARTICLES_REJECTED',
+              type: actionTypes.GET_ARTICLES_REJECTED,
               payload: { message: 'Sorry, an unexpected error occurred.' }
             });
           } else {
             dispatch({
-              type: 'GET_ARTICLES_FAIL',
+              type: actionTypes.GET_ARTICLES_FAIL,
               payload: err.response.data.message
             });
           }
@@ -105,11 +105,11 @@ export default class Article {
   */
   static fetchSingleArticle(slug) {
     return (dispatch) => {
-      dispatch({ type: 'GET_ARTICLE_BEGINS' });
+      dispatch({ type: actionTypes.GET_ARTICLE_BEGINS });
       return axios.get(`${config.apiUrl}/articles/${slug}`)
         .then((response) => {
           dispatch({
-            type: 'GET_ARTICLE',
+            type: actionTypes.GET_ARTICLE,
             article: response.data.article,
           });
           return response;
@@ -117,12 +117,12 @@ export default class Article {
         .catch((err) => {
           if (err.response.status === 500) {
             dispatch({
-              type: 'GET_ARTICLE_REJECTED',
+              type: actionTypes.GET_ARTICLE_REJECTED,
               payload: { message: 'Sorry, an unexpected error occurred.' }
             });
           } else {
             dispatch({
-              type: 'GET_ARTICLE_FAIL',
+              type: actionTypes.GET_ARTICLE_FAIL,
               payload: err.response.data.message
             });
           }
@@ -141,11 +141,11 @@ export default class Article {
   */
   static fetchUserArticle(user) {
     return (dispatch) => {
-      dispatch({ type: 'GET_ARTICLES_BEGINS' });
+      dispatch({ type: actionTypes.GET_ARTICLES_BEGINS });
       return axios.get(`${config.apiUrl}/articles?user=${user}`)
         .then((response) => {
           dispatch({
-            type: 'GET_ARTICLES',
+            type: actionTypes.GET_ARTICLES,
             articles: response.data.articles,
             pageCount: response.data.paginationMeta.pageCount
           });
@@ -153,12 +153,12 @@ export default class Article {
         .catch((err) => {
           if (err.response.status === 500) {
             dispatch({
-              type: 'GET_ARTICLES_REJECTED',
+              type: actionTypes.GET_ARTICLES_REJECTED,
               payload: { message: 'Sorry, an unexpected error occurred.' }
             });
           } else {
             dispatch({
-              type: 'GET_ARTICLES_FAIL',
+              type: actionTypes.GET_ARTICLES_FAIL,
               payload: err.response.data.message
             });
           }
@@ -178,12 +178,12 @@ export default class Article {
   */
   static editUserArticle(slug, updates) {
     return (dispatch) => {
-      dispatch({ type: 'EDIT_ARTICLE_BEGINS' });
+      dispatch({ type: actionTypes.EDIT_ARTICLE_BEGINS });
       return axios.put(`${config.apiUrl}/articles/${slug}`,
         updates)
         .then((response) => {
           dispatch({
-            type: 'EDIT_ARTICLE',
+            type: actionTypes.EDIT_ARTICLE,
             article: response.data.article,
           });
           toastr.success(response.data.message);
@@ -191,13 +191,13 @@ export default class Article {
         .catch((err) => {
           if (err.response.status === 500) {
             dispatch({
-              type: 'EDIT_ARTICLE_REJECTED',
+              type: actionTypes.EDIT_ARTICLE_REJECTED,
               payload: { message: 'Sorry, an unexpected error occurred.' }
             });
             toastr.error(err.response.data.message);
           } else {
             dispatch({
-              type: 'EDIT_ARTICLE_FAIL',
+              type: actionTypes.EDIT_ARTICLE_FAIL,
               payload: err.response.data.message
             });
             toastr.error(err.response.data.message);
@@ -218,11 +218,11 @@ export default class Article {
   */
   static deleteUserArticle(slug) {
     return (dispatch) => {
-      dispatch({ type: 'DELETE_ARTICLE_BEGINS' });
+      dispatch({ type: actionTypes.DELETE_ARTICLE_BEGINS });
       return axios.delete(`${config.apiUrl}/articles/${slug}`)
         .then((response) => {
           dispatch({
-            type: 'DELETE_ARTICLE',
+            type: actionTypes.DELETE_ARTICLE,
             article: { message: response.data.message }
           });
           toastr.success(response.data.message);
@@ -230,13 +230,13 @@ export default class Article {
         .catch((err) => {
           if (err.response.status === 500) {
             dispatch({
-              type: 'DELETE_ARTICLE_REJECTED',
+              type: actionTypes.DELETE_ARTICLE_REJECTED,
               payload: { message: 'Sorry, an unexpected error occurred.' }
             });
             toastr.error(err.response.data.message);
           } else {
             dispatch({
-              type: 'DELETE_ARTICLE_FAIL',
+              type: actionTypes.DELETE_ARTICLE_FAIL,
               payload: err.response.data.message
             });
             toastr.error(err.response.data.message);

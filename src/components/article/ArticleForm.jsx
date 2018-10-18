@@ -206,14 +206,12 @@ export class ArticleForm extends Component {
             <div className="col-md-12">
               <div className="card" id="format-title">
                 <div className="card-title">
-                  <h2>
-                    <TitleEditor
-                      handleChange={this.handleTitleChange}
-                      value={title}
-                      handleTitleFocusIn={this.handleTitlePlaceholderFocusIn}
-                      handleTitleFocusOut={this.handleTitlePlaceholderFocusOut}
-                    />
-                  </h2>
+                  <TitleEditor
+                    handleChange={this.handleTitleChange}
+                    value={title}
+                    handleTitleFocusIn={this.handleTitlePlaceholderFocusIn}
+                    handleTitleFocusOut={this.handleTitlePlaceholderFocusOut}
+                  />
                 </div>
               </div>
               <div className="description">
@@ -242,9 +240,9 @@ export class ArticleForm extends Component {
     }
 }
 ArticleForm.propTypes = {
-  onSubmit: PropTypes.func, // eslint-disable-line
+  onSubmit: PropTypes.func,
   match: PropTypes.shape({}),
-  fetchSingleArticle: PropTypes.func.isRequired,
+  fetchSingleArticle: PropTypes.func,
 };
 const matchDispatchToProps = dispatch => bindActionCreators({
   fetchSingleArticle: Article.fetchSingleArticle,

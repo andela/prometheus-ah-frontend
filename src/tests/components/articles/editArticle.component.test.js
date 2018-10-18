@@ -7,6 +7,7 @@ import ConnectedEditArticle,
 
 const props = {
   editUserArticle: jest.fn().mockResolvedValue(Promise.resolve()),
+  fetchSingleArticle: jest.fn(),
   article: {
     Tags: [],
     User: {
@@ -37,10 +38,8 @@ const props = {
   },
   location: { pathname: '/new-article' },
   history: {},
-  update: {
-    title: 'new edited',
-    body: 'new edited body',
-    description: 'new edited description'
+  user: {
+    userId: 5
   }
 };
 const mockStore = configureMockStore([thunk]);
@@ -57,6 +56,11 @@ const initialState = {
       description: 'new description',
       slug: 'new-2'
     }],
+  },
+  auth: {
+    user: {
+      userId: 5
+    }
   }
 };
 const store = mockStore(initialState);
@@ -69,6 +73,7 @@ describe('Edit article component', () => {
   });
   it('should display the necessary element', () => {
     const newProps = {
+      fetchSingleArticle: jest.fn().mockResolvedValue(Promise.resolve()),
       editUserArticle: jest.fn(),
       article: {
         Tags: [],
@@ -93,6 +98,9 @@ describe('Edit article component', () => {
         updatedAt: '2018-10-17T13:30:43.350Z',
         userId: 5
       },
+      user: {
+        userId: 5
+      },
       match: {
         params: {
           slug: '/new-article'
@@ -112,13 +120,55 @@ describe('Edit article component', () => {
     instance.onSubmit();
     expect(props.editUserArticle).toHaveBeenCalled();
   });
-  it('should set update to state after edit article succeed', () => {
+  it('should deny access to edit article page', () => {
+    const newProps = {
+      fetchSingleArticle: jest.fn().mockResolvedValue(Promise.resolve()),
+      editUserArticle: jest.fn(),
+      article: {
+        Tags: [],
+        User: {
+          bio: 'I am a test',
+          email: 'test@test.com',
+          firstname: 'Testing',
+          id: 5,
+          image: 'string',
+          lastname: 'Component',
+          role: 'user',
+          status: 'active',
+          username: 'test'
+        },
+        title: 'new title',
+        body: 'new body',
+        description: 'new description',
+        slug: 'new-article',
+        createdAt: '2018-10-17T13:30:43.350Z',
+        id: 83,
+        readingTime: '1 min read',
+        updatedAt: '2018-10-17T13:30:43.350Z',
+        userId: 5
+      },
+      user: {
+        userId: 3
+      },
+      match: {
+        params: {
+          slug: '/new-article'
+        }
+      },
+      location: { pathname: '/new-article' },
+      history: {
+        push: jest.fn()
+      },
+    };
+    const wrapper = shallow( // eslint-disable-line
+      <EditArticle {...newProps} />
+    );
+    expect(newProps.history.push).toHaveBeenCalled();
+  });
+  it('should set state to props', () => {
     const wrapper = shallow(<ConnectedEditArticle store={store} {...props} />);
-    expect(props.update).toEqual({
-      body: 'new edited body',
-      description: 'new edited description',
-      title: 'new edited'
-    });
+    expect(props.article).toBeTruthy();
+    expect(props.user).toBeTruthy();
     expect(wrapper.state()).toEqual({});
   });
 });

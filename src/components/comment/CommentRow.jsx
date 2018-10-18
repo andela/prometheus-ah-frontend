@@ -192,13 +192,12 @@ export class CommentRow extends Component {
       username,
     } = this.props;
 
-    // debugger;
-    let currentUsername = '';
+    let currentUser = {};
 
     if (comment.User) {
-      currentUsername = comment.User.username;
+      currentUser = comment.User;
     } else {
-      currentUsername = comment.user.username;
+      currentUser = comment.user;
     }
     const {
       newReply, editing, editError, editBody, replies
@@ -214,7 +213,7 @@ export class CommentRow extends Component {
                   <div className="row card-body">
                     <div className="col-2">
                       <img
-                        src={userThumbnail}
+                        src={currentUser.image ? currentUser.image : userThumbnail}
                         className="rounded-circle img img-fluid-comment"
                         alt="user-thumbnail"
                       />
@@ -222,7 +221,7 @@ export class CommentRow extends Component {
                     <div className="col-10">
                       <div className="comment-body">
                         <p id="username">
-                          <strong>{currentUsername}</strong>
+                          <strong>{currentUser.username}</strong>
                           <span className="comment-span" id="timestamp">
                         &nbsp; -
                         &nbsp;
@@ -316,7 +315,7 @@ export class CommentRow extends Component {
                       </div>
                     </div>
                     <div className="pull-right">
-                      {(currentUsername === username) ? (
+                      {(currentUser.username === username) ? (
                         <div className="menu-top-right dropleft">
                           <i className="mdi mdi-dots-vertical"
                             id="dropdownMenuButton"

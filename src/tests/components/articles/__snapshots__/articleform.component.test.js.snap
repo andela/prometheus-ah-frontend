@@ -74,14 +74,12 @@ exports[`Article Form component should render Article Form correctly 1`] = `
         <div
           className="card-title"
         >
-          <h2>
-            <TitleEditor
-              handleChange={[Function]}
-              handleTitleFocusIn={[Function]}
-              handleTitleFocusOut={[Function]}
-              value="Title"
-            />
-          </h2>
+          <TitleEditor
+            handleChange={[Function]}
+            handleTitleFocusIn={[Function]}
+            handleTitleFocusOut={[Function]}
+            value="Title"
+          />
         </div>
       </div>
       <div

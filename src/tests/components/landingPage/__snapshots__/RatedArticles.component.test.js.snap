@@ -47,9 +47,13 @@ exports[`RatedArticles component should render a snapshot of the RatedArticles c
         <RatedArticle
           active={0}
           author="Joeeasy"
-          body="My task is getting bigger and I am equal to the task.
+          body={
+            Array [
+              "My task is getting bigger and I am equal to the task.
         Music gives a soul to the universe, wings to the mind,
-        flight to the imagination and life to everything"
+        flight to the imagination and life to everything",
+            ]
+          }
           date="2018-09-20T13:43:12.129Z"
           key="1"
           title="My Broken Mother, My Broken Heart"
@@ -57,9 +61,13 @@ exports[`RatedArticles component should render a snapshot of the RatedArticles c
         <RatedArticle
           active={1}
           author="Joeeasy"
-          body="My task is getting bigger and I am equal to the task.
+          body={
+            Array [
+              "My task is getting bigger and I am equal to the task.
       Music gives a soul to the universe, wings to the mind,
-      flight to the imagination and life to everything"
+      flight to the imagination and life to everything",
+            ]
+          }
           date="2018-09-20T13:43:12.129Z"
           key="1"
           title="My Broken Mother, My Broken Heart"

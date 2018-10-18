@@ -22,29 +22,31 @@ class BodyEditor extends Component {
         onFocusOut={handleBodyFocusOut}
         init={{
           menubar: false,
-          theme: 'inlite',
           inline: true,
-          mobile: {
-            theme: 'mobile',
-            plugins: ['autosave', 'lists', 'autolink']
-          },
           plugins: [
-            'autolink',
-            'codesample',
             'link',
-            'linkchecker',
-            'lists',
-            'mediaembed',
             'textcolor',
-            'image',
-            'emoticons',
+            'lists',
+            'powerpaste',
+            'linkchecker',
+            'contextmenu',
+            'autolink',
+            'tinymcespellchecker'
           ],
-          selection_toolbar:
-            `bold italic underline strikethrough|
-            h2 h3 | blockquote quicklink | alignleft aligncenter alignright alignjustify |
-            forecolor fontsize underlinr`,
-          images_reuse_filename: true,
-          toolbar: 'emoticons'
+          toolbar: [
+            'undo redo | bold italic underline | fontselect fontsizeselect',
+            `forecolor backcolor | alignleft aligncenter alignjustify
+            alignright alignfull| numlist bullist outdent indent`
+          ],
+          valid_elements: 'p[style],strong,em,span[style],a[href],ul,ol,li',
+          valid_styles: {
+            '*': 'font-size,font-family,color,text-decoration,text-align'
+          },
+          powerpaste_word_import: 'clean',
+          powerpaste_html_import: 'clean',
+          content_css: [
+            '//fonts.googleapis.com/css?family=Frank+Ruhl+Libre:300,400,500,700',
+          ]
         }}
       />
     );

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import SignupModal from './SignUpModal';
 import LoginModal from './LoginModal';
+import ReportModal from './ReportModal';
 
 /**
    * @class Modal
@@ -16,19 +17,22 @@ export class Modal extends Component {
    * @returns {JSX} JSX representation of component
    */
   render() {
-    const { modal } = this.props;
-    const { current } = modal;
+    const { modal, article, articleSlug } = this.props;
 
     return (
       <div
         className="modal"
         id="myModal"
-        style={{ display: !current ? 'none' : 'block' }}
+        style={{ display: modal.current === null ? 'none' : 'block' }}
       >
         <div className="modal-overlay" />
         <div className="modal-dialog">
-          <SignupModal show={current === 'signup'} />
-          <LoginModal show={current === 'login'} />
+          {modal.current === 'signup' && <SignupModal show={modal.current === 'signup'} />}
+          {modal.current === 'login' && <LoginModal show={modal.current === 'login'} />}
+          {modal.current === 'report' && (
+            <ReportModal show={modal.current === 'report'}
+              article={article} articleSlug={articleSlug}
+            />)}
         </div>
       </div>
     );
@@ -37,10 +41,12 @@ export class Modal extends Component {
 
 Modal.propTypes = {
   modal: PropTypes.shape({}),
+  article: PropTypes.shape({}),
+  articleSlug: PropTypes.string
 };
 
-const mapStateToProps = ({ modal }) => ({
-  modal
+const mapStateToProps = state => ({
+  modal: state.modal
 });
 
 export default connect(mapStateToProps, null)(Modal);

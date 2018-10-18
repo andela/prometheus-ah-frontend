@@ -23,6 +23,7 @@ const AppRoutes = () => (
     <div>
       <Header />
       <Switch>
+
         <Route exact path={routes.LANDING} component={LandingPage} />
         <Route exact path={routes.USER_ARTICLE} component={UserArticle} />
         <PrivateRoute exact path={routes.EDIT_ARTICLE} component={EditArticle} />
