@@ -1,14 +1,19 @@
 
-html {
+html, body {
   min-height: 100%;
   position: relative;
 }
 
+body {
+  padding-bottom: 96px;
+}
+
 .footer {
   background-color: $footer-bg-color;
+  left: 0;
   bottom: 0;
+  position: absolute;
   color: $white;
-  margin-top: 50px;
   padding: 10px;
   width: 100%;
 }

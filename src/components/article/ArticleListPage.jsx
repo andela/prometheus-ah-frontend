@@ -45,7 +45,7 @@ class ArticleListPage extends Component {
 }
 ArticleListPage.propTypes = {
   fetchArticle: PropTypes.func.isRequired,
-  articles: PropTypes.shape([]),
+  articles: PropTypes.instanceOf(Array),
 };
 const mapStateToProps = state => ({
   articles: state.articleReducer.articles,

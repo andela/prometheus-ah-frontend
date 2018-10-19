@@ -18,17 +18,58 @@ exports[`Read Article component ComponentDidMount 1`] = `
         >
           new article
         </h1>
-        <div>
-          <span
-            className="mr-5 text-muted"
+        <div
+          className="d-flex flex-column align-items-start flex-sm-row"
+        >
+          <div
+            className="mr-5 text-muted align-self-sm-center"
           >
             1 min read
-          </span>
-          <span
-            className="text-muted"
+          </div>
+          <div
+            className="text-muted mr-5 align-self-sm-center"
           >
             Oct 15, 2018
-          </span>
+          </div>
+          <div
+            className="d-flex justify-content-around align-items-start"
+          >
+            <i
+              className="mdi mdi-thumb-up-outline mr-3 align-top"
+            >
+              <span
+                className="likes-num"
+              >
+                 30
+              </span>
+            </i>
+            <a
+              href="https://twitter.com/intent/tweet?url=http%3A%2F%2Flocalhost%2F&text=Check%20out%20this%20article%20from%20Authors%20Haven&hashtags=AuthorsHaven"
+            >
+              <i
+                className="mdi mdi-twitter mr-3"
+              />
+            </a>
+            <a
+              href="https://www.facebook.com/dialog/share?app_id=344596382778592&display=page&href=http%3A%2F%2Flocalhost%2F&redirect_uri=http%3A%2F%2Flocalhost%2F"
+            >
+              <i
+                className="mdi mdi-facebook mr-3"
+              />
+            </a>
+            <a
+              href="mailto:?Subject=Check%20out%20this%20article%20from%20Authors%20Haven Titled new article&body=http%3A%2F%2Flocalhost%2F"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <i
+                className="mdi mdi-email mr-3"
+              />
+            </a>
+            <i
+              className="mdi mdi-bookmark"
+            />
+          </div>
         </div>
         <p
           className="mt-3 description font-italic text-muted"
@@ -39,31 +80,6 @@ exports[`Read Article component ComponentDidMount 1`] = `
             the description
           </p>
         </p>
-        <div
-          className="article-reactions mt-2 d-flex justify-content-around"
-        >
-          <i
-            className="mdi mdi-thumb-up-outline"
-          >
-            <span
-              className="likes-num"
-            >
-               30
-            </span>
-          </i>
-          <i
-            className="mdi mdi-twitter"
-          />
-          <i
-            className="mdi mdi-facebook"
-          />
-          <i
-            className="mdi mdi-bookmark"
-          />
-          <i
-            className="mdi mdi-email"
-          />
-        </div>
       </div>
     </div>
     <div
@@ -133,17 +149,31 @@ exports[`Read Article component ComponentDidMount 1`] = `
              30
           </span>
         </i>
-        <i
-          className="mdi mdi-twitter"
-        />
-        <i
-          className="mdi mdi-facebook"
-        />
+        <a
+          href="https://twitter.com/intent/tweet?url=http%3A%2F%2Flocalhost%2F&text=Check%20out%20this%20article%20from%20Authors%20Haven&hashtags=AuthorsHaven"
+        >
+          <i
+            className="mdi mdi-twitter"
+          />
+        </a>
+        <a
+          href="https://www.facebook.com/dialog/share?app_id=344596382778592&display=page&href=http%3A%2F%2Flocalhost%2F&redirect_uri=http%3A%2F%2Flocalhost%2F"
+        >
+          <i
+            className="mdi mdi-facebook"
+          />
+        </a>
+        <a
+          href="mailto:?Subject=Check%20out%20this%20article%20from%20Authors%20Haven Titled new article&body=http%3A%2F%2Flocalhost%2F"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <i
+            className="mdi mdi-email"
+          />
+        </a>
         <i
           className="mdi mdi-bookmark"
-        />
-        <i
-          className="mdi mdi-email"
         />
       </div>
     </div>

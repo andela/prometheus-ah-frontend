@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 import Article from '../../actions/articleActions';
 import Loading from '../common/Loading';
 
-
 /**
  * class ReadArticlePage
  * @returns {Object} New article
@@ -17,7 +16,7 @@ export class ReadArticle extends Component {
   componentDidMount = () => {
     const { fetchSingleArticle, match } = this.props;
     fetchSingleArticle(match.params.slug);
-  }
+  };
 
   /**
    * render jsx
@@ -35,30 +34,44 @@ export class ReadArticle extends Component {
       );
     }
 
+    const message = encodeURIComponent(
+      'Check out this article from Authors Haven'
+    );
+
+    const articleURL = encodeURIComponent(window.location.href);
+
+    const twitterUrl = `https://twitter.com/intent/tweet?url=${articleURL}&text=${message}&hashtags=${encodeURIComponent('AuthorsHaven')}`; // eslint-disable-line
+
+    const facebookUrl = `https://www.facebook.com/dialog/share?app_id=344596382778592&display=page&href=${articleURL}&redirect_uri=${articleURL}`; // eslint-disable-line
+
+    const emailUrl = `mailto:?Subject=${message}${' Titled '}${ReactHtmlParser(article.title)}&body=${articleURL}`; // eslint-disable-line
+
     return (
       <div className="read-article my-5">
         <div className="row">
           <div className="col-12 col-lg-8 offset-lg-2">
             <div className="article-title">
               <h1 className="title">{ReactHtmlParser(article.title)}</h1>
-              <div>
-                <span className="mr-5 text-muted">{article.readingTime}</span>
-                <span className="text-muted">
+              <div className="d-flex flex-column align-items-start flex-sm-row">
+                <div className="mr-5 text-muted align-self-sm-center">{article.readingTime}</div>
+                <div className="text-muted mr-5 align-self-sm-center">
                   {moment(article.createdAt).format('MMM D, YYYY')}
-                </span>
+                </div>
+                <div className="d-flex justify-content-around align-items-start">
+                  <i className="mdi mdi-thumb-up-outline mr-3 align-top">
+                    <span className="likes-num"> 30</span>
+                  </i>
+                  <a href={twitterUrl}><i className="mdi mdi-twitter mr-3" /></a>
+                  <a href={facebookUrl}><i className="mdi mdi-facebook mr-3" /></a>
+                  <a href={emailUrl} target="_blank" rel="noopener noreferrer">
+                    <i className="mdi mdi-email mr-3" />
+                  </a>
+                  <i className="mdi mdi-bookmark" />
+                </div>
               </div>
               <p className="mt-3 description font-italic text-muted">
                 {ReactHtmlParser(article.description)}
               </p>
-              <div className="article-reactions mt-2 d-flex justify-content-around">
-                <i className="mdi mdi-thumb-up-outline">
-                  <span className="likes-num"> 30</span>
-                </i>
-                <i className="mdi mdi-twitter" />
-                <i className="mdi mdi-facebook" />
-                <i className="mdi mdi-bookmark" />
-                <i className="mdi mdi-email" />
-              </div>
             </div>
           </div>
 
@@ -94,10 +107,12 @@ export class ReadArticle extends Component {
               <i className="mdi mdi-thumb-up-outline">
                 <span className="likes-num"> 30</span>
               </i>
-              <i className="mdi mdi-twitter" />
-              <i className="mdi mdi-facebook" />
+              <a href={twitterUrl}><i className="mdi mdi-twitter" /></a>
+              <a href={facebookUrl}><i className="mdi mdi-facebook" /></a>
+              <a href={emailUrl} target="_blank" rel="noopener noreferrer">
+                <i className="mdi mdi-email" />
+              </a>
               <i className="mdi mdi-bookmark" />
-              <i className="mdi mdi-email" />
             </div>
           </div>
         </div>
@@ -114,8 +129,14 @@ const mapStateToProps = state => ({
   article: state.articleReducer.article
 });
 
-const matchDispatchToProps = dispatch => bindActionCreators({
-  fetchSingleArticle: Article.fetchSingleArticle,
-}, dispatch);
+const matchDispatchToProps = dispatch => bindActionCreators(
+  {
+    fetchSingleArticle: Article.fetchSingleArticle
+  },
+  dispatch
+);
 
-export default connect(mapStateToProps, matchDispatchToProps)(ReadArticle);
+export default connect(
+  mapStateToProps,
+  matchDispatchToProps
+)(ReadArticle);

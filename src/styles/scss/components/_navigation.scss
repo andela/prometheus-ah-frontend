@@ -89,3 +89,30 @@ li .register-link {
     margin-right: 20px;
   }
 }
+
+.not-found {
+  align-items: center;
+  background-image: url(https://bit.ly/2QZ6D4C);
+  background-size: cover;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: hidden;
+  justify-content: center;
+  width: 100vw;
+}
+
+.not-found-btn {
+  background: $red;
+  border: 1px solid $red;
+  border-radius: 3px;
+  color: $white;
+  font-size: 15px;
+  font-weight: 300;
+  margin-top: 6px;
+  padding: 2px 15px !important;
+  &:hover {
+    cursor: pointer;
+  }
+}
