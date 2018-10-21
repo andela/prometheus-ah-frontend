@@ -1,0 +1,198 @@
+
+
+img {
+	max-width: 100%;
+	max-height: 400px;
+}
+.row{
+	margin: 0 auto;
+}
+.tag-box {
+	border: 0;
+	border-bottom: 1px solid #ccc;
+}
+.editor-config {
+	margin: 2em;
+
+	img {
+		width: 100%;
+		max-height: 400px;
+		margin: 0 auto;
+	}
+
+}
+*[contentEditable="true"] {
+	outline: 0;
+	p {
+		font-size: 16px;
+		font-family: 'Frank Ruhl Libre';
+	}
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Playfair Display';
+	} 
+}
+.submit {
+	margin-top: 10px;
+}
+.editor-body {
+	outline: none;
+	color: black;
+	border: none;
+	padding: 2px;
+}
+#format-title{
+	border-left: 2px solid rgba(0,0,0,.125) !important;
+	border-bottom: 0;
+	border-right: 0;
+	border-top: 0;
+	font-weight: bolder;
+	
+	h2 {
+		margin-left: 1%;
+	}
+}
+.read-article {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 10px;
+	padding: 10px;
+
+	p {
+		font-size: 18px;
+		padding: 0;
+
+		span {
+			img {
+				width: 100%
+			}
+		}
+	}
+}
+.btn-update:hover{
+	background-color: #C0392B !important;
+	color: #fff !important
+}
+.btn-update {
+	background: #fff !important;
+	color:  #C0392B !important;
+	border-color: #C0392B !important;
+	border-radius: 5px;
+	margin: 0 auto;
+	padding-left: 2em !important;
+	padding-right: 2em !important;
+}
+
+// read article style
+
+.read-article {
+  margin: 0 auto;
+  width: 80%;
+
+  .article-author-image {
+    height: 100px;
+    width: 100px;
+  }
+
+  .follow-btn {
+    background-color: $white;
+    border: thin solid $red;
+    color: $red;
+    font-size: 14px;
+    padding: 2px 10px;
+  }
+  .tags {
+    background-color: #ffffff;
+    border: thin solid #C0392B;
+    color: #C0392B;
+    font-size: 14px;
+    padding: 2px 10px;
+    margin: 3px 5px;
+    cursor: text !important;
+  }
+
+  .author-bio {
+    font-size: 14px;
+  }
+
+  .mdi {
+    color: $light-gray;
+    font-size: 1.4rem;
+  }
+
+  .likes-num {
+    font-size: 1.1rem;
+    font-style: normal;
+  }
+
+  .title {
+    color: $dark-gray;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 36px;
+    letter-spacing: 2px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .author-bio {
+    color: $gray;
+  }
+
+  .author-name {
+    color: $dark-gray;
+    font-weight: 600;
+  }
+
+  .post-body {
+    color: $gray;
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 18px;
+    font-weight: 100;
+    letter-spacing: 0.02rem;
+    line-height: 1.58;
+    word-break: break-word;
+  }
+
+  .article-reactions {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+
+@media (max-width: 768px) {
+	.editor-body {
+		position: relative;
+		margin-bottom: 20px;
+		height: 100vh
+	}
+	.submit-card {
+		width: 80vw;
+    bottom: 10px;
+	}
+	.mobile-row {
+		justify-content: flex-end!important;
+	}
+	.read-article .title {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 992px) {
+  .read-article {
+    .title {
+      font-size: 50px;
+    }
+
+    .description {
+      font-size: 18px;
+    }
+
+    .post-body {
+      font-size: 20px;
+    }
+  }
+}

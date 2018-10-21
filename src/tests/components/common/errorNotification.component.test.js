@@ -6,9 +6,8 @@ import ErrorAlertNotification from '../../../components/common/ErrorAlertNotific
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('Error Alert Notification Component', () => {
-
   it('should render without throwing an error', () => {
-    const wrapper = shallow(<ErrorAlertNotification errors={'iamerror'} onClick={jest.fn()} />);
+    const wrapper = shallow(<ErrorAlertNotification errors="iamerror" onClick={jest.fn()} />);
     const button = wrapper.find('button');
     button.simulate('click');
     expect(wrapper.exists()).toBe(true);

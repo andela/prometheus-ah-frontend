@@ -48,7 +48,7 @@ export class ReadArticle extends Component {
                 </span>
               </div>
               <p className="mt-3 description font-italic text-muted">
-                {article.description}
+                {ReactHtmlParser(article.description)}
               </p>
               <div className="article-reactions mt-2 d-flex justify-content-around">
                 <i className="mdi mdi-thumb-up-outline">
@@ -64,6 +64,11 @@ export class ReadArticle extends Component {
 
           <div className="col-12 mt-5 col-lg-8 offset-lg-2">
             <p className="post-body">{ReactHtmlParser(article.body)}</p>
+          </div>
+          <div className="col-12 mt-4 offset-lg-2">
+            {article.Tags.length >= 1 ? article.Tags.map(tag => (
+              <span className="btn tags" key={tag.name}>{tag.name}</span>
+            )) : ''}
           </div>
 
           <div className="col-12 col-md-9 offset-md-1 mt-4 col-lg-6 offset-lg-3">
