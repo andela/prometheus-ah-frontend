@@ -12,7 +12,7 @@ describe('Read Article component', () => {
   beforeEach(() => {
     props = {
       article: {
-        Tags: [],
+        Tags: ['tag a', 'tag b'],
         User: {
           email: null,
           firstname: null,
@@ -43,7 +43,7 @@ describe('Read Article component', () => {
       articleReducer: {
         articles: [
           {
-            Tags: [],
+            Tags: ['tag a', 'tag b'],
             User: {
               email: null,
               firstname: null,
@@ -62,7 +62,7 @@ describe('Read Article component', () => {
             updatedAt: '2018-10-15T11:27:58.250Z',
             userId: 5
           }, {
-            Tags: [],
+            Tags: ['tag a', 'tag b'],
             User: {
               email: null,
               firstname: null,
@@ -104,7 +104,7 @@ describe('Read Article component', () => {
 
   it('should display the necessary element', () => {
     expect(wrapper.find('div').exists()).toBe(true);
-    expect(wrapper.find('div').length).toBe(3);
+    expect(wrapper.find('div').length).toEqual(3);
   });
 
   it('ComponentDidMount', () => {

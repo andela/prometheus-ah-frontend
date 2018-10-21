@@ -33,7 +33,11 @@ exports[`Read Article component ComponentDidMount 1`] = `
         <p
           className="mt-3 description font-italic text-muted"
         >
-          &lt;p&gt;the description&lt;/p&gt;
+          <p
+            key="0"
+          >
+            the description
+          </p>
         </p>
         <div
           className="article-reactions mt-2 d-flex justify-content-around"
@@ -74,6 +78,16 @@ exports[`Read Article component ComponentDidMount 1`] = `
           The story started few years back
         </p>
       </p>
+    </div>
+    <div
+      className="col-12 mt-4 offset-lg-2"
+    >
+      <span
+        className="btn tags"
+      />
+      <span
+        className="btn tags"
+      />
     </div>
     <div
       className="col-12 col-md-9 offset-md-1 mt-4 col-lg-6 offset-lg-3"
@@ -153,7 +167,10 @@ exports[`Read Article component should render Article page correctly 1`] = `
   <Connect(ReadArticle)
     article={
       Object {
-        "Tags": Array [],
+        "Tags": Array [
+          "tag a",
+          "tag b",
+        ],
         "User": Object {
           "email": null,
           "firstname": null,
