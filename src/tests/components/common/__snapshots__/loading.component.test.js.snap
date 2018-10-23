@@ -2,7 +2,7 @@
 
 exports[`should render LoadingPage correctly 1`] = `
 <div
-  className="loading-center"
+  className="loading-center text-center"
 >
   <img
     alt="Loading..."

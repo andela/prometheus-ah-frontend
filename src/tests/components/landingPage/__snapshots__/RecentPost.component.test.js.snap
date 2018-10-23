@@ -12,13 +12,15 @@ exports[`RecentPost component should render a snapshot of the RecentPost compone
   <div
     className="card-body"
   >
-    <h3
+    <Link
       className="card-title post-title"
+      replace={false}
+      to="/articles/undefined"
     >
       My Broken Mother, My Broken Heart
-    </h3>
+    </Link>
     <div
-      className="d-flex justify-content-between"
+      className="d-flex justify-content-between mt-3"
     >
       <div
         className="card-text post-author"
@@ -26,7 +28,7 @@ exports[`RecentPost component should render a snapshot of the RecentPost compone
         <p
           className="author"
         >
-          Okeremeta
+          faksam
         </p>
         <p>
           <small
@@ -40,7 +42,7 @@ exports[`RecentPost component should render a snapshot of the RecentPost compone
         className="card-text post-time"
       >
         <p
-          className="font-weight-light font-italic"
+          className="font-weight-light font-italic text-uppercase"
         >
           Technology
         </p>

@@ -1,23 +1,36 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 
 const RecentPost = ({
-  image, title, date, category, readTime, author
+  image, title, date, category, readTime, author, slug
 }) => {
   const formatedDate = moment(date).startOf('hour').fromNow();
+  const { firstname, lastname, username } = author;
+
+  let authorName = `${firstname} ${lastname}`;
+
+  if (!firstname || !lastname) {
+    authorName = username;
+  }
+
   return (
     <div className="card shadow-lg border-0 mb-5 recent-post">
-      <img src={image} className="img-fluid recent-post-image" alt="" />
+      <img
+        src={image ? image : 'https://image.ibb.co/c3DFrV/article-thumbnail.jpg'} // eslint-disable-line
+        className="img-fluid recent-post-image"
+        alt=""
+      />
       <div className="card-body">
-        <h3 className="card-title post-title">{title}</h3>
-        <div className="d-flex justify-content-between">
+        <Link to={`/articles/${slug}`} className="card-title post-title">{title}</Link>
+        <div className="d-flex justify-content-between mt-3">
           <div className="card-text post-author">
-            <p className="author">{author}</p>
+            <p className="author">{authorName}</p>
             <p><small className="text-muted font-italic">{readTime}</small></p>
           </div>
           <div className="card-text post-time">
-            <p className="font-weight-light font-italic">{category}</p>
+            <p className="font-weight-light font-italic text-uppercase">{category}</p>
             <p className="time">{formatedDate}</p>
           </div>
         </div>
@@ -32,7 +45,8 @@ RecentPost.propTypes = {
   date: PropTypes.string,
   category: PropTypes.string,
   readTime: PropTypes.string,
-  author: PropTypes.string
+  slug: PropTypes.string,
+  author: PropTypes.instanceOf(Object)
 };
 
 export default RecentPost;

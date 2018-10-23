@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FeaturedAuthor component should render a snapshot of the FeaturedAuthor component 1`] = `
-<div
-  className="col-12"
->
+<div>
   <h2
     className="section-title"
   >
@@ -18,15 +16,15 @@ exports[`FeaturedAuthor component should render a snapshot of the FeaturedAuthor
       <img
         alt=""
         className="img-fluid featured-author-image rounded-circle"
-        src={null}
+        src="https://image.ibb.co/i48Wqf/paceholder.jpg"
       />
       <div
-        className="author-detail ml-4 mt-3"
+        className="author-detail ml-5 mt-3"
       >
         <p
           className="author mb-1"
         >
-          undefined undefined
+          faksam
         </p>
         <button
           className="btn btn-follow"
@@ -40,16 +38,10 @@ exports[`FeaturedAuthor component should render a snapshot of the FeaturedAuthor
       className="mx-4 mt-5"
     >
       <FeaturedAuthorPost
-        image="https://image.ibb.co/eLVQwL/kids.jpg"
-        key="1"
+        key="23"
         readTime="1 min read"
-        title="My Broken Mother, My Broken Heart"
-      />
-      <FeaturedAuthorPost
-        image="https://image.ibb.co/eLVQwL/kids.jpg"
-        key="1"
-        readTime="1 min read"
-        title="My Broken Mother, My Broken Heart"
+        slug="the-most-important-skill-nobody-taught-you"
+        title="The most important skill nobody taught you"
       />
     </div>
   </div>

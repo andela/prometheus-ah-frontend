@@ -3,6 +3,7 @@ import auth from './auth';
 import modal from './modal';
 import verifyEmail from './verifyEmail';
 import articleReducer from './Article';
+import featuredAuthor from './featuredAuthor';
 import socialLoginReducer from './socialLogin';
 import resetPasswordReducer from './resetPasswordReducer';
 import userProfile from './userProfile';
@@ -16,6 +17,7 @@ const appReducer = combineReducers({
   modal,
   verifyEmail,
   articleReducer,
+  featuredAuthor,
   socialLoginReducer,
   passwordreset: resetPasswordReducer,
   userProfile,

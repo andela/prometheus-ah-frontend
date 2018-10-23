@@ -261,7 +261,7 @@ exports[`Read Article component should render Article page correctly 1`] = `
         >
           <Loading>
             <div
-              className="loading-center"
+              className="loading-center text-center"
             >
               <img
                 alt="Loading..."

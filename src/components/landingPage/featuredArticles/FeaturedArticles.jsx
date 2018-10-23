@@ -15,10 +15,11 @@ const FeaturedArticles = (props) => {
             image={post.image}
             title={post.title}
             date={post.createdAt}
-            category={post.Tags[0]}
+            category={post.Tags[0].name}
             description={post.description}
             readTime={post.readingTime}
-            author={`${post.User.firstname} ${post.User.lastname}`}
+            author={post.User}
+            slug={post.slug}
           />
         ))
       }
