@@ -8,10 +8,22 @@ let wrapper;
 describe('FeaturedArticles component', () => {
   beforeEach(() => {
     const {
-      active, image, title, date, category, description, readTime, author
+      active, image, title, date, category, description, readTime
     } = mockData.postProps;
+
     const props = {
-      active, image, title, date, category, description, readTime, author
+      active,
+      image,
+      title,
+      date,
+      category,
+      description,
+      readTime,
+      author: {
+        username: 'faksam',
+        firstname: null,
+        lastname: null
+      }
     };
 
     wrapper = shallow(<FeaturedArticles {...props} />);

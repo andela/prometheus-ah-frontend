@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
+import Article from '../actions/articleActions';
+import fetchAuthor from '../actions/featuedAuthor.action';
+import Loading from '../components/common/Loading';
 import data from './articlesData';
 import Footer from '../components/Footer';
 import RatedArticles from '../components/landingPage/ratedArticles/RatedArticles';
@@ -9,7 +15,14 @@ import FeaturedAuthor from '../components/landingPage/featuredAuthor/FeaturedAut
 /**
  * @class LandingPage
  */
-class LandingPage extends Component {
+export class LandingPage extends Component {
+  componentDidMount = () => {
+    const { actions } = this.props;
+    actions.fetchFeaturedArticles();
+    actions.fetchArticles();
+    actions.fetchAuthor();
+  }
+
   /**
    * @description Render the JSX template
    *
@@ -18,20 +31,24 @@ class LandingPage extends Component {
    * @returns {JSX} JSX representation of component
    */
   render() {
+    const { featuredArticles, articles, author } = this.props;
     const ratedPosts = data.articles.slice(0, 5);
-    const featuredPosts = data.articles.slice(0, 5);
-    const recentPosts = data.articles.slice(-3);
-    const authorPosts = data.articles.slice(4, 7);
-    const featuredAuthor = data.user;
+    const recentPosts = articles.slice(0, 3);
+
+    if (!featuredArticles || !articles || !author.featuredAuthor) {
+      return (
+        <Loading />
+      );
+    }
 
     return (
       <React.Fragment>
         <RatedArticles posts={ratedPosts} />
         <section className="main-content my-5">
           <div className="row">
-            <FeaturedArticles posts={featuredPosts} />
+            <FeaturedArticles posts={featuredArticles} />
             <div className="col-12 col-md-5 col-lg-5">
-              <FeaturedAuthor posts={authorPosts} author={featuredAuthor} />
+              <FeaturedAuthor author={author} />
               <RecentPost posts={recentPosts} />
             </div>
           </div>
@@ -42,4 +59,27 @@ class LandingPage extends Component {
   }
 }
 
-export default LandingPage;
+LandingPage.propTypes = {
+  actions: PropTypes.instanceOf(Object),
+  featuredArticles: PropTypes.instanceOf(Array),
+  articles: PropTypes.instanceOf(Array),
+  author: PropTypes.instanceOf(Object)
+};
+
+const mapStateToProps = state => ({
+  featuredArticles: state.articleReducer.featuredArticles,
+  articles: state.articleReducer.articles,
+  author: state.featuredAuthor
+});
+
+const matchDispatchToProps = dispatch => ({
+  actions: bindActionCreators(
+    {
+      fetchFeaturedArticles: Article.fetchFeaturedArticles,
+      fetchArticles: Article.fetchArticle,
+      fetchAuthor
+    }, dispatch
+  )
+});
+
+export default connect(mapStateToProps, matchDispatchToProps)(LandingPage);

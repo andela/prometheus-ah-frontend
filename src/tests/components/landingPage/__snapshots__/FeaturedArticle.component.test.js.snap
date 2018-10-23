@@ -12,19 +12,21 @@ exports[`FeaturedArticles component should render a snapshot of the FeaturedArti
   <div
     className="card-body"
   >
-    <h3
+    <Link
       className="card-title post-title"
+      replace={false}
+      to="/articles/undefined"
     >
       My Broken Mother, My Broken Heart
-    </h3>
+    </Link>
     <p
       className="card-text post-date"
     >
       Sep 20, 2018
       <span
-        className="ml-4 font-weight-light font-italic"
+        className="ml-4 font-weight-light font-italic text-uppercase"
       >
-        TECHNOLOGY
+        Technology
       </span>
     </p>
     <p
@@ -41,7 +43,7 @@ exports[`FeaturedArticles component should render a snapshot of the FeaturedArti
         <p
           className="author"
         >
-          Okeremeta
+          faksam
         </p>
         <p>
           <small

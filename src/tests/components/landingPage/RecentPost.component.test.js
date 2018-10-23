@@ -8,10 +8,19 @@ let wrapper;
 describe('RecentPost component', () => {
   beforeEach(() => {
     const {
-      image, title, date, category, readTime, author
+      image, title, date, category, readTime,
     } = mockData.postProps;
     const props = {
-      image, title, date, category, readTime, author
+      image,
+      title,
+      date,
+      category,
+      readTime,
+      author: {
+        username: 'faksam',
+        firstname: null,
+        lastname: null
+      }
     };
 
     wrapper = shallow(<RecentPost {...props} />);

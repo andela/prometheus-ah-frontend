@@ -2,17 +2,21 @@
 
 exports[`FeaturedAuthorPost component should render a snapshot of the FeaturedAuthorPost component 1`] = `
 <div
-  className="d-flex justify-content-between featured-author-post mb-3"
+  className="featured-author-post mb-3"
 >
   <div
     className="author-post"
   >
-    <h3
+    <Link
       className="post-title"
+      replace={false}
+      to="/articles/undefined"
     >
       My Broken Mother, My Broken Heart
-    </h3>
-    <p>
+    </Link>
+    <p
+      className="mt-3"
+    >
       <small
         className="text-muted font-italic"
       >
@@ -20,10 +24,5 @@ exports[`FeaturedAuthorPost component should render a snapshot of the FeaturedAu
       </small>
     </p>
   </div>
-  <img
-    alt=""
-    className="img-fluid post-image"
-    src="https://image.ibb.co/eLVQwL/kids.jpg"
-  />
 </div>
 `;

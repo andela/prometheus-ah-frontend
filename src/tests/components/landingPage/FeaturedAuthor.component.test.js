@@ -1,17 +1,29 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import FeaturedAuthor from '../../../components/landingPage/featuredAuthor/FeaturedAuthor';
-import mockData from '../../__mocks__/mockData';
 
 let wrapper;
 
 describe('FeaturedAuthor component', () => {
   beforeEach(() => {
-    const {
-      posts, user: author
-    } = mockData;
     const props = {
-      posts, author
+      author: {
+        featuredAuthor: {
+          id: 2,
+          username: 'faksam',
+          firstname: null,
+          lastname: null,
+          image: null,
+          articles: [
+            {
+              id: 23,
+              slug: 'the-most-important-skill-nobody-taught-you',
+              title: 'The most important skill nobody taught you',
+              readingTime: '1 min read'
+            }
+          ]
+        }
+      }
     };
 
     wrapper = shallow(<FeaturedAuthor {...props} />);

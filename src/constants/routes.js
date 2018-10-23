@@ -13,6 +13,7 @@ const routes = {
   READ_ARTICLE: '/articles/:slug/',
   PROFILE_PAGE: '/profiles',
   EDIT_PROFILE_PAGE: '/profiles/edit',
+  FEATURED_AUTHOR: '/featuredAuthor'
 };
 
 export default routes;

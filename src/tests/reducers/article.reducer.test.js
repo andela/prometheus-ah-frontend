@@ -5,7 +5,8 @@ const initialState = {
   loading: false,
   articles: [],
   article: null,
-  paginationMeta: {}
+  paginationMeta: {},
+  featuredArticles: null,
 };
 const article = {
   title: 'new article',
@@ -22,6 +23,7 @@ describe('Article reducer', () => {
       loading: false,
       articles: [],
       article: null,
+      featuredArticles: null,
       paginationMeta: {}
     };
     const newState = articleReducer(initialState, action);
@@ -33,7 +35,12 @@ describe('Article reducer', () => {
       type: 'CREATE_ARTICLE_BEGINS'
     };
     const expected = {
-      article: null, articles: [], loading: true, paginationMeta: {}, reqError: null
+      article: null,
+      articles: [],
+      loading: true,
+      paginationMeta: {},
+      reqError: null,
+      featuredArticles: null
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -52,6 +59,7 @@ describe('Article reducer', () => {
         description: 'new article begins',
         title: 'new article'
       },
+      featuredArticles: null,
       loading: false,
       paginationMeta: {},
       reqError: null
@@ -69,6 +77,7 @@ describe('Article reducer', () => {
       article: null,
       articles: [],
       loading: false,
+      featuredArticles: null,
       paginationMeta: {},
       reqError: { message: 'request fail' }
     };
@@ -82,7 +91,12 @@ describe('Article reducer', () => {
       article
     };
     const expected = {
-      article: null, articles: [], loading: false, paginationMeta: {}, reqError: undefined
+      article: null,
+      articles: [],
+      loading: false,
+      paginationMeta: {},
+      reqError: undefined,
+      featuredArticles: null
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -93,7 +107,12 @@ describe('Article reducer', () => {
       type: 'GET_ARTICLE_BEGINS'
     };
     const expected = {
-      article: null, articles: [], loading: true, paginationMeta: {}, reqError: null
+      article: null,
+      articles: [],
+      loading: true,
+      paginationMeta: {},
+      reqError: null,
+      featuredArticles: null,
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -104,7 +123,12 @@ describe('Article reducer', () => {
       type: 'GET_ARTICLES_BEGINS'
     };
     const expected = {
-      article: null, articles: [], loading: true, paginationMeta: {}, reqError: null
+      article: null,
+      articles: [],
+      featuredArticles: null,
+      loading: true,
+      reqError: null,
+      paginationMeta: {},
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -116,7 +140,12 @@ describe('Article reducer', () => {
       article
     };
     const expected = {
-      article: null, articles: undefined, loading: false, paginationMeta: {}, reqError: null
+      article: null,
+      articles: undefined,
+      featuredArticles: null,
+      loading: false,
+      paginationMeta: {},
+      reqError: null,
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -128,7 +157,12 @@ describe('Article reducer', () => {
       article
     };
     const expected = {
-      article: null, articles: [], loading: false, paginationMeta: {}, reqError: undefined
+      article: null,
+      articles: [],
+      featuredArticles: null,
+      loading: false,
+      paginationMeta: {},
+      reqError: undefined
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -140,7 +174,12 @@ describe('Article reducer', () => {
       article
     };
     const expected = {
-      article: null, articles: [], loading: false, paginationMeta: {}, reqError: undefined
+      article: null,
+      articles: [],
+      featuredArticles: null,
+      loading: false,
+      paginationMeta: {},
+      reqError: undefined
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -151,7 +190,12 @@ describe('Article reducer', () => {
       type: 'GET_ARTICLE_BEGINS'
     };
     const expected = {
-      article: null, articles: [], loading: true, paginationMeta: {}, reqError: null
+      article: null,
+      articles: [],
+      featuredArticles: null,
+      loading: true,
+      paginationMeta: {},
+      reqError: null,
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -169,6 +213,7 @@ describe('Article reducer', () => {
         title: 'new article'
       },
       articles: [],
+      featuredArticles: null,
       loading: false,
       paginationMeta: {},
       reqError: null
@@ -183,7 +228,12 @@ describe('Article reducer', () => {
       article
     };
     const expected = {
-      article: null, articles: [], loading: false, paginationMeta: {}, reqError: undefined
+      article: null,
+      articles: [],
+      featuredArticles: null,
+      paginationMeta: {},
+      loading: false,
+      reqError: undefined
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -195,7 +245,12 @@ describe('Article reducer', () => {
       article
     };
     const expected = {
-      article: null, articles: [], loading: false, paginationMeta: {}, reqError: undefined
+      article: null,
+      articles: [],
+      featuredArticles: null,
+      paginationMeta: {},
+      loading: false,
+      reqError: undefined,
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -206,7 +261,30 @@ describe('Article reducer', () => {
       type: 'EDIT_ARTICLE_BEGINS'
     };
     const expected = {
-      article: null, articles: [], loading: true, paginationMeta: {}, reqError: null
+      article: null,
+      articles: [],
+      loading: true,
+      paginationMeta: {},
+      reqError: null,
+      featuredArticles: null,
+    };
+    const newState = articleReducer(initialState, action);
+    expect(newState).toEqual(expected);
+    done();
+  });
+
+  it('should update the state when GET_FEATURED_ARTICLES is passed', (done) => {
+    const action = {
+      type: 'GET_FEATURED_ARTICLES',
+      featuredArticles: []
+    };
+    const expected = {
+      article: null,
+      articles: [],
+      featuredArticles: [],
+      loading: false,
+      paginationMeta: {},
+      reqError: null,
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -224,6 +302,7 @@ describe('Article reducer', () => {
         title: 'new article'
       },
       articles: [],
+      featuredArticles: null,
       loading: false,
       paginationMeta: {},
       reqError: null
@@ -238,7 +317,12 @@ describe('Article reducer', () => {
       article
     };
     const expected = {
-      article: null, articles: [], loading: false, paginationMeta: {}, reqError: undefined
+      article: null,
+      articles: [],
+      loading: false,
+      featuredArticles: null,
+      paginationMeta: {},
+      reqError: undefined
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -254,6 +338,7 @@ describe('Article reducer', () => {
       articles: [],
       error: true,
       loading: false,
+      featuredArticles: null,
       paginationMeta: {},
       reqError: undefined
     };

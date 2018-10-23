@@ -236,11 +236,37 @@ export default class Article {
             toastr.error(err.response.data.message);
           } else {
             dispatch({
-              type: 'DELETE_ARTICLES_FAIL',
+              type: 'DELETE_ARTICLE_FAIL',
               payload: err.response.data.message
             });
             toastr.error(err.response.data.message);
           }
+        });
+    };
+  }
+
+  /**
+    * Request to the API to get featured articles
+    *
+    * @static
+    * @returns {Object} dispatch object
+    * @memberof ArticleActions
+    */
+  static fetchFeaturedArticles() {
+    return (dispatch) => {
+      dispatch({ type: 'GET_ARTICLES_BEGINS' });
+      return axios.get(`${config.apiUrl}/featuredArticles`)
+        .then((response) => {
+          dispatch({
+            type: 'GET_FEATURED_ARTICLES',
+            featuredArticles: response.data.articles,
+          });
+        })
+        .catch((err) => {
+          dispatch({
+            type: 'GET_FEATURED_ARTICLES_FAIL',
+            payload: err.response.data.message
+          });
         });
     };
   }

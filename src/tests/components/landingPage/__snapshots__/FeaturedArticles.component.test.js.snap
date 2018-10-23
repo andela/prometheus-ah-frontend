@@ -11,25 +11,20 @@ exports[`LandingPage component should render a snapshot of the userNavigation co
   </h2>
   <FeaturedArticle
     active={0}
-    author="Tega Okeremeta"
-    category="Technolgy"
-    date="2018-09-20T13:43:12.129Z"
-    description="feeling very excited"
-    image="https://image.ibb.co/eLVQwL/kids.jpg"
-    key="1"
+    author={
+      Object {
+        "firstname": null,
+        "lastname": null,
+        "username": "faksam",
+      }
+    }
+    category="Self"
+    date="2018-10-20T12:21:33.812Z"
+    description="all our problems"
+    key="23"
     readTime="1 min read"
-    title="My Broken Mother, My Broken Heart"
-  />
-  <FeaturedArticle
-    active={1}
-    author="Tega Okeremeta"
-    category="Technolgy"
-    date="2018-09-20T13:43:12.129Z"
-    description="feeling very excited"
-    image="https://image.ibb.co/eLVQwL/kids.jpg"
-    key="1"
-    readTime="1 min read"
-    title="My Broken Mother, My Broken Heart"
+    slug="nobody-taught-you"
+    title="nobody taught you"
   />
 </div>
 `;

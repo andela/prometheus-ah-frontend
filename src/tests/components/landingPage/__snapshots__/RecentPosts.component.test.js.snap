@@ -1,30 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RecentPost component should render a snapshot of the RecentPost component 1`] = `
-<div
-  className="col-12"
->
+<div>
   <h2
     className="section-title"
   >
     RECENT POSTS
   </h2>
   <RecentPost
-    author="Tega Okeremeta"
-    category="Technolgy"
+    author={
+      Object {
+        "email": "joeeasy@gmail.com",
+        "firstname": "Tega",
+        "id": 1,
+        "image": null,
+        "lastname": "Okeremeta",
+        "role": "user",
+        "status": "active",
+        "username": "Joeeasy",
+      }
+    }
     date="2018-09-20T13:43:12.129Z"
     image="https://image.ibb.co/eLVQwL/kids.jpg"
     key="1"
     readTime="1 min read"
+    slug="this-is-how-i-feel"
     title="My Broken Mother, My Broken Heart"
   />
   <RecentPost
-    author="Tega Okeremeta"
-    category="Technolgy"
+    author={
+      Object {
+        "email": "joeeasy@gmail.com",
+        "firstname": "Tega",
+        "id": 1,
+        "image": null,
+        "lastname": "Okeremeta",
+        "role": "user",
+        "status": "active",
+        "username": "Joeeasy",
+      }
+    }
     date="2018-09-20T13:43:12.129Z"
     image="https://image.ibb.co/eLVQwL/kids.jpg"
     key="1"
     readTime="1 min read"
+    slug="this-is-how-i-feel"
     title="My Broken Mother, My Broken Heart"
   />
 </div>

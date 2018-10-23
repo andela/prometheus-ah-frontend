@@ -171,6 +171,29 @@ describe('Article Actions', () => {
         });
       done();
     });
+    it('should make a get request to get all featured articles', (done) => {
+      moxios.stubRequest(`${config.apiUrl}/featuredArticles`, {
+        status: 200,
+        response: response.data
+      });
+      const store = createMockStore({});
+      const expectedActions = [
+        {
+          type: 'GET_ARTICLES_BEGINS'
+        },
+        {
+          type: 'GET_FEATURED_ARTICLES',
+          featuredArticles: response.data.articles
+        }
+      ];
+      store.dispatch(
+        Article.fetchFeaturedArticles()
+      )
+        .then(() => {
+          expect(store.getActions()).toEqual(expectedActions);
+        });
+      done();
+    });
     it('should dispatch the necessary action if fetching article fails', (done) => {
       moxios.stubRequest(`${config.apiUrl}/articles`, {
         status: 400,
