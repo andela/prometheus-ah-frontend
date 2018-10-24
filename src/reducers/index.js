@@ -11,6 +11,7 @@ import userArticles from './userArticles';
 import userFollowers from './userFollowers';
 import userFollowing from './userFollowing';
 import editProfile from './editProfile';
+import commentReducer from './comments';
 
 const appReducer = combineReducers({
   auth,
@@ -25,6 +26,8 @@ const appReducer = combineReducers({
   userFollowers,
   userFollowing,
   editProfile,
+  commentReducer,
+  passwordreset: resetPasswordReducer
 });
 
 export default appReducer;

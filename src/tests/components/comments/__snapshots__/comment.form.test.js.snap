@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommentForm Component should render without throwing an error 1`] = `
+<div>
+  <hr />
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-row form-row-comment"
+    >
+      <div
+        className="col-2 comment-thumbnail center-form-group-img"
+      >
+        <img
+          alt="user-thumbnail"
+          className="rounded-circle float-right img img-fluid-comment"
+          src={Object {}}
+        />
+      </div>
+      <div
+        className="form-group col-10"
+      >
+        <textarea
+          className="form-control"
+          error=""
+          field="body"
+          id="body"
+          label="body"
+          name="body"
+          onChange={[Function]}
+          placeholder="Leave a comment....."
+          rows="2"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="form-row"
+    >
+      <div
+        className="form-group col float-right"
+      >
+        <button
+          className="btn comment-btn float-right"
+          id="submit"
+          onClick={[Function]}
+          type="submit"
+        >
+          COMMENT
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+`;

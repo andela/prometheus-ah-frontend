@@ -1,181 +1,192 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Read Article component ComponentDidMount 1`] = `
-<div
-  className="read-article my-5"
->
+<div>
   <div
-    className="row"
+    className="read-article my-5"
   >
     <div
-      className="col-12 col-lg-8 offset-lg-2"
+      className="row"
     >
       <div
-        className="article-title"
+        className="col-12 col-lg-8 offset-lg-2"
       >
-        <h1
-          className="title"
-        >
-          new article
-        </h1>
         <div
-          className="d-flex flex-column align-items-start flex-sm-row"
+          className="article-title"
         >
-          <div
-            className="mr-5 text-muted align-self-sm-center"
+          <h1
+            className="title"
           >
-            1 min read
-          </div>
+            new article
+          </h1>
           <div
-            className="text-muted mr-5 align-self-sm-center"
+            className="d-flex flex-column align-items-start flex-sm-row"
           >
-            Oct 15, 2018
-          </div>
-          <div
-            className="d-flex justify-content-around align-items-start"
-          >
-            <i
-              className="mdi mdi-thumb-up-outline mr-3 align-top"
+            <div
+              className="mr-5 text-muted align-self-sm-center"
             >
-              <span
-                className="likes-num"
+              1 min read
+            </div>
+            <div
+              className="text-muted mr-5 align-self-sm-center"
+            >
+              Oct 15, 2018
+            </div>
+            <div
+              className="d-flex justify-content-around align-items-start"
+            >
+              <i
+                className="mdi mdi-thumb-up-outline mr-3 align-top"
               >
-                 30
-              </span>
-            </i>
-            <a
-              href="https://twitter.com/intent/tweet?url=http%3A%2F%2Flocalhost%2F&text=Check%20out%20this%20article%20from%20Authors%20Haven&hashtags=AuthorsHaven"
-            >
+                <span
+                  className="likes-num"
+                >
+                   30
+                </span>
+              </i>
+              <a
+                href="https://twitter.com/intent/tweet?url=http%3A%2F%2Flocalhost%2F&text=Check%20out%20this%20article%20from%20Authors%20Haven&hashtags=AuthorsHaven"
+              >
+                <i
+                  className="mdi mdi-twitter mr-3"
+                />
+              </a>
+              <a
+                href="https://www.facebook.com/dialog/share?app_id=344596382778592&display=page&href=http%3A%2F%2Flocalhost%2F&redirect_uri=http%3A%2F%2Flocalhost%2F"
+              >
+                <i
+                  className="mdi mdi-facebook mr-3"
+                />
+              </a>
+              <a
+                href="mailto:?Subject=Check%20out%20this%20article%20from%20Authors%20Haven Titled new article&body=http%3A%2F%2Flocalhost%2F"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <i
+                  className="mdi mdi-email mr-3"
+                />
+              </a>
               <i
-                className="mdi mdi-twitter mr-3"
+                className="mdi mdi-bookmark"
               />
-            </a>
-            <a
-              href="https://www.facebook.com/dialog/share?app_id=344596382778592&display=page&href=http%3A%2F%2Flocalhost%2F&redirect_uri=http%3A%2F%2Flocalhost%2F"
-            >
-              <i
-                className="mdi mdi-facebook mr-3"
-              />
-            </a>
-            <a
-              href="mailto:?Subject=Check%20out%20this%20article%20from%20Authors%20Haven Titled new article&body=http%3A%2F%2Flocalhost%2F"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <i
-                className="mdi mdi-email mr-3"
-              />
-            </a>
-            <i
-              className="mdi mdi-bookmark"
-            />
+            </div>
           </div>
+          <p
+            className="mt-3 description font-italic text-muted"
+          >
+            <p
+              key="0"
+            >
+              the description
+            </p>
+          </p>
         </div>
+      </div>
+      <div
+        className="col-12 mt-5 col-lg-8 offset-lg-2"
+      >
         <p
-          className="mt-3 description font-italic text-muted"
+          className="post-body"
         >
           <p
             key="0"
           >
-            the description
+            The story started few years back
           </p>
         </p>
       </div>
-    </div>
-    <div
-      className="col-12 mt-5 col-lg-8 offset-lg-2"
-    >
-      <p
-        className="post-body"
-      >
-        <p
-          key="0"
-        >
-          The story started few years back
-        </p>
-      </p>
-    </div>
-    <div
-      className="col-12 mt-4 offset-lg-2"
-    >
-      <span
-        className="btn tags"
-      />
-      <span
-        className="btn tags"
-      />
-    </div>
-    <div
-      className="col-12 col-md-9 offset-md-1 mt-4 col-lg-6 offset-lg-3"
-    >
       <div
-        className="shadow-lg border-0 card p-3 p-lg-4"
+        className="col-12 mt-4 offset-lg-2"
       >
-        <div
-          className="d-flex mb-3"
-        >
-          <img
-            alt=""
-            className="img-fluid article-author-image rounded-circle"
-            src="https://image.ibb.co/i48Wqf/paceholder.jpg"
-          />
-          <div
-            className="ml-3 ml-md-3 ml-lg-4"
-          >
-            <p
-              className="my-2 author-name"
-            />
-            <p
-              className="author-bio"
-            />
-            <button
-              className="btn follow-btn"
-              type="button"
-            >
-              follow
-            </button>
-          </div>
-        </div>
-      </div>
-      <div
-        className="article-reactions mt-4 d-flex justify-content-around"
-      >
-        <i
-          className="mdi mdi-thumb-up-outline"
-        >
-          <span
-            className="likes-num"
-          >
-             30
-          </span>
-        </i>
-        <a
-          href="https://twitter.com/intent/tweet?url=http%3A%2F%2Flocalhost%2F&text=Check%20out%20this%20article%20from%20Authors%20Haven&hashtags=AuthorsHaven"
-        >
-          <i
-            className="mdi mdi-twitter"
-          />
-        </a>
-        <a
-          href="https://www.facebook.com/dialog/share?app_id=344596382778592&display=page&href=http%3A%2F%2Flocalhost%2F&redirect_uri=http%3A%2F%2Flocalhost%2F"
-        >
-          <i
-            className="mdi mdi-facebook"
-          />
-        </a>
-        <a
-          href="mailto:?Subject=Check%20out%20this%20article%20from%20Authors%20Haven Titled new article&body=http%3A%2F%2Flocalhost%2F"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <i
-            className="mdi mdi-email"
-          />
-        </a>
-        <i
-          className="mdi mdi-bookmark"
+        <span
+          className="btn tags"
+        />
+        <span
+          className="btn tags"
         />
       </div>
+      <div
+        className="col-12 col-md-9 offset-md-1 mt-4 col-lg-6 offset-lg-3"
+      >
+        <div
+          className="shadow-lg border-0 card p-3 p-lg-4"
+        >
+          <div
+            className="d-flex mb-3"
+          >
+            <img
+              alt=""
+              className="img-fluid article-author-image rounded-circle"
+              src="https://image.ibb.co/i48Wqf/paceholder.jpg"
+            />
+            <div
+              className="ml-3 ml-md-3 ml-lg-4"
+            >
+              <p
+                className="my-2 author-name"
+              />
+              <p
+                className="author-bio"
+              />
+              <button
+                className="btn follow-btn"
+                type="button"
+              >
+                follow
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="article-reactions mt-4 d-flex justify-content-around"
+        >
+          <i
+            className="mdi mdi-thumb-up-outline"
+          >
+            <span
+              className="likes-num"
+            >
+               30
+            </span>
+          </i>
+          <a
+            href="https://twitter.com/intent/tweet?url=http%3A%2F%2Flocalhost%2F&text=Check%20out%20this%20article%20from%20Authors%20Haven&hashtags=AuthorsHaven"
+          >
+            <i
+              className="mdi mdi-twitter"
+            />
+          </a>
+          <a
+            href="https://www.facebook.com/dialog/share?app_id=344596382778592&display=page&href=http%3A%2F%2Flocalhost%2F&redirect_uri=http%3A%2F%2Flocalhost%2F"
+          >
+            <i
+              className="mdi mdi-facebook"
+            />
+          </a>
+          <a
+            href="mailto:?Subject=Check%20out%20this%20article%20from%20Authors%20Haven Titled new article&body=http%3A%2F%2Flocalhost%2F"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <i
+              className="mdi mdi-email"
+            />
+          </a>
+          <i
+            className="mdi mdi-bookmark"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="container-fluid comment-container"
+    >
+      <Connect(ArticleComments) />
     </div>
   </div>
 </div>
@@ -220,8 +231,22 @@ exports[`Read Article component should render Article page correctly 1`] = `
         "userId": 5,
       }
     }
+    comment={
+      Object {
+        "User": Object {
+          "email": "fakunlesamuel@gmail.com",
+          "image": null,
+          "username": "faksam",
+        },
+        "body": "Life is a race what do I do?",
+        "createdAt": "2018-10-23T08:41:31.073Z",
+        "id": 179,
+        "updatedAt": "2018-10-23T08:41:31.073Z",
+      }
+    }
     fetchSingleArticle={[MockFunction]}
     history={Object {}}
+    loadCommentsAction={[MockFunction]}
     location={
       Object {
         "pathname": "/articles/new-article",
@@ -239,6 +264,7 @@ exports[`Read Article component should render Article page correctly 1`] = `
     <ReadArticle
       fetchSingleArticle={[Function]}
       history={Object {}}
+      loadCommentsAction={[Function]}
       location={
         Object {
           "pathname": "/articles/new-article",

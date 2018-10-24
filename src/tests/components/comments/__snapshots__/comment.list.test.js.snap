@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommentList Component should render without throwing an error 1`] = `
+<div>
+  <br />
+  <div>
+    <Connect(CommentRow)
+      comment={
+        Object {
+          "User": Object {
+            "bio": "tomorrow is a better day",
+            "email": "joeeasy@gmail.com",
+            "id": 1,
+            "isVerified": true,
+            "role": "user",
+            "username": "joeeasy",
+          },
+          "body": "This article is hot",
+          "createdAt": "2016-02-18T03:22:56.637Z",
+          "id": 2,
+          "updatedAt": "2016-02-18T03:48:35.824Z",
+        }
+      }
+      key="2"
+      username="faksam"
+    />
+    <Connect(CommentRow)
+      comment={
+        Object {
+          "User": Object {
+            "bio": "tomorrow is a better day",
+            "email": "joeeasy@gmail.com",
+            "id": 1,
+            "isVerified": true,
+            "role": "user",
+            "username": "joeeasy",
+          },
+          "body": "This article is hot",
+          "createdAt": "2016-02-18T03:22:56.637Z",
+          "id": 3,
+          "updatedAt": "2016-02-18T03:48:35.824Z",
+        }
+      }
+      key="3"
+      username="faksam"
+    />
+    <Connect(CommentRow)
+      comment={
+        Object {
+          "User": Object {
+            "bio": "tomorrow is a better day",
+            "email": "joeeasy@gmail.com",
+            "id": 1,
+            "isVerified": true,
+            "role": "user",
+            "username": "joeeasy",
+          },
+          "body": "This article is hot",
+          "createdAt": "2016-02-18T03:22:56.637Z",
+          "id": 4,
+          "updatedAt": "2016-02-18T03:48:35.824Z",
+        }
+      }
+      key="4"
+      username="faksam"
+    />
+  </div>
+</div>
+`;

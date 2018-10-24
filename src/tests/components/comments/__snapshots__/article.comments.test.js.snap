@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleComments Component should render without throwing an error 1`] = `
+<div>
+  <br />
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+    >
+      <h5>
+        Comments  
+        <span
+          className="comments-count"
+          id="commentsCount"
+        />
+      </h5>
+      <div>
+        <Connect(CommentForm)
+          article={
+            Object {
+              "Tags": Array [],
+              "User": Object {
+                "bio": "tomorrow is a better day",
+                "email": "joeeasy@gmail.com",
+                "firstname": null,
+                "id": 1,
+                "image": null,
+                "lastname": null,
+                "role": "user",
+                "status": "active",
+                "username": "joeeasy",
+              },
+              "body": "PHP is a cool framework for coding but not fast as node",
+              "createdAt": "2018-10-17T11:50:20.538Z",
+              "description": "coding",
+              "id": 11,
+              "readingTime": "1 min read",
+              "slug": "how-to-train-your-dragon",
+              "title": "how to code",
+              "updatedAt": "2018-10-17T11:50:20.538Z",
+              "userId": 1,
+            }
+          }
+        />
+        <br />
+        <br />
+      </div>
+      <Connect(CommentList)
+        commentsArray={Array []}
+        username="faksam"
+      />
+      <div>
+        <button
+          className="btn mx-auto"
+          onClick={[Function]}
+          type="submit"
+        >
+          Load More....
+        </button>
+      </div>
+    </div>
+  </div>
+  <hr />
+</div>
+`;

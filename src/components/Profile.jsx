@@ -30,7 +30,8 @@ class Profile extends Component {
             </div>
             <div className="col-sm-8">
               <h5>
-                {` ${profile.firstname}  ${profile.lastname} `}
+                { profile.firstname ? `${profile.firstname}  ${profile.lastname}`
+                  : 'Update Your Profile'}
                 &nbsp;
                 {
                   userId === profile.id ? (
