@@ -1,0 +1,106 @@
+.comment-btn {
+  background-color:#C03232;
+  border-color: #C03232;
+  color: #ffffff;
+  font-size: xx-small;
+}
+.comment-cancel-btn {
+  background-color:#ffffff;
+  border-color: #C03232;
+  color: #C03232;
+  font-size: xx-small;
+}
+.comment-span {
+  color: #8D8D8D;
+}
+.comment-span img {
+  vertical-align: top;
+  height: 20px;
+}
+.comments-count {
+  border: #C03232;
+  background-color: #c03232;
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 50px 50px;
+}
+.center-form-group-btn {
+  margin-top: 2%;
+}
+.comment-container {
+  margin: 0 auto;
+  padding: 0 10px;
+  max-width: 80%;
+}
+.form-row
+.col {
+  padding-left: 0px;
+}
+
+.dropleft {
+  cursor: pointer
+}
+.menu-top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+.reply-menu-top-right {
+  position: absolute;
+  right: -5px;
+  font-size: 18px;
+}
+.img-fluid-comment {
+  max-width: 50%;
+}
+.form-row
+.img-fluid-comment {
+  max-width: 45%;
+}
+
+.img-fluid-reply {
+  max-width: 45%;
+}
+.img-fluid-reply-1 {
+  max-width: 45%;
+}
+
+@media (max-width: 576px) {
+  .img-fluid-comment {
+    max-width: 250%;
+  }
+  .img-fluid-reply {
+    max-width: 100%;
+  }
+  .img-fluid-reply-1 {
+    max-width: 300%;
+  }
+  .form-row .img-fluid-comment {
+    max-width: 120%;
+  }
+  .form-row-comment {
+    padding-left: 3px;
+  }
+  .card-body
+  .img-fluid-comment {
+    max-width: 150%;
+  }
+  .card-body
+  .comment-reply-row
+  .img-fluid-comment {
+    max-width: 350%;
+  }
+  .center-form-group-btn {
+    margin-top: 5%;
+  }  
+  .center-form-group-img {
+    margin-top: 5%;
+  }
+
+  .comment-container {
+    margin: 0 auto;
+    padding: 0 0px;
+    max-width: 100%;
+  }
+}

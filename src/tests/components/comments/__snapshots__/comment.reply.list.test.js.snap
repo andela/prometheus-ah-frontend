@@ -1,0 +1,218 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommentReplyList Component should render without throwing an error 1`] = `
+<div>
+  <div>
+    <Connect(CommentReplyRow)
+      comment={
+        Object {
+          "User": Object {
+            "bio": "tomorrow is a better day",
+            "email": "joeeasy@gmail.com",
+            "id": 1,
+            "isVerified": true,
+            "role": "user",
+            "username": "joeeasy",
+          },
+          "body": "This article is hot",
+          "createdAt": "2016-02-18T03:22:56.637Z",
+          "id": 1,
+          "updatedAt": "2016-02-18T03:48:35.824Z",
+        }
+      }
+      commentReply={
+        Object {
+          "User": Object {
+            "bio": "tomorrow is a better day",
+            "email": "joeeasy@gmail.com",
+            "id": 1,
+            "isVerified": true,
+            "role": "user",
+            "username": "joeeasy",
+          },
+          "body": "This article is hot",
+          "createdAt": "2016-02-18T03:22:56.637Z",
+          "id": 2,
+          "updatedAt": "2016-02-18T03:48:35.824Z",
+        }
+      }
+      key="2"
+    />
+    <Connect(CommentReplyRow)
+      comment={
+        Object {
+          "User": Object {
+            "bio": "tomorrow is a better day",
+            "email": "joeeasy@gmail.com",
+            "id": 1,
+            "isVerified": true,
+            "role": "user",
+            "username": "joeeasy",
+          },
+          "body": "This article is hot",
+          "createdAt": "2016-02-18T03:22:56.637Z",
+          "id": 1,
+          "updatedAt": "2016-02-18T03:48:35.824Z",
+        }
+      }
+      commentReply={
+        Object {
+          "User": Object {
+            "bio": "tomorrow is a better day",
+            "email": "joeeasy@gmail.com",
+            "id": 1,
+            "isVerified": true,
+            "role": "user",
+            "username": "joeeasy",
+          },
+          "body": "This article is hot",
+          "createdAt": "2016-02-18T03:22:56.637Z",
+          "id": 3,
+          "updatedAt": "2016-02-18T03:48:35.824Z",
+        }
+      }
+      key="3"
+    />
+    <Connect(CommentReplyRow)
+      comment={
+        Object {
+          "User": Object {
+            "bio": "tomorrow is a better day",
+            "email": "joeeasy@gmail.com",
+            "id": 1,
+            "isVerified": true,
+            "role": "user",
+            "username": "joeeasy",
+          },
+          "body": "This article is hot",
+          "createdAt": "2016-02-18T03:22:56.637Z",
+          "id": 1,
+          "updatedAt": "2016-02-18T03:48:35.824Z",
+        }
+      }
+      commentReply={
+        Object {
+          "User": Object {
+            "bio": "tomorrow is a better day",
+            "email": "joeeasy@gmail.com",
+            "id": 1,
+            "isVerified": true,
+            "role": "user",
+            "username": "joeeasy",
+          },
+          "body": "This article is hot",
+          "createdAt": "2016-02-18T03:22:56.637Z",
+          "id": 4,
+          "updatedAt": "2016-02-18T03:48:35.824Z",
+        }
+      }
+      key="4"
+    />
+    <Connect(CommentReplyRow)
+      comment={
+        Object {
+          "User": Object {
+            "bio": "tomorrow is a better day",
+            "email": "joeeasy@gmail.com",
+            "id": 1,
+            "isVerified": true,
+            "role": "user",
+            "username": "joeeasy",
+          },
+          "body": "This article is hot",
+          "createdAt": "2016-02-18T03:22:56.637Z",
+          "id": 1,
+          "updatedAt": "2016-02-18T03:48:35.824Z",
+        }
+      }
+      commentReply={
+        Object {
+          "User": Object {
+            "bio": "tomorrow is a better day",
+            "email": "joeeasy@gmail.com",
+            "id": 1,
+            "isVerified": true,
+            "role": "user",
+            "username": "joeeasy",
+          },
+          "body": "This article is hot",
+          "createdAt": "2016-02-18T03:22:56.637Z",
+          "id": 2,
+          "updatedAt": "2016-02-18T03:48:35.824Z",
+        }
+      }
+      key="2"
+    />
+    <Connect(CommentReplyRow)
+      comment={
+        Object {
+          "User": Object {
+            "bio": "tomorrow is a better day",
+            "email": "joeeasy@gmail.com",
+            "id": 1,
+            "isVerified": true,
+            "role": "user",
+            "username": "joeeasy",
+          },
+          "body": "This article is hot",
+          "createdAt": "2016-02-18T03:22:56.637Z",
+          "id": 1,
+          "updatedAt": "2016-02-18T03:48:35.824Z",
+        }
+      }
+      commentReply={
+        Object {
+          "User": Object {
+            "bio": "tomorrow is a better day",
+            "email": "joeeasy@gmail.com",
+            "id": 1,
+            "isVerified": true,
+            "role": "user",
+            "username": "joeeasy",
+          },
+          "body": "This article is hot",
+          "createdAt": "2016-02-18T03:22:56.637Z",
+          "id": 3,
+          "updatedAt": "2016-02-18T03:48:35.824Z",
+        }
+      }
+      key="3"
+    />
+    <Connect(CommentReplyRow)
+      comment={
+        Object {
+          "User": Object {
+            "bio": "tomorrow is a better day",
+            "email": "joeeasy@gmail.com",
+            "id": 1,
+            "isVerified": true,
+            "role": "user",
+            "username": "joeeasy",
+          },
+          "body": "This article is hot",
+          "createdAt": "2016-02-18T03:22:56.637Z",
+          "id": 1,
+          "updatedAt": "2016-02-18T03:48:35.824Z",
+        }
+      }
+      commentReply={
+        Object {
+          "User": Object {
+            "bio": "tomorrow is a better day",
+            "email": "joeeasy@gmail.com",
+            "id": 1,
+            "isVerified": true,
+            "role": "user",
+            "username": "joeeasy",
+          },
+          "body": "This article is hot",
+          "createdAt": "2016-02-18T03:22:56.637Z",
+          "id": 4,
+          "updatedAt": "2016-02-18T03:48:35.824Z",
+        }
+      }
+      key="4"
+    />
+  </div>
+</div>
+`;

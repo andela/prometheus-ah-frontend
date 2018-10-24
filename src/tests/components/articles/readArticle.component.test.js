@@ -31,7 +31,19 @@ describe('Read Article component', () => {
         userId: 5
 
       },
+      comment: {
+        id: 179,
+        createdAt: '2018-10-23T08:41:31.073Z',
+        updatedAt: '2018-10-23T08:41:31.073Z',
+        body: 'Life is a race what do I do?',
+        User: {
+          username: 'faksam',
+          email: 'fakunlesamuel@gmail.com',
+          image: null
+        }
+      },
       fetchSingleArticle: jest.fn(),
+      loadCommentsAction: jest.fn(),
       match: {
         params: { slug: 'new-article' },
         url: '/articles/new-article'
@@ -82,6 +94,53 @@ describe('Read Article component', () => {
             userId: 5
           }
         ]
+      },
+      commentReducer: {
+        comments: {
+          paginationMeta: {
+            currentPage: 1,
+            pageSize: 10,
+            totalCount: 5,
+            resultCount: 5,
+            pageCount: 1
+          },
+          comments: {
+            0: {
+              id: 179,
+              createdAt: '2018-10-23T08:41:31.073Z',
+              updatedAt: '2018-10-23T08:41:31.073Z',
+              body: 'This article is correct edit',
+              User: {
+                username: 'faksam',
+                email: 'fakunlesamuel@gmail.com',
+                image: null
+              }
+            },
+            1: {
+              id: 179,
+              createdAt: '2018-10-23T08:41:31.073Z',
+              updatedAt: '2018-10-23T08:41:31.073Z',
+              body: 'Life is a race what do I do?',
+              User: {
+                username: 'faksam',
+                email: 'fakunlesamuel@gmail.com',
+                image: null
+              }
+            },
+            2: {
+              id: 179,
+              createdAt: '2018-10-23T08:41:31.073Z',
+              updatedAt: '2018-10-23T08:41:31.073Z',
+              body: 'This article is hot',
+              User: {
+                username: 'faksam',
+                email: 'fakunlesamuel@gmail.com',
+                image: null
+              }
+            },
+          },
+          commentsCount: 5
+        },
       }
     };
     store = mockStore(initialState);
@@ -100,6 +159,7 @@ describe('Read Article component', () => {
     const props = { // eslint-disable-line
       article: null,
       fetchSingleArticle: jest.fn(),
+      loadCommentsAction: jest.fn(),
       match: {
         params: { slug: 'new-article' },
         url: '/articles/new-article'
@@ -109,6 +169,8 @@ describe('Read Article component', () => {
     };
     wrapper = shallow(<ReadArticle store={store} {...props} />);
     expect(props.fetchSingleArticle).toHaveBeenCalled();
+    expect(props.loadCommentsAction).toHaveBeenCalled();
+    wrapper = shallow(<ReadArticle {...props} />);
   });
 
   it('should display the necessary element', () => {
