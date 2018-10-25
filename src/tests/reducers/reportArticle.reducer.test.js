@@ -37,6 +37,20 @@ describe('Report Article Reducer', () => {
     expect(newState.error.error).toEqual(undefined);
     done();
   });
+
+  it('should send an error message when passed GET_REPORTS_ERROR', (done) => {
+    const state = {};
+    const error = mockData.errorResponse;
+    const action = {
+      type: 'GET_REPORTS_ERROR',
+      error
+    };
+
+    const newState = reportArticle(state, action);
+    expect(newState.error.error).toEqual(undefined);
+    done();
+  });
+
   it('should get all report category when ALL_REPORT_CATEGORY is dispatched', (done) => {
     const state = {};
     const category = mockData.reportCategoryDetails;

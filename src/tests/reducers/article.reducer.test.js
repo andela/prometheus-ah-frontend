@@ -7,6 +7,8 @@ const initialState = {
   article: null,
   paginationMeta: {},
   featuredArticles: null,
+  articleLikes: 0,
+  likeStatus: false
 };
 const article = {
   title: 'new article',
@@ -24,7 +26,9 @@ describe('Article reducer', () => {
       articles: [],
       article: null,
       featuredArticles: null,
-      paginationMeta: {}
+      paginationMeta: {},
+      articleLikes: 0,
+      likeStatus: false
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -40,7 +44,9 @@ describe('Article reducer', () => {
       loading: true,
       paginationMeta: {},
       reqError: null,
-      featuredArticles: null
+      featuredArticles: null,
+      articleLikes: 0,
+      likeStatus: false
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -62,7 +68,9 @@ describe('Article reducer', () => {
       featuredArticles: null,
       loading: false,
       paginationMeta: {},
-      reqError: null
+      reqError: null,
+      articleLikes: 0,
+      likeStatus: false
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -79,6 +87,8 @@ describe('Article reducer', () => {
       loading: false,
       featuredArticles: null,
       paginationMeta: {},
+      articleLikes: 0,
+      likeStatus: false,
       reqError: { message: 'request fail' }
     };
     const newState = articleReducer(initialState, action);
@@ -96,7 +106,9 @@ describe('Article reducer', () => {
       loading: false,
       paginationMeta: {},
       reqError: undefined,
-      featuredArticles: null
+      featuredArticles: null,
+      articleLikes: 0,
+      likeStatus: false
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -113,6 +125,8 @@ describe('Article reducer', () => {
       paginationMeta: {},
       reqError: null,
       featuredArticles: null,
+      articleLikes: 0,
+      likeStatus: false
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -127,8 +141,10 @@ describe('Article reducer', () => {
       articles: [],
       featuredArticles: null,
       loading: true,
-      reqError: null,
       paginationMeta: {},
+      reqError: null,
+      articleLikes: 0,
+      likeStatus: false
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -143,9 +159,11 @@ describe('Article reducer', () => {
       article: null,
       articles: undefined,
       featuredArticles: null,
+      reqError: null,
       loading: false,
       paginationMeta: {},
-      reqError: null,
+      articleLikes: 0,
+      likeStatus: false
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -160,9 +178,11 @@ describe('Article reducer', () => {
       article: null,
       articles: [],
       featuredArticles: null,
+      reqError: undefined,
       loading: false,
       paginationMeta: {},
-      reqError: undefined
+      articleLikes: 0,
+      likeStatus: false
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -179,7 +199,9 @@ describe('Article reducer', () => {
       featuredArticles: null,
       loading: false,
       paginationMeta: {},
-      reqError: undefined
+      reqError: undefined,
+      articleLikes: 0,
+      likeStatus: false
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -196,6 +218,8 @@ describe('Article reducer', () => {
       loading: true,
       paginationMeta: {},
       reqError: null,
+      articleLikes: 0,
+      likeStatus: false
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -216,7 +240,9 @@ describe('Article reducer', () => {
       featuredArticles: null,
       loading: false,
       paginationMeta: {},
-      reqError: null
+      reqError: null,
+      articleLikes: 0,
+      likeStatus: false
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -233,7 +259,9 @@ describe('Article reducer', () => {
       featuredArticles: null,
       paginationMeta: {},
       loading: false,
-      reqError: undefined
+      reqError: undefined,
+      articleLikes: 0,
+      likeStatus: false
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -251,6 +279,8 @@ describe('Article reducer', () => {
       paginationMeta: {},
       loading: false,
       reqError: undefined,
+      articleLikes: 0,
+      likeStatus: false
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -267,6 +297,8 @@ describe('Article reducer', () => {
       paginationMeta: {},
       reqError: null,
       featuredArticles: null,
+      articleLikes: 0,
+      likeStatus: false
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -285,6 +317,8 @@ describe('Article reducer', () => {
       loading: false,
       paginationMeta: {},
       reqError: null,
+      articleLikes: 0,
+      likeStatus: false
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -305,7 +339,9 @@ describe('Article reducer', () => {
       featuredArticles: null,
       loading: false,
       paginationMeta: {},
-      reqError: null
+      reqError: null,
+      articleLikes: 0,
+      likeStatus: false
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -322,7 +358,9 @@ describe('Article reducer', () => {
       loading: false,
       featuredArticles: null,
       paginationMeta: {},
-      reqError: undefined
+      reqError: undefined,
+      articleLikes: 0,
+      likeStatus: false
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -340,7 +378,9 @@ describe('Article reducer', () => {
       loading: false,
       featuredArticles: null,
       paginationMeta: {},
-      reqError: undefined
+      reqError: undefined,
+      articleLikes: 0,
+      likeStatus: false
     };
     const newState = articleReducer(initialState, action);
     expect(newState).toEqual(expected);
@@ -375,7 +415,7 @@ describe('Article reducer', () => {
     expect(newState).toEqual(expected);
     done();
   });
-  it('should update the state when DELETE_ARTICLES_FAIL is passed', (done) => {
+  it('should update the state when DELETE_ARTICLE_FAIL is passed', (done) => {
     const action = {
       type: 'DELETE_ARTICLE_FAIL',
     };
@@ -397,5 +437,60 @@ describe('Article reducer', () => {
     const newState = articleReducer([], action);
     expect(newState).toEqual(expected);
     done();
+  });
+
+  it('should return the state when a user likes an article', () => {
+    const action = {
+      type: 'LIKE_ARTICLE_SUCCESS'
+    };
+    const state = articleReducer(initialState, action);
+    expect(state).toEqual(initialState);
+  });
+
+  it('should return the state when a user likes an article fails', () => {
+    const action = {
+      type: 'LIKE_ARTICLE_FAILED'
+    };
+    const state = articleReducer(initialState, action);
+    expect(state).toEqual(initialState);
+  });
+
+  it('should return the state when a user unlikes an article', () => {
+    const action = {
+      type: 'UNLIKE_ARTICLE_SUCCESS'
+    };
+    const state = articleReducer(initialState, action);
+    expect(state).toEqual(initialState);
+  });
+
+  it('should return the state when a user unlikes an article fails', () => {
+    const action = {
+      type: 'UNLIKE_ARTICLE_FAILED'
+    };
+    const state = articleReducer(initialState, action);
+    expect(state).toEqual(initialState);
+  });
+
+  it('should return the state when likes count on article fails', () => {
+    const action = {
+      type: 'LIKES_COUNT_FAILED'
+    };
+    const state = articleReducer(initialState, action);
+    expect(state).toEqual(initialState);
+  });
+
+  it('should return the state when likes status on article fails', () => {
+    const action = {
+      type: 'LIKE_STATUS_FAILED'
+    };
+    const state = articleReducer(initialState, action);
+    expect(state).toEqual(initialState);
+  });
+
+  it('should setup default article state', () => {
+    // action.type in this case is '@@INIT' which only returns the default
+    // initial state
+    const state = articleReducer(undefined, { type: '@@INIT' });
+    expect(state).toEqual(initialState);
   });
 });

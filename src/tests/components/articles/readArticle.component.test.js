@@ -28,7 +28,6 @@ describe('Read Article component', () => {
         title: 'new article',
         updatedAt: '2018-10-15T11:27:58.250Z',
         userId: 5
-
       },
       comment: {
         id: 179,
@@ -47,6 +46,17 @@ describe('Read Article component', () => {
       fetchSingleArticle: jest.fn().mockResolvedValue(Promise.resolve()),
       deleteUserArticle: jest.fn().mockResolvedValue(Promise.resolve()),
       loadCommentsAction: jest.fn(),
+      likeStatus: jest.fn(),
+      articleLikesCount: jest.fn(),
+      likeArticle: jest.fn(() => Promise.resolve({ status: 200 })),
+      unlikeArticle: jest.fn(() => Promise.resolve()),
+      auth: {
+        isAuthenticated: true,
+        user: {
+          username: 'joe'
+        }
+      },
+      count: [],
       match: {
         params: { slug: 'new-article' },
         url: '/articles/new-article'
@@ -70,13 +80,15 @@ describe('Read Article component', () => {
       postReport: {
         reports: {}
       },
-      auth: {
-        user: {
-          userId: 5
-        }
-      },
       modal: {
         current: null,
+      },
+      auth: {
+        isAuthenticated: false,
+        user: {
+          username: 'joe',
+          userId: 5
+        }
       },
       articleReducer: {
         articles: [
@@ -181,6 +193,14 @@ describe('Read Article component', () => {
       article: null,
       fetchSingleArticle: jest.fn().mockResolvedValue(Promise.resolve()),
       loadCommentsAction: jest.fn(),
+      articleLikesCount: jest.fn(),
+      likeArticle: jest.fn(),
+      likeStatus: jest.fn(),
+      unlikeArticle: jest.fn(),
+      auth: {
+        isAuthenticated: false,
+      },
+      count: 0,
       match: {
         params: { slug: 'new-article' },
         url: '/articles/new-article'
@@ -196,7 +216,7 @@ describe('Read Article component', () => {
   it('should display the necessary element', () => {
     wrapper = shallow(<ReadArticle {...props} />);
     expect(wrapper.find('div').exists()).toBe(true);
-    expect(wrapper.find('div').length).toEqual(26);
+    expect(wrapper.find('div').length).toEqual(27);
   });
 
   it('Display loading if no article', () => {
@@ -204,9 +224,14 @@ describe('Read Article component', () => {
       user: {
         userId: 5
       },
+      auth: {
+        isAuthenticated: false,
+      },
       fetchSingleArticle: jest.fn().mockResolvedValue(Promise.resolve()),
       deleteUserArticle: jest.fn().mockResolvedValue(Promise.resolve()),
       loadCommentsAction: jest.fn(),
+      articleLikesCount: jest.fn(),
+      likeStatus: jest.fn(),
       match: {
         params: { slug: 'new-article' },
         url: '/articles/new-article'
@@ -246,5 +271,13 @@ describe('Read Article component', () => {
     const instance = wrapper.instance();
     instance.onDelete();
     expect(props.deleteUserArticle).toHaveBeenCalled();
+  });
+
+  it('should like an article on click', () => {
+    store = mockStore({});
+    wrapper = shallow(<ReadArticle store={store} {...props} />);
+    wrapper.find('Like').at(0).simulate('click');
+    expect(props.likeArticle).toHaveBeenCalled();
+    expect(wrapper).toMatchSnapshot();
   });
 });

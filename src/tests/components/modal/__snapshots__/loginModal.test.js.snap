@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sign Up Modal Component should render connected component 1`] = `
+<LoginModal
+  closeModal={[MockFunction]}
+  hideModal={[Function]}
+  modal={
+    Object {
+      "current": "signUp",
+    }
+  }
+  onClick={[MockFunction]}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+/>
+`;

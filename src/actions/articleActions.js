@@ -41,7 +41,7 @@ export default class Article {
           return response;
         })
         .catch((err) => {
-          if (err.response === 500) {
+          if (err.response.status === 500) {
             dispatch({
               type: actionTypes.CREATE_ARTICLE_REJECTED,
               payload: { message: 'Sorry, an unexpected error occurred.' },
@@ -75,6 +75,7 @@ export default class Article {
           dispatch({
             type: actionTypes.GET_ARTICLES,
             articles: response.data.articles,
+            likedArticle: response.data.likes,
             paginationMeta: response.data.articles.paginationMeta
           });
         })
@@ -266,6 +267,123 @@ export default class Article {
           dispatch({
             type: 'GET_FEATURED_ARTICLES_FAIL',
             payload: err.response.data.message
+          });
+        });
+    };
+  }
+
+  /**
+  * Request to the API to like an article
+  *
+  * @static
+  * @param {string} slug - id of article
+  * @returns {Object} dispatch object
+  *
+  * @memberof ArticleActions
+  */
+  static likeArticle(slug) {
+    return (dispatch) => {
+      const link = `/articles/${slug}/like`;
+      return axios
+        .post(`${config.apiUrl}${link}`)
+        .then((response) => {
+          if (response.status === 201) {
+            dispatch({
+              type: 'LIKE_ARTICLE_SUCCESS',
+            });
+          }
+          return response;
+        })
+        .catch(() => {
+          dispatch({
+            type: 'LIKE_ARTICLE_FAILED',
+          });
+        });
+    };
+  }
+
+  /**
+* Request to the API to unlike an articles
+*
+* @static
+* @param {string} slug - id of article
+* @returns {Object} dispatch object
+*
+* @memberof ArticleActions
+*/
+  static unlikeArticle(slug) {
+    return (dispatch) => {
+      const link = `/articles/${slug}/unlike`;
+      return axios
+        .delete(`${config.apiUrl}${link}`)
+        .then((response) => {
+          dispatch({
+            type: 'UNLIKE_ARTICLE_SUCCESS'
+          });
+          return response;
+        })
+        .catch(() => {
+          dispatch({
+            type: 'UNLIKE_ARTICLE_FAILED'
+          });
+        });
+    };
+  }
+
+  /**
+* Request to the API to get all likes for an article
+*
+* @static
+* @param {string} slug - id of article
+* @returns {Object} dispatch object
+*
+* @memberof ArticleActions
+*/
+  static articleLikesCount(slug) {
+    return (dispatch) => {
+      const link = `/articles/${slug}/like`;
+      return axios
+        .get(`${config.apiUrl}${link}`)
+        .then((response) => {
+          dispatch({
+            type: 'LIKES_COUNT_SUCCESS',
+            count: response.data.paginationMeta.totalCount
+          });
+          return response;
+        })
+        .catch(() => {
+          dispatch({
+            type: 'LIKES_COUNT_FAILED',
+          });
+          toastr.error('Sorry an unexpected error occured');
+        });
+    };
+  }
+
+  /**
+* Request to the API to get a user like status for an article
+*
+* @static
+* @param {string} slug - id of article
+* @returns {Object} dispatch object
+*
+* @memberof ArticleActions
+*/
+  static articleLikeStatus(slug) {
+    return (dispatch) => {
+      const link = `/articles/${slug}/likes`;
+      return axios
+        .get(`${config.apiUrl}${link}`)
+        .then((response) => {
+          dispatch({
+            type: 'LIKE_STATUS_SUCCESS',
+            status: response.data.userLikes
+          });
+          return response;
+        })
+        .catch(() => {
+          dispatch({
+            type: 'LIKE_STATUS_FAILED',
           });
         });
     };

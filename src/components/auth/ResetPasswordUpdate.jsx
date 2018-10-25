@@ -74,7 +74,7 @@ export class ResetPasswordUpdate extends Component {
               passwordUpdated: true
             }));
           }
-        })
+        });
     }
   };
 

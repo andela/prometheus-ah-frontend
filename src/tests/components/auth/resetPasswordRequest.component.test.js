@@ -72,9 +72,12 @@ describe('ResetPasswordRequest', () => {
   });
 
   test('should call the dispatch mapped to the props', () => {
+    const props = {
+      resetPasswordRequest: jest.fn(() => Promise.resolve())
+    };
     const store = createMockStore({});
     const wrapper2 = shallow(
-      <ResetPasswordRequest.WrappedComponent store={store} />
+      <ResetPasswordRequest store={store} {...props} />
     );
     expect(wrapper2).toMatchSnapshot();
   });

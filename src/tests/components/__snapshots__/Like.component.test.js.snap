@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Like should correctly Like component  1`] = `
+<i
+  className=""
+>
+  <span
+    className=""
+  >
+     
+  </span>
+</i>
+`;

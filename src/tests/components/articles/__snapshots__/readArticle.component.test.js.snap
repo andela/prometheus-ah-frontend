@@ -12,4 +12,248 @@ exports[`Read Article component Display loading if no article 1`] = `
 </div>
 `;
 
+exports[`Read Article component should like an article on click 1`] = `
+<div>
+  <div
+    className="read-article my-5"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-12 col-lg-8 offset-lg-2"
+      >
+        <div
+          className="article-title"
+        >
+          <h1
+            className="title"
+          >
+            new article
+          </h1>
+          <div
+            className="d-flex flex-column flex-md-row justify-content-between"
+          >
+            <div
+              className="d-flex flex-column flex-md-row"
+            >
+              <div
+                className="mr-5 text-muted"
+              >
+                1 min read
+              </div>
+              <div
+                className="text-muted mr-5"
+              >
+                Oct 15, 2018
+              </div>
+            </div>
+            <div
+              className="d-flex justify-content-around align-items-start article-reactions-top"
+            >
+              <Like
+                count={Array []}
+                iconClassName="mdi mdi-thumb-up-outline mr-3 align-top"
+                onClick={[Function]}
+                spanClassName="likes-num"
+              />
+              <a
+                href="https://twitter.com/intent/tweet?url=http%3A%2F%2Flocalhost%2F&text=Check%20out%20this%20article%20from%20Authors%20Haven&hashtags=AuthorsHaven"
+              >
+                <i
+                  className="mdi mdi-twitter mr-3"
+                />
+              </a>
+              <a
+                href="https://www.facebook.com/dialog/share?app_id=344596382778592&display=page&href=http%3A%2F%2Flocalhost%2F&redirect_uri=http%3A%2F%2Flocalhost%2F"
+              >
+                <i
+                  className="mdi mdi-facebook mr-3"
+                />
+              </a>
+              <a
+                href="mailto:?Subject=Check%20out%20this%20article%20from%20Authors%20Haven Titled new article&body=http%3A%2F%2Flocalhost%2F"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <i
+                  className="mdi mdi-email mr-3"
+                />
+              </a>
+              <i
+                className="mdi mdi-bookmark"
+              />
+            </div>
+          </div>
+          <div
+            className="mt-3 description font-italic text-muted"
+          >
+            <p
+              key="0"
+            >
+              the description
+            </p>
+          </div>
+        </div>
+        <div
+          className="col-12 mt-5 col-lg-8 offset-lg-2"
+        >
+          <div
+            className="post-body"
+          >
+            <p
+              key="0"
+            >
+              The story started few years back
+            </p>
+          </div>
+        </div>
+        <div
+          className="col-md-6 offset-md-2"
+        >
+          <span
+            className="btn tags"
+          />
+          <span
+            className="btn tags"
+          />
+        </div>
+        <div>
+          <div
+            className="col-md-3 align-self-center report-icon"
+          >
+            <div
+              className="menu-top-right dropdown"
+            >
+              <i
+                aria-expanded="false"
+                aria-haspopup="true"
+                className="mdi mdi-dots-horizontal"
+                data-toggle="dropdown"
+                id="dropdownMenuButton"
+              />
+              <div
+                aria-labelledby="dropdownMenuButton"
+                className="dropdown-menu"
+              >
+                <ArticleControlBtn
+                  handleDelete={[Function]}
+                  link="/articles/new-article/edit"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <Connect(Modal)
+          article={
+            Object {
+              "Tags": Array [
+                "tag a",
+                "tag b",
+              ],
+              "User": Object {
+                "email": null,
+                "firstname": null,
+                "id": 5,
+                "image": null,
+                "lastname": null,
+                "reset_password_hash": null,
+              },
+              "body": "<p>The story started few years back</p>",
+              "createdAt": "2018-10-15T11:27:58.250Z",
+              "description": "<p>the description</p>",
+              "id": 71,
+              "readingTime": "1 min read",
+              "slug": "new-article",
+              "title": "new article",
+              "updatedAt": "2018-10-15T11:27:58.250Z",
+              "userId": 5,
+            }
+          }
+          articleSlug="new-article"
+        />
+        <div
+          className="col-12 col-md-9 offset-md-1 mt-4 col-lg-6 offset-lg-3 card-margin"
+        >
+          <div
+            className="shadow-lg border-0 card p-3 p-lg-4"
+          >
+            <div
+              className="d-flex mb-3"
+            >
+              <img
+                alt=""
+                className="img-fluid article-author-image rounded-circle"
+                src="https://image.ibb.co/i48Wqf/paceholder.jpg"
+              />
+              <div
+                className="ml-3 ml-md-3 ml-lg-4"
+              >
+                <div
+                  className="my-2 author-name"
+                />
+                <div
+                  className="author-bio"
+                />
+                <button
+                  className="btn follow-btn"
+                  type="button"
+                >
+                  follow
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            className="article-reactions mt-4 d-flex justify-content-around"
+          >
+            <Like
+              count={Array []}
+              iconClassName="mdi mdi-thumb-up-outline"
+              onClick={[Function]}
+              spanClassName="likes-num"
+            />
+            <a
+              href="https://twitter.com/intent/tweet?url=http%3A%2F%2Flocalhost%2F&text=Check%20out%20this%20article%20from%20Authors%20Haven&hashtags=AuthorsHaven"
+            >
+              <i
+                className="mdi mdi-twitter"
+              />
+            </a>
+            <a
+              href="https://www.facebook.com/dialog/share?app_id=344596382778592&display=page&href=http%3A%2F%2Flocalhost%2F&redirect_uri=http%3A%2F%2Flocalhost%2F"
+            >
+              <i
+                className="mdi mdi-facebook"
+              />
+            </a>
+            <a
+              href="mailto:?Subject=Check%20out%20this%20article%20from%20Authors%20Haven Titled new article&body=http%3A%2F%2Flocalhost%2F"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <i
+                className="mdi mdi-email"
+              />
+            </a>
+            <i
+              className="mdi mdi-bookmark"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="container-fluid comment-container"
+      >
+        <Connect(ArticleComments) />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Read Article component should render Article page correctly 1`] = `undefined`;

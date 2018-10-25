@@ -16,7 +16,11 @@ describe('Verify Email Component', () => {
   };
   const spy = sinon.spy(() => Promise.resolve());
   it('should render without throwing an error', () => {
-    const wrapper = shallow(<VerifyEmail startVerifyEmailAction={spy} location={location} success="Your account has been successfully activated" />);
+    const wrapper = shallow(<VerifyEmail
+      startVerifyEmailAction={spy}
+      location={location}
+      success="Your account has been successfully activated"
+    />);
     expect(wrapper.exists()).toBe(true);
   });
   it('should ', () => {
@@ -25,4 +29,3 @@ describe('Verify Email Component', () => {
     expect(wrapper.exists()).toBe(true);
   });
 });
-
