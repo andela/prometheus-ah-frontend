@@ -12,7 +12,7 @@ const setCurrentUserToStore = (store) => {
       const isExpired = (decodedToken.exp < (Date.now() / 1000));
       if (!isExpired) {
         store.dispatch(setCurrentUser(decodedToken));
-        store.dispatch(userProfile(jwt.decode(token).username));
+        store.dispatch(userProfile(decodedToken.username));
       } else {
         store.dispatch(logoutAction());
       }

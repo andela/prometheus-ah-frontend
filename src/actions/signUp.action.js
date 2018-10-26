@@ -59,6 +59,7 @@ export const userSignUpRequest = userData => (dispatch) => {
       dispatch(setCurrentUser(jwt.decode(token)));
       dispatch(hideSignupModal());
       toastr.success(message);
+      return true;
     }
   ).catch((error) => {
     dispatch(signUpError(error.response.data));

@@ -31,6 +31,7 @@ const loginAction = userDetails => (dispatch) => {
       toastr.success(message);
       dispatch(setCurrentUser(jwt.decode(token)));
       dispatch(hideLoginModal());
+      return true;
     })
     .catch((error) => {
       dispatch(setCurrentUserError(error.response.data));

@@ -49,7 +49,7 @@ class ProfilePage extends Component {
       articles: { user: { articles = {} } = {} },
       followers,
       following,
-      user: { user: { userId = {} } = {} },
+      user: { user: { userId } = {} },
       history,
       user: { isAuthenticated = {} }
     } = this.props;
