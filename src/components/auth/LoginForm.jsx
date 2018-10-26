@@ -12,6 +12,7 @@ import ErrorAlertNotification from '../common/ErrorAlertNotification';
 import SocialLogin from '../socialLogin/SocialLogin';
 import routes from '../../constants/routes';
 import { hideLoginModal } from '../../actions/modal.action';
+import userProfileAction from '../../actions/profile/userProfile.action';
 
 
 /**
@@ -52,11 +53,13 @@ export class LoginForm extends Component {
   };
 
   onSubmit = (event) => {
-    const { login } = this.props;
+    const { login, userProfile } = this.props;
+    const { username } = this.state;
     event.preventDefault();
     if (this.isValid()) {
       this.setState({ errors: {} });
       login(this.state);
+      userProfile(username);
     }
   };
 
@@ -178,6 +181,7 @@ LoginForm.propTypes = {
   login: PropTypes.func.isRequired,
   deleteErrorMessage: PropTypes.func,
   hideModal: PropTypes.func,
+  userProfile: PropTypes.func
 };
 
 const mapStateToProps = state => ({
@@ -188,7 +192,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   login: user => dispatch(loginAction(user)),
   deleteErrorMessage: () => dispatch(deleteErrorMessages()),
-  hideModal: () => dispatch(hideLoginModal())
+  hideModal: () => dispatch(hideLoginModal()),
+  userProfile: username => dispatch(userProfileAction(username)),
 });
 
 export default connect(

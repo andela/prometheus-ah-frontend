@@ -41,7 +41,7 @@ exports[`UserNavigation component should render a snapshot of the userNavigation
       alt=""
       className="img-fluid user-image rounded-circle dropdown-toggle"
       data-toggle="dropdown"
-      src="https://image.ibb.co/i48Wqf/paceholder.jpg"
+      src={null}
     />
     <div
       className="dropdown-menu dropdown-menu-right"

@@ -7,9 +7,14 @@ let wrapper;
 describe('Header Component', () => {
   beforeEach(() => {
     const props = {
+      auth: {
+        isAuthenticated: false
+      },
       logout: jest.fn(),
       showModal: jest.fn(),
-      showModalSignup: jest.fn()
+      showModalSignup: jest.fn(),
+      profile: jest.fn(),
+      user: {}
     };
 
     wrapper = shallow(<Header {...props} />);
@@ -23,7 +28,9 @@ describe('Header Component', () => {
 
   it('should render a component', () => {
     const props = {
-      auth: true,
+      auth: {
+        isAuthenticated: true
+      },
       logout: jest.fn(),
       showModal: jest.fn(),
       showModalSignup: jest.fn()

@@ -110,7 +110,7 @@ Profile.propTypes = {
   }).isRequired,
   following: PropTypes.shape({
   }).isRequired,
-  userId: PropTypes.number.isRequired,
+  userId: PropTypes.number,
   articles: PropTypes.instanceOf(Object)
 };
 

@@ -10,6 +10,7 @@ describe('Login component', () => {
     const props = {
       login: jest.fn(),
       auth: false,
+      userProfile: jest.fn(),
     };
     wrapper = shallow(<LoginForm {...props} />);
   });
@@ -54,7 +55,7 @@ describe('Login component', () => {
       .toBe(event.target.value);
   });
 
-  it('should login user when correct creadentials are supplied', () => {
+  it('should login user when correct credentials are supplied', () => {
     const { loginData } = mockData;
     const event = {
       preventDefault: jest.fn(),

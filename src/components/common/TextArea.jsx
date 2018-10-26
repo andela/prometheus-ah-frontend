@@ -17,8 +17,8 @@ const TextArea = ({
 );
 
 TextArea.propTypes = {
-  field: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  field: PropTypes.string,
+  value: PropTypes.string,
   error: PropTypes.shape({
   }),
   onChange: PropTypes.func.isRequired,

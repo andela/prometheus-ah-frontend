@@ -36,8 +36,7 @@ export class UserNavigation extends Component {
    * @memberof Header
    */
   render() {
-    const { profile } = this.props;
-
+    const { user } = this.props;
     return (
       <ul className="navbar-nav ml-auto">
         <li className="nav-item mr-4">
@@ -57,7 +56,7 @@ export class UserNavigation extends Component {
         </li>
         <li className="nav-item dropdown">
           <img
-            src={profile && profile.image ? profile.image : 'https://image.ibb.co/i48Wqf/paceholder.jpg'}
+            src={user ? user.image : 'https://image.ibb.co/i48Wqf/paceholder.jpg'}
             className="img-fluid user-image rounded-circle dropdown-toggle"
             data-toggle="dropdown"
             alt=""
@@ -84,15 +83,11 @@ export class UserNavigation extends Component {
 
 UserNavigation.propTypes = {
   logoutUser: PropTypes.func,
-  profile: PropTypes.shape({}),
+  user: PropTypes.shape({}),
 };
 
 const mapDispatchToProps = dispatch => ({
   logoutUser: () => dispatch(logoutAction()),
 });
 
-const mapStateToProps = state => ({
-  profile: state.userProfile.user.profile
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(UserNavigation);
+export default connect(null, mapDispatchToProps)(UserNavigation);
