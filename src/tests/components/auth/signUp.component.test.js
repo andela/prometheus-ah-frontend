@@ -43,10 +43,11 @@ const error = {
 
 const setUp = () => {
   const props = {
-    signUp: jest.fn(),
+    signUp: jest.fn().mockResolvedValue(Promise.resolve()),
     auth: false,
     router: undefined,
-    deleteError: jest.fn()
+    deleteError: jest.fn(),
+    userProfile: jest.fn()
   };
   return shallow(<SignUpForm {...props} />);
 };

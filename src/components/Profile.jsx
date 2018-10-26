@@ -25,7 +25,7 @@ class Profile extends Component {
           <div className="row">
             <div className="col-sm-4">
               <div className="profile-img">
-                <img src={profile.image} alt="profile" height="200px" width="200px" />
+                <img src={profile.image ? profile.image : 'https://image.ibb.co/i48Wqf/paceholder.jpg'} alt="profile" height="200px" width="200px" />
               </div>
             </div>
             <div className="col-sm-8">
@@ -110,7 +110,7 @@ Profile.propTypes = {
   }).isRequired,
   following: PropTypes.shape({
   }).isRequired,
-  userId: PropTypes.number.isRequired,
+  userId: PropTypes.number,
   articles: PropTypes.instanceOf(Object)
 };
 

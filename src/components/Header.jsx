@@ -6,7 +6,6 @@ import GuestNavigation from './navigation/GuestNavigation';
 import { showLoginModal, showSignupModal } from '../actions/modal.action';
 import appLogo from '../images/logo.png';
 
-
 /**
  * @description class for app header
  *
@@ -24,7 +23,7 @@ export class Header extends Component {
    */
   render() {
     const {
-      auth, modal, showModal, showModalSignup
+      auth, modal, showModal, showModalSignup, profile
     } = this.props;
     return (
       <div className="sticky-top main-navbar">
@@ -41,8 +40,12 @@ export class Header extends Component {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="collapsibleNavbar">
-            { auth
-              ? <UserNavigation />
+            { auth.isAuthenticated
+              ? (
+                <UserNavigation
+                  profile={profile}
+                />
+              )
               : (
                 <GuestNavigation
                   modal={modal}
@@ -71,15 +74,17 @@ export class Header extends Component {
 }
 
 Header.propTypes = {
-  auth: PropTypes.bool,
+  auth: PropTypes.shape({}),
   modal: PropTypes.shape({}),
   showModal: PropTypes.func,
-  showModalSignup: PropTypes.func
+  showModalSignup: PropTypes.func,
+  profile: PropTypes.shape({}),
 };
 
 const mapStateToProps = state => ({
   modal: state.modal,
-  auth: state.auth.isAuthenticated
+  auth: state.auth,
+  profile: state.userProfile.user.profile,
 });
 
 const mapDispatchToProps = dispatch => ({

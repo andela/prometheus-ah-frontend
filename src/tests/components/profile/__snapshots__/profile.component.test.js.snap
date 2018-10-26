@@ -19,6 +19,7 @@ exports[`Profile component should render the profile component 1`] = `
           <img
             alt="profile"
             height="200px"
+            src="https://image.ibb.co/i48Wqf/paceholder.jpg"
             width="200px"
           />
         </div>

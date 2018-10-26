@@ -37,7 +37,6 @@ export class UserNavigation extends Component {
    */
   render() {
     const { profile } = this.props;
-
     return (
       <ul className="navbar-nav ml-auto">
         <li className="nav-item mr-4">
@@ -84,15 +83,11 @@ export class UserNavigation extends Component {
 
 UserNavigation.propTypes = {
   logoutUser: PropTypes.func,
-  profile: PropTypes.shape({}),
+  user: PropTypes.shape({}),
 };
 
 const mapDispatchToProps = dispatch => ({
   logoutUser: () => dispatch(logoutAction()),
 });
 
-const mapStateToProps = state => ({
-  profile: state.userProfile.user.profile
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(UserNavigation);
+export default connect(null, mapDispatchToProps)(UserNavigation);
