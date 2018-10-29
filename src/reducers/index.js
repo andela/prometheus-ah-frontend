@@ -7,8 +7,7 @@ import socialLoginReducer from './socialLogin';
 import resetPasswordReducer from './resetPasswordReducer';
 import userProfile from './userProfile';
 import userArticles from './userArticles';
-import userFollowers from './userFollowers';
-import userFollowing from './userFollowing';
+import followReducer from './follow';
 import editProfile from './editProfile';
 
 const appReducer = combineReducers({
@@ -20,8 +19,7 @@ const appReducer = combineReducers({
   passwordreset: resetPasswordReducer,
   userProfile,
   userArticles,
-  userFollowers,
-  userFollowing,
+  followReducer,
   editProfile,
 });
 

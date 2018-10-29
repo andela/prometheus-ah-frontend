@@ -36,7 +36,7 @@ export class UserNavigation extends Component {
    * @memberof Header
    */
   render() {
-    const { user } = this.props;
+    const { profile } = this.props;
     return (
       <ul className="navbar-nav ml-auto">
         <li className="nav-item mr-4">
@@ -56,7 +56,7 @@ export class UserNavigation extends Component {
         </li>
         <li className="nav-item dropdown">
           <img
-            src={user ? user.image : 'https://image.ibb.co/i48Wqf/paceholder.jpg'}
+            src={profile && profile.image ? profile.image : 'https://image.ibb.co/i48Wqf/paceholder.jpg'}
             className="img-fluid user-image rounded-circle dropdown-toggle"
             data-toggle="dropdown"
             alt=""

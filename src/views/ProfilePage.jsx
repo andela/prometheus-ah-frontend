@@ -6,10 +6,11 @@ import { Link } from 'react-router-dom';
 import routes from '../constants/routes';
 import userProfile from '../actions/profile/userProfile.action';
 import userArticles from '../actions/profile/userArticles.action';
-import userFollowers from '../actions/profile/userFollowers.action';
-import userFollowing from '../actions/profile/userFollowing.action';
 import Profile from '../components/Profile';
 import Loading from '../components/common/Loading';
+import {
+  getMyFollowersAction, getMyFollowingAction, followUserAction, unfollowUserAction
+} from '../actions/profile/followAction';
 
 /**
  * Profile page
@@ -49,9 +50,12 @@ class ProfilePage extends Component {
       articles: { user: { articles = {} } = {} },
       followers,
       following,
-      user: { user: { userId } = {} },
+      user: { user = {} },
       history,
-      user: { isAuthenticated = {} }
+      user: { isAuthenticated = {} },
+      isFollowing,
+      followUser,
+      unfollowUser,
     } = this.props;
 
     if (!isAuthenticated) {
@@ -74,7 +78,10 @@ class ProfilePage extends Component {
           articles={articles}
           followers={followers}
           following={following}
-          userId={userId}
+          user={user}
+          isFollowing={isFollowing}
+          followUser={followUser}
+          unfollowUser={unfollowUser}
         />
       </div>
     );
@@ -85,17 +92,19 @@ const mapStateToProps = state => ({
   loading: state.userProfile.loading,
   profile: state.userProfile,
   articles: state.userArticles,
-  bookmarks: state.userBookmarks,
-  followers: state.userFollowers,
-  following: state.userFollowing,
+  followers: state.followReducer.followers,
+  following: state.followReducer.following,
+  isFollowing: state.followReducer.isFollowing,
   user: state.auth,
 });
 
 const mapDispatchToProps = dispatch => ({
   userProfileAction: user => dispatch(userProfile(user)),
   userArticlesAction: username => dispatch(userArticles(username)),
-  userFollowersAction: username => dispatch(userFollowers(username)),
-  userFollowingAction: username => dispatch(userFollowing(username)),
+  userFollowersAction: username => dispatch(getMyFollowersAction(username)),
+  userFollowingAction: username => dispatch(getMyFollowingAction(username)),
+  followUser: (username, user) => { dispatch(followUserAction(username, user)); },
+  unfollowUser: (username, user) => { dispatch(unfollowUserAction(username, user)); },
 });
 
 ProfilePage.propTypes = {
@@ -116,6 +125,9 @@ ProfilePage.propTypes = {
   }).isRequired,
   history: PropTypes.shape({
   }),
+  isFollowing: PropTypes.bool,
+  followUser: PropTypes.func,
+  unfollowUser: PropTypes.func,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProfilePage);

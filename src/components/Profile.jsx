@@ -4,11 +4,33 @@ import { Link } from 'react-router-dom';
 
 import routes from '../constants/routes';
 import ArticleCard from './common/ArticleCard';
+import Following from './common/Following';
+import Followers from './common/Followers';
 
 /**
  * Profile page
  */
 class Profile extends Component {
+  /**
+   * handleClick
+   * @return {void}
+   */
+  handleClick = () => {
+    const {
+      isFollowing,
+      unfollowUser,
+      followUser,
+      profile,
+      user,
+    } = this.props;
+
+    if (isFollowing === true) {
+      unfollowUser(profile.username, user.username);
+    } else {
+      followUser(profile.username, user.username);
+    }
+  }
+
   /**
    * render
    *
@@ -16,8 +38,9 @@ class Profile extends Component {
    */
   render() {
     const {
-      profile, articles, followers, following, userId
+      profile, articles, followers, following, user, isFollowing
     } = this.props;
+
 
     return (
       <div className="container-fluid">
@@ -25,7 +48,7 @@ class Profile extends Component {
           <div className="row">
             <div className="col-sm-4">
               <div className="profile-img">
-                <img src={profile.image} alt="profile" height="200px" width="200px" />
+                <img src={profile.image ? profile.image : 'https://image.ibb.co/i48Wqf/paceholder.jpg'} alt="profile" height="200px" width="200px" />
               </div>
             </div>
             <div className="col-sm-8">
@@ -33,12 +56,21 @@ class Profile extends Component {
                 {` ${profile.firstname}  ${profile.lastname} `}
                 &nbsp;
                 {
-                  userId === profile.id ? (
+                  user.userId === profile.id ? (
                     <Link to={{ pathname: routes.EDIT_PROFILE_PAGE, state: { profile } }}>
                       <button className="btn btn-outline-danger btn-sm" type="button">
                         Edit Profile
                       </button>
-                    </Link>) : ''
+                    </Link>) : (
+                      <Link to={{ }}>
+                        <button
+                          className="btn btn-outline-danger btn-sm"
+                          type="button"
+                          onClick={this.handleClick}
+                        >
+                          {isFollowing ? 'Unfollow' : 'Follow'}
+                        </button>
+                      </Link>)
                 }
               </h5>
               <p>
@@ -48,10 +80,19 @@ class Profile extends Component {
               <h6>{profile ? profile.bio : ''}</h6>
               <br />
               <p className="text-color">
-                <span>{ followers.myTotalFollow ? followers.myTotalFollow : '0 ' }</span>
-                Following &nbsp;&nbsp;
-                <span>{ following.totalFollower ? following.totalFollower : '0 ' }</span>
-                Followers
+                <span>
+                  <button type="button" className="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#following">
+                    { followers.myTotalFollow ? followers.myTotalFollow : '0' }
+                    &nbsp;Following
+                  </button>
+                </span>
+                &nbsp;
+                <span>
+                  <button type="button" className="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#followers">
+                    { following.myTotalFollow ? following.myTotalFollow : '0' }
+                    &nbsp;Followers
+                  </button>
+                </span>
               </p>
             </div>
           </div>
@@ -98,6 +139,12 @@ class Profile extends Component {
             </div>
           </div>
         </div>
+        <Following
+          following={following}
+        />
+        <Followers
+          followers={followers}
+        />
       </div>
     );
   }
@@ -110,8 +157,12 @@ Profile.propTypes = {
   }).isRequired,
   following: PropTypes.shape({
   }).isRequired,
-  userId: PropTypes.number,
-  articles: PropTypes.instanceOf(Object)
+  user: PropTypes.shape({
+  }).isRequired,
+  articles: PropTypes.instanceOf(Object),
+  isFollowing: PropTypes.bool,
+  followUser: PropTypes.func,
+  unfollowUser: PropTypes.func,
 };
 
 export default Profile;

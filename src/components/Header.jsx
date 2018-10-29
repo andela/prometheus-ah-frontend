@@ -23,7 +23,7 @@ export class Header extends Component {
    */
   render() {
     const {
-      auth, modal, showModal, showModalSignup
+      auth, modal, showModal, showModalSignup, profile
     } = this.props;
     return (
       <div className="sticky-top main-navbar">
@@ -43,7 +43,7 @@ export class Header extends Component {
             { auth.isAuthenticated
               ? (
                 <UserNavigation
-                  user={auth.user}
+                  profile={profile}
                 />
               )
               : (
@@ -84,6 +84,7 @@ Header.propTypes = {
 const mapStateToProps = state => ({
   modal: state.modal,
   auth: state.auth,
+  profile: state.userProfile.user.profile,
 });
 
 const mapDispatchToProps = dispatch => ({

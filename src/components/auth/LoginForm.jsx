@@ -58,8 +58,10 @@ export class LoginForm extends Component {
     event.preventDefault();
     if (this.isValid()) {
       this.setState({ errors: {} });
-      login(this.state);
-      userProfile(username);
+      login(this.state)
+        .then(() => {
+          userProfile(username);
+        });
     }
   };
 

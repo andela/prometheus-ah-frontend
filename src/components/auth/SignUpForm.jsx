@@ -7,6 +7,7 @@ import SignUpInputValidation from '../../validations/SignUpInputValidate';
 import ErrorAlertNotification from '../common/ErrorAlertNotification';
 import SocialLogin from '../socialLogin/SocialLogin';
 import { userSignUpRequest, deleteErrorMessage } from '../../actions/signUp.action';
+import userProfileAction from '../../actions/profile/userProfile.action';
 
 
 /**
@@ -65,8 +66,10 @@ export class SignUpForm extends Component {
     event.preventDefault();
     if (this.isValid()) {
       this.setState({ errors: {}, isLoading: true });
-      const { signUp } = this.props;
+      const { signUp, userProfile } = this.props;
+      const { username } = this.state;
       signUp(this.state);
+      userProfile(username);
     }
   }
 
@@ -190,15 +193,21 @@ export class SignUpForm extends Component {
 SignUpForm.propTypes = {
   signUp: PropTypes.func.isRequired,
   deleteError: PropTypes.func.isRequired,
+  userProfile: PropTypes.func,
   error: PropTypes.shape({}),
   auth: PropTypes.bool
 };
 
+const mapDispatchToProps = dispatch => ({
+  signUp: user => dispatch(userSignUpRequest(user)),
+  deleteError: () => dispatch(deleteErrorMessage()),
+  userProfile: username => dispatch(userProfileAction(username)),
+});
+
 const mapStateToProps = state => ({
   error: state.auth.error,
-  auth: state.auth.isAuthenticated
+  auth: state.auth.isAuthenticated,
 });
 
 
-export default connect(mapStateToProps,
-  { signUp: userSignUpRequest, deleteError: deleteErrorMessage })((SignUpForm));
+export default connect(mapStateToProps, mapDispatchToProps)((SignUpForm));
