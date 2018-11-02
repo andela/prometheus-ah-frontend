@@ -32,7 +32,21 @@ describe('Profile component', () => {
           message: 'You are yet to follow an Author.'
         }
       },
-      userId: 10
+      userId: 10,
+      bookmarks: {
+        articles: [{
+          body: 'Contrary to popular belief, Lorem Ipsum is not simply random text.',
+          createdAt: '2018-10-02T12:07:45.830Z',
+          description: 'why code in ruby',
+          id: 3,
+          readingTime: '3 min read',
+          slug: 'how-coding-works',
+          title: 'Coding',
+          updatedAt: '2018-10-02T12:07:45.830Z',
+          userId: 10,
+        }],
+        paginationMeta: {}
+      }
     };
     wrapper = shallow(<Profile {...props} />);
   });
@@ -42,6 +56,6 @@ describe('Profile component', () => {
   });
 
   it('should render articles cards and links', () => {
-    expect((wrapper).find('ArticleCard').length).toBe(1);
+    expect((wrapper).find('ArticleCard').length).toBe(2);
   });
 });
