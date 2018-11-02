@@ -13,8 +13,8 @@ const ArticleCard = ({ article }) => (
       </Link>
       <p className="card-text post-date">
         {moment(article.createdAt).fromNow()}
-        <span className="ml-4 font-weight-light font-italic">
-          {article.Tags ? article.Tags[0].name.toUpperCase() : '' }
+        <span className="ml-4 font-weight-light font-italic text-uppercase">
+          {article.Tags.length ? `${article.Tags[0].name}` : null}
         </span>
       </p>
       <div className="card-text post-description">
