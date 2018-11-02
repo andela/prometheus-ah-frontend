@@ -4,6 +4,7 @@ import FeaturedArticle from './FeaturedArticle';
 
 const FeaturedArticles = (props) => {
   const { posts } = props;
+
   return (
     <div className="col-12 col-md-7 col-lg-7">
       <h2 className="section-title">FEATURED POSTS</h2>
@@ -15,7 +16,7 @@ const FeaturedArticles = (props) => {
             image={post.image}
             title={post.title}
             date={post.createdAt}
-            category={post.Tags[0].name}
+            category={post.Tags.length ? `${post.Tags[0].name}` : null}
             description={post.description}
             readTime={post.readingTime}
             author={post.User}

@@ -32,14 +32,15 @@ export class LandingPage extends Component {
    */
   render() {
     const { featuredArticles, articles, author } = this.props;
-    const ratedPosts = data.articles.slice(0, 5);
-    const recentPosts = articles.slice(0, 3);
 
-    if (!featuredArticles || !articles || !author.featuredAuthor) {
+    if (!featuredArticles || !articles.length || !author.featuredAuthor) {
       return (
         <Loading />
       );
     }
+
+    const ratedPosts = data.articles.slice(0, 5);
+    const recentPosts = articles.slice(0, 3);
 
     return (
       <React.Fragment>

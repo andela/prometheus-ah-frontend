@@ -20,6 +20,7 @@ exports[`RecentPost component should render a snapshot of the RecentPost compone
         "username": "Joeeasy",
       }
     }
+    category="undefined"
     date="2018-09-20T13:43:12.129Z"
     image="https://image.ibb.co/eLVQwL/kids.jpg"
     key="1"
@@ -40,6 +41,7 @@ exports[`RecentPost component should render a snapshot of the RecentPost compone
         "username": "Joeeasy",
       }
     }
+    category="undefined"
     date="2018-09-20T13:43:12.129Z"
     image="https://image.ibb.co/eLVQwL/kids.jpg"
     key="1"

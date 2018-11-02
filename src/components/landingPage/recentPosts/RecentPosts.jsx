@@ -5,6 +5,8 @@ import RecentPost from './RecentPost';
 const RecentPosts = (props) => {
   const { posts } = props;
 
+  // const postTag = posts.Tags.length ? `${posts.Tags[0].name}` : null;
+
   return (
     <div>
       <h2 className="section-title">RECENT POSTS</h2>
@@ -15,7 +17,7 @@ const RecentPosts = (props) => {
             image={post.image}
             title={post.title}
             date={post.createdAt}
-            category={post.Tags[0].name}
+            category={post.Tags.length ? `${post.Tags[0].name}` : null}
             readTime={post.readingTime}
             author={post.User}
             slug={post.slug}
