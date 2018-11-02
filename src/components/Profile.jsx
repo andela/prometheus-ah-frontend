@@ -16,7 +16,7 @@ class Profile extends Component {
    */
   render() {
     const {
-      profile, articles, followers, following, userId
+      profile, articles, followers, following, userId, bookmarks
     } = this.props;
 
     return (
@@ -30,8 +30,7 @@ class Profile extends Component {
             </div>
             <div className="col-sm-8">
               <h5>
-                { profile.firstname ? `${profile.firstname}  ${profile.lastname}`
-                  : 'Update Your Profile'}
+                { profile.firstname ? `${profile.firstname}  ${profile.lastname}` : 'Update Your Profile'}
                 &nbsp;
                 {
                   userId === profile.id ? (
@@ -92,8 +91,15 @@ class Profile extends Component {
                 <div className="tab-pane fade" id="profile"
                   role="tabpanel" aria-labelledby="profile-tab"
                 >
-                  <h5>List of bookmarks</h5>
-                  <h1>&nbsp;</h1>
+                  <div className="row">
+                    {bookmarks.articles && bookmarks.articles.length > 0 ? bookmarks.articles.map(article => (
+                      <div className="col-sm-6" key={article.id}>
+                        <ArticleCard
+                          article={article}
+                        />
+                      </div>
+                    )) : 'You have not published any article'}
+                  </div>
                 </div>
               </div>
             </div>
@@ -112,7 +118,8 @@ Profile.propTypes = {
   following: PropTypes.shape({
   }).isRequired,
   userId: PropTypes.number,
-  articles: PropTypes.instanceOf(Object)
+  articles: PropTypes.instanceOf(Object),
+  bookmarks: PropTypes.shape({})
 };
 
 export default Profile;

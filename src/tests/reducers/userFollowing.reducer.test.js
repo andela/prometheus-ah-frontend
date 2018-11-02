@@ -11,7 +11,7 @@ describe('User Followers reducer', () => {
     });
     done();
   });
-  it('should get a user bookmarks successfully', (done) => {
+  it('should get a user followers successfully', (done) => {
     const state = {};
     const payload = {
       user: {}
@@ -24,7 +24,7 @@ describe('User Followers reducer', () => {
     expect(newState.user).toBeDefined();
     done();
   });
-  it('should fail to get a user articles', (done) => {
+  it('should fail to get a user following', (done) => {
     const state = {};
     const action = {
       type: GET_USER_FOLLOWING_FAILURE,

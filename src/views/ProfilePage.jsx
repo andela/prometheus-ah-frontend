@@ -8,6 +8,7 @@ import userProfile from '../actions/profile/userProfile.action';
 import userArticles from '../actions/profile/userArticles.action';
 import userFollowers from '../actions/profile/userFollowers.action';
 import userFollowing from '../actions/profile/userFollowing.action';
+import userBookmarks from '../actions/profile/userBookmarks.action';
 import Profile from '../components/Profile';
 import Loading from '../components/common/Loading';
 
@@ -22,14 +23,20 @@ class ProfilePage extends Component {
    */
   componentDidMount() {
     const {
-      userProfileAction, userArticlesAction, userFollowersAction, userFollowingAction
+      userProfileAction,
+      userArticlesAction,
+      userFollowersAction,
+      userFollowingAction,
+      userBookmarksAction,
     } = this.props;
+
     const { user: { user: { username = {} } } } = this.props;
     Promise.all([
       userProfileAction(username),
       userArticlesAction(username),
       userFollowersAction(username),
-      userFollowingAction(username)
+      userFollowingAction(username),
+      userBookmarksAction()
     ]);
   }
 
@@ -51,7 +58,8 @@ class ProfilePage extends Component {
       following,
       user: { user: { userId } = {} },
       history,
-      user: { isAuthenticated = {} }
+      user: { isAuthenticated = {} },
+      bookmarks
     } = this.props;
 
     if (!isAuthenticated) {
@@ -75,6 +83,7 @@ class ProfilePage extends Component {
           followers={followers}
           following={following}
           userId={userId}
+          bookmarks={bookmarks}
         />
       </div>
     );
@@ -85,7 +94,7 @@ const mapStateToProps = state => ({
   loading: state.userProfile.loading,
   profile: state.userProfile,
   articles: state.userArticles,
-  bookmarks: state.userBookmarks,
+  bookmarks: state.userBookmarks.bookmarks,
   followers: state.userFollowers,
   following: state.userFollowing,
   user: state.auth,
@@ -96,6 +105,7 @@ const mapDispatchToProps = dispatch => ({
   userArticlesAction: username => dispatch(userArticles(username)),
   userFollowersAction: username => dispatch(userFollowers(username)),
   userFollowingAction: username => dispatch(userFollowing(username)),
+  userBookmarksAction: () => dispatch(userBookmarks()),
 });
 
 ProfilePage.propTypes = {
@@ -103,6 +113,7 @@ ProfilePage.propTypes = {
   userFollowersAction: PropTypes.func.isRequired,
   userFollowingAction: PropTypes.func.isRequired,
   userArticlesAction: PropTypes.func.isRequired,
+  userBookmarksAction: PropTypes.func,
   loading: PropTypes.bool.isRequired,
   profile: PropTypes.shape({
   }).isRequired,
@@ -116,6 +127,7 @@ ProfilePage.propTypes = {
   }).isRequired,
   history: PropTypes.shape({
   }),
+  bookmarks: PropTypes.shape({}),
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProfilePage);

@@ -137,12 +137,30 @@ exports[`Profile component should render the profile component 1`] = `
             id="profile"
             role="tabpanel"
           >
-            <h5>
-              List of bookmarks
-            </h5>
-            <h1>
-               
-            </h1>
+            <div
+              className="row"
+            >
+              <div
+                className="col-sm-6"
+                key="3"
+              >
+                <ArticleCard
+                  article={
+                    Object {
+                      "body": "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+                      "createdAt": "2018-10-02T12:07:45.830Z",
+                      "description": "why code in ruby",
+                      "id": 3,
+                      "readingTime": "3 min read",
+                      "slug": "how-coding-works",
+                      "title": "Coding",
+                      "updatedAt": "2018-10-02T12:07:45.830Z",
+                      "userId": 10,
+                    }
+                  }
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

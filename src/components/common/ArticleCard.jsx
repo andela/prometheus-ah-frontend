@@ -1,15 +1,20 @@
 import React from 'react';
 import moment from 'moment';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const ArticleCard = ({ article }) => (
   <div className="card shadow-lg border-0 mb-5 featured-post">
     <div className="card-body">
-      <h3 className="card-title post-title">{article.title}</h3>
+      <Link to={`/articles/${article.slug}`} className="card-title post-title">
+        <h3 className="card-title post-title">
+          {article.title}
+        </h3>
+      </Link>
       <p className="card-text post-date">
         {moment(article.createdAt).fromNow()}
         <span className="ml-4 font-weight-light font-italic">
-          {article.Tags[0].name.toUpperCase()}
+          {article.Tags ? article.Tags[0].name.toUpperCase() : '' }
         </span>
       </p>
       <div className="card-text post-description">
