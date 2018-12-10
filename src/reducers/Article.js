@@ -6,7 +6,9 @@ const initialState = {
   articles: [],
   article: null,
   featuredArticles: null,
-  paginationMeta: {}
+  paginationMeta: {},
+  articleLikes: 0,
+  likeStatus: false
 };
 
 /**
@@ -30,7 +32,9 @@ const articleReducer = (state = initialState, action) => {
       };
     case actionTypes.CREATE_ARTICLE_REJECTED:
       return {
-        ...state, reqError: action.payload, loading: false,
+        ...state,
+        reqError: action.payload,
+        loading: false,
       };
     case actionTypes.GET_ARTICLES_BEGINS:
     case actionTypes.GET_ARTICLE_BEGINS:
@@ -58,7 +62,9 @@ const articleReducer = (state = initialState, action) => {
     case actionTypes.GET_ARTICLE_FAIL:
     case actionTypes.GET_ARTICLES_FAIL:
       return {
-        ...state, loading: false, reqError: action.payload
+        ...state,
+        loading: false,
+        reqError: action.payload
       };
     case actionTypes.GET_ARTICLE_REJECTED:
     case actionTypes.GET_ARTICLES_REJECTED:
@@ -72,12 +78,17 @@ const articleReducer = (state = initialState, action) => {
     case actionTypes.EDIT_ARTICLE:
       return {
         ...state,
-        article: { ...state.article, ...action.article },
+        article: {
+          ...state.article,
+          ...action.article
+        },
         loading: false,
       };
     case actionTypes.EDIT_ARTICLE_FAIL:
       return {
-        ...state, loading: false, reqError: action.payload
+        ...state,
+        loading: false,
+        reqError: action.payload
       };
     case actionTypes.EDIT_ARTICLE_REJECTED:
       return {
@@ -102,7 +113,45 @@ const articleReducer = (state = initialState, action) => {
         loading: false,
         reqError: action.payload,
       };
-
+    case 'LIKE_ARTICLE_SUCCESS':
+      return {
+        ...state
+      };
+    case 'LIKE_ARTICLE_FAILED':
+      return {
+        ...state
+      };
+    case 'UNLIKE_ARTICLE_SUCCESS':
+      return {
+        ...state
+      };
+    case 'UNLIKE_ARTICLE_FAILED':
+      return {
+        ...state
+      };
+    case 'LIKES_COUNT_SUCCESS':
+      return {
+        ...state,
+        articleLikes: action.count
+      };
+    case 'LIKES_COUNT_FAILED':
+      return {
+        ...state,
+      };
+    case 'LIKE_STATUS_SUCCESS':
+      return {
+        ...state,
+        likeStatus: action.status
+      };
+    case 'LIKE_STATUS_FAILED':
+      return {
+        ...state,
+      };
+    case 'LOGOUT_USER':
+      return {
+        ...state,
+        likeStatus: false
+      };
     default:
       return state;
   }

@@ -48,7 +48,7 @@ class ResetPasswordRequest extends Component {
               emailValid: true
             }));
           }
-        })
+        });
     }
   };
 

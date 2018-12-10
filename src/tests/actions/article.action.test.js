@@ -533,4 +533,121 @@ describe('Article Actions', () => {
       done();
     });
   });
+
+  describe('LIKE ARTICLE', () => {
+    it('should like an article when the user clicks on the like icon', (done) => {
+      const slug = 'new-article';
+      moxios.stubRequest(`${config.apiUrl}/articles/${slug}/like`, {
+        status: 201,
+        response: { data: response.data.message }
+      });
+      const store = createMockStore({});
+      const expectedActions = [
+        {
+          type: 'LIKE_ARTICLE_SUCCESS',
+        }
+      ];
+      store.dispatch(Article.likeArticle(slug))
+        .then(() => {
+          expect(store.getActions()).toEqual(expectedActions);
+        });
+      done();
+    });
+
+    it('should not like an article when an error occurs', (done) => {
+      const slug = 'new-article';
+      moxios.stubRequest(`${config.apiUrl}/articles/${slug}/like`, {
+        status: 500,
+        response: { data: response.data.message }
+      });
+      const store = createMockStore({});
+      const expectedActions = [
+        {
+          type: 'LIKE_ARTICLE_FAILED',
+        }
+      ];
+      store.dispatch(Article.likeArticle(slug))
+        .then(() => {
+          expect(store.getActions()).toEqual(expectedActions);
+        });
+      done();
+    });
+
+    it('should unlike an article when the same user clicks on the like icon', (done) => {
+      const slug = 'new-article';
+      moxios.stubRequest(`${config.apiUrl}/articles/${slug}/unlike`, {
+        status: 200,
+        response: { data: response.data.message }
+      });
+      const store = createMockStore({});
+      const expectedActions = [
+        {
+          type: 'UNLIKE_ARTICLE_SUCCESS',
+        }
+      ];
+      store.dispatch(Article.unlikeArticle(slug))
+        .then(() => {
+          expect(store.getActions()).toEqual(expectedActions);
+        });
+      done();
+    });
+
+    it('should not unlike an article when an error occurs', (done) => {
+      const slug = 'new-article';
+      moxios.stubRequest(`${config.apiUrl}/articles/${slug}/unlike`, {
+        status: 400,
+        response: { data: response.data.message }
+      });
+      const store = createMockStore({});
+      const expectedActions = [
+        {
+          type: 'UNLIKE_ARTICLE_FAILED',
+        }
+      ];
+      store.dispatch(Article.unlikeArticle(slug))
+        .then(() => {
+          expect(store.getActions()).toEqual(expectedActions);
+        });
+      done();
+    });
+
+    it('should return likes count', (done) => {
+      const slug = 'new-article';
+      moxios.stubRequest(`${config.apiUrl}/articles/${slug}/like`, {
+        status: 200,
+        response: { data: response.data.message }
+      });
+      const store = createMockStore({});
+      const expectedActions = [
+        {
+          type: 'LIKES_COUNT_SUCCESS',
+          count: undefined
+        }
+      ];
+      store.dispatch(Article.articleLikesCount(slug))
+        .then(() => {
+          expect(store.getActions()).toEqual(expectedActions);
+        });
+      done();
+    });
+
+    it('should not return likes count', (done) => {
+      const slug = 'new-article';
+      moxios.stubRequest(`${config.apiUrl}/articles/${slug}/like`, {
+        status: 400,
+        response: { data: response.data.message }
+      });
+      const store = createMockStore({});
+      const expectedActions = [
+        {
+          type: 'LIKES_COUNT_FAILED'
+        }
+      ];
+      store.dispatch(Article.articleLikesCount(slug))
+        .then(() => {
+          expect(store.getActions()).toEqual(expectedActions);
+        });
+      done();
+    });
+  });
 });
